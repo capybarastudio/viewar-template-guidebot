@@ -1,0 +1,36 @@
+.console {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  max-height: 50%;
+  color: white;
+  font-size: 12px;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco,
+    'Bitstream Vera Sans Mono', monospace;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.entry {
+  display: flex;
+  flex: 0 0 auto;
+  margin-bottom: 8px;
+}
+
+.entry.type-warn {
+  color: yellow;
+}
+
+.entry.type-error {
+  color: red;
+}
+
+.time {
+  color: white;
+  white-space: nowrap;
+  margin-right: 10px;
+}

@@ -1,0 +1,32 @@
+.Base {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 5;
+}
+
+.Button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media only screen and (max-height: 736px),
+  screen and (-webkit-min-device-pixel-ratio: 3) {
+  .Base {
+    width: 108px;
+    height: 108px;
+  }
+
+  .Button {
+    width: 72px;
+    height: 72px;
+  }
+}

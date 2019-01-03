@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Guidebot</title>
+</head>
+<body>
+<div id="app-root"></div>
+<div id="modal-root"></div>
+<div id="log-container"
+     style="display: none; position: fixed; top: 0; left: 0; background: white; font-size: 8px; z-index: -99999999; max-height: 128px; overflow-y: scroll">
+  <pre id="log" />
+</div>
+<div id="output-container"
+     style="display: none; position: fixed; bottom: 0; left: 0; background: white; font-size: 8px; z-index: -99999999">
+  <pre id="output" />
+</div>
+<script type="text/javascript">
+  window.bundleIdentifier = window.bundleIdentifier || <%= JSON.stringify(htmlWebpackPlugin.options.bundleIdentifier) %>
+  window.bundleVersion = window.bundleVersion || <%= JSON.stringify(htmlWebpackPlugin.options.bundleVersion) %>
+</script>
+</body>
+<link rel="stylesheet" type="text/css" href="/CustomUI/index.css">
+</html>

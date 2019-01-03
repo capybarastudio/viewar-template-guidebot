@@ -1,0 +1,18 @@
+.headerBar {
+  position: absolute;
+  right: 1.3rem;
+  top: 0;
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+.isHidden.headerBar {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.isHidden.headerBar * {
+  pointer-events: none;
+}

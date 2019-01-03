@@ -1,0 +1,54 @@
+[
+  {
+    "modelId": "60780",
+    "paths": [
+      {
+        "shape": "circle",
+        "durationInSeconds": 25,
+        "loop": true,
+        "animations": ["Forward"],
+        "definition": {
+          "radius": 5000,
+          "startAngle": 180,
+          "resolution": 360,
+          "direction": "clockwise",
+          "center": {
+            "x": -2500,
+            "y": 2000,
+            "z": 1000
+          }
+        }
+      }
+    ]
+  },
+  {
+    "modelId": "60780",
+    "pose": {
+      "orientation": {
+        "w": 0,
+        "x": 0,
+        "y": 1,
+        "z": 0
+      }
+    },
+    "paths": [
+      {
+        "shape": "circle",
+        "durationInSeconds": 10,
+        "loop": true,
+        "animations": ["Forward"],
+        "definition": {
+          "radius": 5000,
+          "startAngle": 0,
+          "resolution": 360,
+          "direction": "counterclockwise",
+          "center": {
+            "x": 0,
+            "y": 500,
+            "z": 0
+          }
+        }
+      }
+    ]
+  }
+]

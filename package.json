@@ -1,0 +1,77 @@
+{
+  "name": "indoor-navigation",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./scripts/run-tests.js './src/**/transducer.test.js'",
+    "clean": "rm -rf build && rm -rf bundle",
+    "build": "npm run clean && webpack -p --config ./config/webpack.config.js --mode production --env production",
+    "start": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_core",
+    "start:mock": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_mock",
+    "format": "prettier --single-quote --trailing-comma es5 'src/**/*.{js,jsx,css,scss,md,json}' --write"
+  },
+  "author": "Karl Hofer <kh@viewar.com>",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,md,jsx}": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.10.0",
+    "postcss": "^7.0.5",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "prettier": "^1.15.2",
+    "react-hot-loader": "^4.3.12",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "fastclick": "^1.0.6",
+    "lodash": "^4.17.5",
+    "normalize.css": "^7.0.0",
+    "rc-progress": "^2.2.6",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-image-gallery": "^0.8.12",
+    "react-router": "^4.2.0",
+    "react-router-transition": "^1.2.1",
+    "recompose": "^0.26.0",
+    "viewar-api": "^0.30.2",
+    "viewar-core": "^11.18.1",
+    "viewar-guide": "^0.2.1"
+  }
+}

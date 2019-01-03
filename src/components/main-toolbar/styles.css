@@ -1,0 +1,30 @@
+.mainToolbar {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  z-index: 30;
+  transition: opacity 0.5s linear;
+}
+
+.isHidden.mainToolbar {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.isHidden.mainToolbar > * {
+  pointer-events: none;
+}
+
+.position-left {
+  left: 0;
+  bottom: 0;
+  align-items: flex-start;
+}
+
+.position-right {
+  right: 0;
+  bottom: 0;
+  align-items: flex-end;
+}

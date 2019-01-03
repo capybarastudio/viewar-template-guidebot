@@ -1,0 +1,12 @@
+.toolbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: opacity 0.5s ease;
+}
+
+.isHidden.toolbar {
+  pointer-events: none;
+  opacity: 0;
+}

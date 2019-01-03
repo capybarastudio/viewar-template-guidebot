@@ -1,0 +1,96 @@
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.loadingText {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 40px);
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.doubleBounce1,
+.doubleBounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #cccccc;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.doubleBounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.Message {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3em;
+  color: white;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+.ProgressSpinner {
+  z-index: 110;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  transition: opacity 0.3s linear;
+}
+
+.Loading {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 1em;
+  letter-spacing: 1px;
+  z-index: 130;
+}
+
+.Spinner {
+  width: 7em;
+  height: 7em;
+  position: relative;
+  z-index: 120;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}

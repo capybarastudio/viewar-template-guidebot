@@ -1,0 +1,22 @@
+.toast {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  line-height: 2.4em;
+  border-radius: 1.2em;
+  padding: 0 1.2em;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+  text-align: center;
+  white-space: nowrap;
+  max-width: calc(100% - 2.6rem);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.isVisible.toast {
+  opacity: 1;
+}

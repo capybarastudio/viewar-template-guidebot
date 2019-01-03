@@ -1,0 +1,9 @@
+.container {
+  margin: 3px 0 0 0;
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  padding: 20px;
+  background: white;
+}

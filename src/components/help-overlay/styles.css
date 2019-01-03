@@ -1,0 +1,198 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  font-size: 1.5em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.isVisible.container {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.buttonContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.container .button {
+  width: auto;
+  margin: 1.3rem 1.3rem 0 0;
+}
+
+.isActive.button {
+  background: rgba(0, 204, 255, 0.5);
+}
+
+.help {
+  position: absolute;
+  display: flex;
+}
+
+.help.left,
+.help.right {
+  height: 48px;
+  align-items: center;
+}
+
+.help.left {
+  flex-flow: row-reverse;
+}
+
+.help.top {
+  transform: translate(-50%, -100%);
+  flex-flow: column-reverse;
+  align-items: center;
+}
+
+.help.left .line,
+.help.right .line {
+  width: 20px;
+  height: 1em;
+  margin: 0 10px;
+  background: url('../../../assets/images/white_pixel.png') left center repeat-x;
+}
+
+.help.top .line {
+  width: 1em;
+  height: 20px;
+  margin: 10px 0;
+  background: url('../../../assets/images/white_pixel.png') center bottom
+    repeat-y;
+}
+
+.help.top .message {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.message {
+  color: white;
+}
+
+.help.right1,
+.help.right2,
+.help.right3,
+.help.right4 {
+  height: 78px;
+  right: calc(78px + 40px);
+}
+
+.help.right1 {
+  top: calc(100vh - (78px + 40px));
+}
+
+.help.right2 {
+  top: calc(100vh - (78px + 40px) * 2);
+}
+
+.help.right3 {
+  top: calc(100vh - (78px + 40px) * 3);
+}
+
+.help.right4 {
+  top: calc(100vh - (78px + 40px) * 4);
+}
+
+.help.left1 {
+  height: 78px;
+  left: calc(40px + 78px / 2);
+  top: calc(100vh - 78px - 40px);
+}
+
+@media only screen and (max-height: 736px),
+  screen and (-webkit-min-device-pixel-ratio: 3) {
+  .container {
+    font-size: 1.2em;
+  }
+
+  .button {
+    height: 1.7rem;
+    line-height: 1.7rem;
+    border-radius: 1.5rem;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .message {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 736px),
+  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  .help.left,
+  .help.right {
+    height: calc(100vh / 4 - 30px);
+  }
+
+  .help.right1,
+  .help.right2,
+  .help.right3 {
+    right: calc((100vh / 4 - 30px) + 24px);
+  }
+
+  .help.right1 {
+    top: calc(100vh - (100vh / 4 - 30px + 24px));
+  }
+
+  .help.right2 {
+    top: calc(100vh - (100vh / 4 - 30px + 24px) * 2);
+  }
+
+  .help.right3 {
+    top: calc(100vh - (100vh / 4 - 30px + 24px) * 3);
+  }
+
+  .help.right4 {
+    top: calc(100vh - (100vh / 4 - 30px + 24px) * 4);
+  }
+
+  .help.left1 {
+    left: calc(24px + (100vh / 4 - 30px) / 2);
+    top: calc(100vh - calc(25vh - 30px) - 24px);
+  }
+}
+
+@media only screen and (orientation: portrait) and(max-height: 736px),
+  screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
+  .help.right1,
+  .help.right2,
+  .help.right3 {
+    height: 60px;
+    right: calc(60px + 24px);
+  }
+
+  .help.right1 {
+    top: calc(100vh - (24px + 60px));
+  }
+
+  .help.right2 {
+    top: calc(100vh - (24px + 60px) * 2);
+  }
+
+  .help.right3 {
+    top: calc(100vh - (24px + 60px) * 3);
+  }
+
+  .help.right4 {
+    top: calc(100vh - (24px + 60px) * 4);
+  }
+
+  .help.left1 {
+    height: 60px;
+    left: calc(24px + 60px / 2);
+    top: calc(100vh - 60px - 24px);
+  }
+}

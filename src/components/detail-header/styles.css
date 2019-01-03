@@ -1,0 +1,15 @@
+.container {
+  flex: 0 0 auto;
+  border-radius: 15px 15px 0 0;
+  padding: 18px;
+  font-size: 1.4em;
+  font-weight: bold;
+  height: 2rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: white;
+  display: flex;
+  align-items: center;
+}

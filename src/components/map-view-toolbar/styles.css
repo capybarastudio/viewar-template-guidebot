@@ -1,0 +1,26 @@
+.container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1.3rem;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+}
+
+.isHidden.container {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container .button {
+  width: auto;
+  margin: 0.5em 0.5em 0 0;
+  flex: 0 0 calc(50% - 0.5em);
+}
+
+.container .button:nth-child(2n) {
+  margin-right: 0;
+}

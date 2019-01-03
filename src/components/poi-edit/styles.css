@@ -1,0 +1,78 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.isHidden.container {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.isHidden.container * {
+  pointer-events: none;
+}
+
+.container .closeButton {
+  position: absolute;
+  right: 1.3rem;
+  margin-right: 0;
+  top: 0;
+}
+
+.container .backButton {
+  position: absolute;
+  left: 1.3rem;
+  margin-left: 0;
+  top: 0;
+}
+
+.poi {
+  padding: 1rem 1rem 0 1rem;
+  width: 80vw;
+  max-width: 80vh;
+  box-sizing: border-box;
+  color: white;
+  height: 80vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.input {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 1em;
+}
+
+.inputText {
+  flex: 1 0 auto;
+}
+
+.label {
+  padding: 0 0.5em;
+  font-weight: 200;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+  flex: 0 0 auto;
+}
+
+.input .textArea {
+  flex: 1 0 auto;
+  line-height: 1.2em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+.input .textInput {
+  line-height: 2em;
+  padding: 0 1em;
+  border-radius: 1em;
+}

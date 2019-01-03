@@ -1,0 +1,51 @@
+.container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.button,
+.loading {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  transition: opacity 0.5s ease;
+}
+
+.loading {
+  color: white;
+}
+
+.loading span:nth-child(2) {
+  background-color: #00ccff;
+  height: 0.5em;
+  margin-top: 0.5em;
+  border-radius: 0.25em;
+  transition: all 0.25s linear;
+}
+
+.button {
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button.isVisible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.toolbarRight {
+  left: auto;
+  right: 0;
+}

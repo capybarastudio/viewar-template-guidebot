@@ -1,0 +1,12 @@
+.title {
+  line-height: 1.5em;
+  background: rgba(189, 24, 25, 1);
+  color: white;
+  padding: 0.25em;
+}
+
+.loadSaveDialog {
+  min-width: 256px;
+  display: flex;
+  flex-direction: column;
+}

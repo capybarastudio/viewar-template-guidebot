@@ -1,0 +1,24 @@
+.loginForm {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.inputWrapper {
+  line-height: 2em;
+  height: 2em;
+  border-radius: 1em;
+  padding: 0 1em;
+  margin-bottom: 0.5em;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrapper input {
+  text-align: center;
+}
+
+.loginForm .button {
+  margin: 0.5em;
+}
