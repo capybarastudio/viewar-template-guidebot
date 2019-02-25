@@ -38,7 +38,7 @@ const getOrInsertObject = async (id, definition) => {
 };
 
 const getObjectDefinitions = () => {
-  const configJson = config.objects || objectsDefinition;
+  const configJson = config.objects || [];
 
   const definitions = [];
   let i = 0;

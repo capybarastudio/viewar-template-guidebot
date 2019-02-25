@@ -13,6 +13,7 @@ import Toast from '../../components/toast';
 import DebugConsole from '../../components/debug-console';
 import TrackingLost from '../../components/tracking-lost';
 import TargetNotification from '../../components/target-notification';
+import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
 
 const MapEditHeaderBar = ({
   headerBarHidden,
@@ -51,6 +52,9 @@ export default ({
   placePoiVisible,
   trackingLost,
   saveProject,
+  trackingMapProgress,
+  trackingMapProgressVisible,
+  trackingMapMessage,
   ...props
 }) => (
   <Fragment>
@@ -75,6 +79,12 @@ export default ({
       onClick={() => saveProject()}
       className={styles.buttonSave}
       hidden={!saveVisible}
+    />
+
+    <TrackingMapProgress
+      progress={trackingMapProgress}
+      visible={trackingMapProgressVisible}
+      message={trackingMapMessage}
     />
 
     <MainToolbar {...props} position="right" className={styles.toolbar}>

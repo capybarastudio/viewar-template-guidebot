@@ -10,7 +10,8 @@ export default ({ active, onClick, label, className }) => (
       styles.button,
       active && styles.isActive,
       className,
-      globalStyles.ButtonColor
+      globalStyles.ButtonColor,
+      globalStyles.CustomFont1
     )}
     onClick={onClick}
   >

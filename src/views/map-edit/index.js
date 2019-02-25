@@ -32,21 +32,26 @@ export const saveProject = ({
   graphController,
   waypointPlacement,
   showToast,
-  history,
-  viewarApi: { coreInterface },
+  viewarApi: { tracker },
   storage,
-  userId,
-  showDialog,
-  hideDialog,
-  appState,
   setUndoVisible,
+  updateTrackingMapProgress,
+  setTrackingMapMessage,
+  setTrackingMapProgressVisible,
+  setTrackingMapProgress,
 }) => async () => {
-  await showDialog('Please wait...');
   await waypointPlacement.stop();
+
+  setTrackingMapProgress(0);
+  setTrackingMapMessage('TrackingMapSaveInProgress');
+  setTrackingMapProgressVisible(true);
+  tracker.on('trackingMapSaveProgress', updateTrackingMapProgress);
   await storage.activeProject.save();
+  tracker.off('trackingMapSaveProgress', updateTrackingMapProgress);
+  setTrackingMapProgressVisible(false);
+
   await waypointPlacement.start();
   setUndoVisible(false);
-  await hideDialog();
   setDeleteVisible(!!graphController.selectedWaypoint);
   showToast('AdminProjectSaved', 2000);
 };
@@ -76,6 +81,17 @@ export default compose(
   withState('helpVisible', 'setHelpVisible', false),
   withState('helpTimeout', 'setHelpTimeout', false),
   withState('deleteVisible', 'setDeleteVisible', false),
+  withState(
+    'trackingMapMessage',
+    'setTrackingMapMessage',
+    'TrackingMapSaveInProgress'
+  ),
+  withState(
+    'trackingMapProgressVisible',
+    'setTrackingMapProgressVisible',
+    false
+  ),
+  withState('trackingMapProgress', 'setTrackingMapProgress', 0),
   withProps({
     config,
     viewarApi,
@@ -152,6 +168,9 @@ export default compose(
       setUndoVisible(graphController.canUndo);
       setDeleteVisible(!!graphController.selectedWaypoint);
     },
+    updateTrackingMapProgress: ({ setTrackingMapProgress }) => progress => {
+      setTrackingMapProgress(progress * 100);
+    },
   }),
   withHandlers({
     goTo,
@@ -219,6 +238,10 @@ export default compose(
         graphController,
         setUndoVisible,
         updateTracking,
+        updateTrackingMapProgress,
+        setTrackingMapMessage,
+        setTrackingMapProgressVisible,
+        setTrackingMapProgress,
       } = this.props;
 
       if (storage.activeProject) {
@@ -237,7 +260,14 @@ export default compose(
         tracker.on('trackingTargetStatusChanged', updateTracking);
         if (storage.activeProject.trackingMap) {
           await tracker.reset();
+
+          setTrackingMapProgress(0);
+          setTrackingMapMessage('TrackingMapLoadInProgress');
+          setTrackingMapProgressVisible(true);
+          tracker.on('trackingMapLoadProgress', updateTrackingMapProgress);
           await storage.activeProject.loadTrackingMap();
+          tracker.off('trackingMapLoadProgress', updateTrackingMapProgress);
+          setTrackingMapProgressVisible(false);
         } else {
           config.app.showFeatures &&
             coreInterface.call('setPointCloudVisibility', true, true);

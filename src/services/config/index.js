@@ -34,6 +34,9 @@ const fetch = async () => {
     objects,
     showPoiOriginalNames,
     chatbotUrl,
+    greetUser,
+    followMe,
+    selectPoi,
 
     app = {},
     models = {},
@@ -79,6 +82,9 @@ const fetch = async () => {
       ...robot,
     }),
     text: defaults({}, text, {
+      greetUser,
+      followMe,
+      selectPoi,
       ...text,
     }),
     objects,

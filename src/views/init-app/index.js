@@ -215,12 +215,6 @@ export default compose(
         await storage.activeProject.close();
       }
 
-      // Start and stop voice input, otherwise it freezes the scene for a few milliseconds if done for the first time.
-      if (coreInterface.platform === 'iOS') {
-        await coreInterface.call('startVoiceInput');
-        await coreInterface.call('stopVoiceInput');
-      }
-
       setLoading(false);
     },
   })

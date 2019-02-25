@@ -10,7 +10,7 @@ We recommend to install this template by using the viewar-cli:<br>
 
 - Install viewar-cli: <br>`npm install -g viewar-cli`.<br><br>
 - Log in with your ViewAR account: <br>`viewar login`<br><br>
-- Initialize a project in a new directory: <br>`viewar init PROJECTNAME`<br><br>
+- Initialize a project: <br>`viewar-cli init`<br><br>
 - _Select the user account for this app:_ navigate to your account.<br><br>
 - _Select a project type:_ Choose the _Sample Template_ to access the Template List.<br><br>
 - _Choose a sample template:_ <br>`GuideBOT`<br><br>

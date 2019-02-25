@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.css';
+import globalStyles from '../../../css/global.css';
 import IconButton from '../../components/icon-button';
 import Logo from '../../components/logo';
 import Toolbar from '../../components/toolbar';
@@ -23,13 +24,15 @@ export default ({ openUrl, infoText, goTo, loading, goToInitTracker }) => (
     <div className={cx(styles.info)}>
       <div>{translate(infoText)}</div>
       <br />
-      <h1>{translate('InfoDeveloper')}</h1>
+      <h1 className={cx(globalStyles.CustomFont3)}>
+        {translate('InfoDeveloper')}
+      </h1>
       <div className={cx(styles.logo)} />
-      <p>
+      <p className={cx(globalStyles.CustomFont3)}>
         Augmented Reality Solutions
         <br />
         <a
-          className={cx(styles.link)}
+          className={cx(styles.link, globalStyles.CustomFont3)}
           onClick={() => openUrl('http://www.viewar.com')}
         >
           www.viewar.com

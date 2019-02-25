@@ -12,6 +12,7 @@ import PleaseWaitDialog from '../../components/please-wait-dialog';
 import Gallery from '../../components/gallery';
 import Chat from '../../components/chat';
 import NearbyQrCodeHint from '../../components/nearby-qr-code-hint';
+import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
 
 const MainHeaderBar = ({ headerBarHidden, toggleHelp, goBack, ...props }) => (
   <HeaderBar hidden={headerBarHidden} {...props} className={styles.headerBar}>
@@ -42,6 +43,9 @@ export default ({
   guideRequested,
   navigationActive,
   helpVisible,
+  trackingMapProgress,
+  trackingMapProgressVisible,
+  trackingMapMessage,
   ...props
 }) => (
   <Fragment>
@@ -51,6 +55,13 @@ export default ({
     <PleaseWaitDialog {...props} />
     <TrackingLost hidden={!trackingLost} />
     <NavigationToolbar visible={navigationToolbarActive} {...props} />
+
+    <TrackingMapProgress
+      progress={trackingMapProgress}
+      visible={trackingMapProgressVisible}
+      message={trackingMapMessage}
+    />
+
     <MainToolbar
       {...props}
       hidden={guideRequested || trackingLost}

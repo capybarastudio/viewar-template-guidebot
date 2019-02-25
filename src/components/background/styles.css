@@ -5,7 +5,9 @@
   height: 100%;
   position: absolute;
   z-index: -1;
-  background: center / cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .background {

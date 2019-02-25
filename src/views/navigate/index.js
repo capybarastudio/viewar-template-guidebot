@@ -37,6 +37,17 @@ export default compose(
   withState('galleryVisible', 'setGalleryVisible', false),
   withState('guideRequested', 'setGuideRequested', false),
   withState('hasQrCodes', 'setHasQrCodes', false),
+  withState(
+    'trackingMapMessage',
+    'setTrackingMapMessage',
+    'TrackingMapSaveInProgress'
+  ),
+  withState(
+    'trackingMapProgressVisible',
+    'setTrackingMapProgressVisible',
+    false
+  ),
+  withState('trackingMapProgress', 'setTrackingMapProgress', 0),
   withProps(({ mode }) => ({
     sceneDirector,
     storage,
@@ -134,6 +145,9 @@ export default compose(
         await sceneDirector.setMode(MODE_NONE);
       }
     },
+    updateTrackingMapProgress: ({ setTrackingMapProgress }) => progress => {
+      setTrackingMapProgress(progress * 100);
+    },
   }),
   lifecycle({
     async componentDidMount() {
@@ -144,6 +158,10 @@ export default compose(
         hideDialog,
         viewarApi: { trackers },
         setHasQrCodes,
+        updateTrackingMapProgress,
+        setTrackingMapMessage,
+        setTrackingMapProgressVisible,
+        setTrackingMapProgress,
       } = this.props;
       await showDialog('NavigationLoading');
 
@@ -153,9 +171,16 @@ export default compose(
       if (tracker) {
         tracker.on('trackingTargetStatusChanged', updateTracking);
         if (storage.activeProject.trackingMap) {
-          await showDialog('NavigationLoadingMap');
+          hideDialog();
           await tracker.reset();
+
+          setTrackingMapProgress(0);
+          setTrackingMapMessage('TrackingMapLoadInProgress');
+          setTrackingMapProgressVisible(true);
+          tracker.on('trackingMapLoadProgress', updateTrackingMapProgress);
           await storage.activeProject.loadTrackingMap();
+          tracker.off('trackingMapLoadProgress', updateTrackingMapProgress);
+          setTrackingMapProgressVisible(false);
         }
         updateTracking();
 

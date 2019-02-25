@@ -43,7 +43,8 @@ export default ({ goTo, goToLogin, loading, loadProject, ...props }) => (
         styles.button,
         !loading && styles.isVisible,
         globalStyles.StartButtonColor,
-        globalStyles.StartButtonBackgroundColor
+        globalStyles.StartButtonBackgroundColor,
+        globalStyles.CustomFont1
       )}
       onClick={() => loadProject()}
     >

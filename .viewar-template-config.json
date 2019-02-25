@@ -1,0 +1,79 @@
+{
+  "tracking": {
+    "Placenote": [
+      {
+        "name": "Placenote",
+        "config": {
+          "license": "007w9ac0hhyqpgzlc7aunjkp7iqk0p0d6jtpladfpp5poiomh7ldpmz5ju48i8f9j2bzv48bj8rsf5na1jxhk1entd5164v9zeso",
+          "autostart": false,
+          "framesPerSecond": 30,
+          "groundConfirm": "plane"
+        },
+        "targets": [
+          {
+            "name": "dummyTarget",
+            "type": "ground",
+            "handling": "camera",
+            "useTimeout": true,
+            "targetTimeout": 0.5,
+            "active": true
+          },
+          {
+            "name": "placenoteTarget",
+            "type": "map",
+            "handling": "object",
+            "useTimeout": true,
+            "targetTimeout": 0.5,
+            "active": true
+          }
+        ]
+      }
+    ],
+    "QRCode": [
+      {
+        "name": "ARKit",
+        "config": {
+          "configFile": "",
+          "autostart": false,
+          "groundConfirm": "none",
+          "defaultQRCodeSize": 377,
+          "combiner_": "PositionFromLastSeenOrientationFromDifference",
+          "filterAndCorrectMapPoseJumps": {
+            "threshold": 150
+          }
+        },
+        "targets": [
+          {
+            "name": "dummyTarget",
+            "type": "map",
+            "handling": "camera",
+            "useTimeout": true,
+            "targetTimeout": 0
+          },
+          {
+            "name": "http://qr.viewar.com/demo/1",
+            "type": "image",
+            "size": 377,
+            "handling": "camera",
+            "useTimeout": true,
+            "targetTimeout": 0,
+            "forceYUp": true,
+            "pose": {
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "orientation": {
+                "w": 1,
+                "x": 0,
+                "y": 0,
+                "z": 0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

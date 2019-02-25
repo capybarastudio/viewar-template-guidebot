@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.css';
+import globalStyles from '../../../css/global.css';
 import { translate } from '../../services/translations';
 import TextInput from '../../components/text-input';
 import IconButton from '../icon-button';
