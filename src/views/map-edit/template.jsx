@@ -11,6 +11,7 @@ import PleaseWaitDialog from '../../components/please-wait-dialog';
 import WalkControl from '../../components/walk-control';
 import Toast from '../../components/toast';
 import DebugConsole from '../../components/debug-console';
+import PromptPopup from '../../components/prompt-popup';
 import TrackingLost from '../../components/tracking-lost';
 import TargetNotification from '../../components/target-notification';
 import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
@@ -73,6 +74,7 @@ export default ({
       admin
     />
     <TrackingLost hidden={!trackingLost} />
+    <PromptPopup {...props} />
 
     <IconButton
       icon="save"

@@ -70,8 +70,8 @@
     "react-router": "^4.2.0",
     "react-router-transition": "^1.2.1",
     "recompose": "^0.26.0",
-    "viewar-api": "^0.33.0",
+    "viewar-api": "^0.36.6",
     "viewar-core": "^11.18.1",
-    "viewar-guide": "^0.2.4"
+    "viewar-guide": "^0.4.1"
   }
 }

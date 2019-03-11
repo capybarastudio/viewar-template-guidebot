@@ -37,6 +37,7 @@ const fetch = async () => {
     greetUser,
     followMe,
     selectPoi,
+    useFeaturePointPlacement,
 
     app = {},
     models = {},
@@ -64,6 +65,7 @@ const fetch = async () => {
       showObjects,
       showPoiOriginalNames,
       chatbotUrl,
+      useFeaturePointPlacement,
     }),
     debug: defaults({}, debug, {
       debugStateMachine,

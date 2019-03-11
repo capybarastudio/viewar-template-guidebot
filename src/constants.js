@@ -66,6 +66,7 @@ export const DEFAULT_CONFIG = Object.freeze({
     showObjects: false,
     showPoiOriginalNames: false,
     chatbotUrl: false,
+    useFeaturePointPlacement: false,
   },
   debug: {
     debugStateMachine: false,

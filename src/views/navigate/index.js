@@ -67,12 +67,40 @@ export default compose(
     speechDisabled: config.app.speechDisabled,
   })),
   withHandlers({
+    goBack,
+  }),
+  withState('promptVisible', 'setPromptVisible', false),
+  withState('promptText', 'setPromptText', ''),
+  withState('promptButton', 'setPromptButton', false),
+  withState('promptAction', 'setPromptAction', ''),
+  withHandlers({
+    showPrompt: ({
+      setPromptVisible,
+      setPromptText,
+      setPromptAction,
+      setPromptButton,
+    }) => (text, button, action) => {
+      setPromptText(text);
+      setPromptVisible(true);
+      setPromptAction(action);
+      setPromptButton(button);
+    },
+    closePrompt: ({ goBack, promptAction, setPromptVisible }) => () => {
+      switch (promptAction) {
+        case 'back':
+          goBack();
+          break;
+      }
+
+      setPromptVisible(false);
+    },
+  }),
+  withHandlers({
     closeGallery: ({ setGalleryVisible }) => () => setGalleryVisible(false),
     showGallery: ({ setGalleryVisible, setGalleryImages }) => images => {
       setGalleryImages(images);
       setGalleryVisible(true);
     },
-    goBack,
     showDialog: ({ setWaitDialogText }) => async text => {
       setWaitDialogText(text);
       await waitForUiUpdate();
@@ -162,6 +190,7 @@ export default compose(
         setTrackingMapMessage,
         setTrackingMapProgressVisible,
         setTrackingMapProgress,
+        showPrompt,
       } = this.props;
       await showDialog('NavigationLoading');
 
@@ -178,9 +207,14 @@ export default compose(
           setTrackingMapMessage('TrackingMapLoadInProgress');
           setTrackingMapProgressVisible(true);
           tracker.on('trackingMapLoadProgress', updateTrackingMapProgress);
-          await storage.activeProject.loadTrackingMap();
+          const success = await storage.activeProject.loadTrackingMap();
           tracker.off('trackingMapLoadProgress', updateTrackingMapProgress);
           setTrackingMapProgressVisible(false);
+
+          if (!success) {
+            showPrompt('NavigationTrackingMapNotFound', false, 'back');
+            return;
+          }
         }
         updateTracking();
 

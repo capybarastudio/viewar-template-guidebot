@@ -4,6 +4,7 @@ import { coreInterface, modelManager, sceneManager } from 'viewar-api';
 import config from '../config';
 import appState from '../../services/app-state';
 import camera from '../camera';
+import { getPosition } from './utils';
 
 const showReticule = reticuleInstance =>
   (appState.sceneStateMutex = appState.sceneStateMutex.then(
@@ -40,23 +41,34 @@ const hideReticuleFn = reticuleInstance =>
 
 const getPose = object => coreInterface.call('getInstancePose', object.id);
 
-const addWaypointAtReticule = async reticuleInstance => {
-  //TODO: remove once the core is patched
-  const pose = await getPose(reticuleInstance);
-  await graphController.addWaypoint(pose);
-};
+const placeWaypoint = async reticuleInstance => {
+  let pose;
 
-const addWaypointAtFeaturePoint = async () => {
-  const hits = await sceneManager.simulateTouchRay(0.5, 0.5, 500);
-  if (hits.featurePoints.length) {
-    const pose = {
-      position: hits.featurePoints[0].intersection,
+  if (config.app.useFeaturePointPlacement) {
+    const hits = await sceneManager.simulateTouchRay(0.5, 0.5, 100);
+    let position;
+
+    // Get plane from nearest three feature points.
+    if (hits.ray) {
+      position = await getPosition(hits);
+    }
+
+    // Use floor intersection as fallback.
+    if (!position && hits.floors.length) {
+      position = hits.floors[0];
+    }
+
+    pose = {
+      position,
     };
-    await graphController.addWaypoint(pose);
-    return true;
   }
 
-  return false;
+  // Use reticule position as fallback.
+  if (!pose) {
+    pose = await getPose(reticuleInstance);
+  }
+
+  await graphController.addWaypoint(pose);
 };
 
 const getCameraHeight = () => camera.pose.position.y;
@@ -72,8 +84,7 @@ export default createWaypointPlacement({
   hideReticule,
   getPose,
   getCameraHeight,
-  addWaypointAtFeaturePoint,
-  addWaypointAtReticule,
+  placeWaypoint,
   removeSelection,
   clearSelection,
 });

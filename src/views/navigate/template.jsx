@@ -11,6 +11,7 @@ import Logo from '../../components/logo';
 import PleaseWaitDialog from '../../components/please-wait-dialog';
 import Gallery from '../../components/gallery';
 import Chat from '../../components/chat';
+import PromptPopup from '../../components/prompt-popup';
 import NearbyQrCodeHint from '../../components/nearby-qr-code-hint';
 import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
 
@@ -55,6 +56,7 @@ export default ({
     <PleaseWaitDialog {...props} />
     <TrackingLost hidden={!trackingLost} />
     <NavigationToolbar visible={navigationToolbarActive} {...props} />
+    <PromptPopup {...props} />
 
     <TrackingMapProgress
       progress={trackingMapProgress}

@@ -62,11 +62,7 @@ export default ({ arCamera, vrCamera, perspectiveCamera, coreInterface }) => {
           .invert()
           .rotate(pose.orientation)
           .add(pose.position);
-        const promise = coreInterface.call(
-          'setCameraPose',
-          'GridStageCamera',
-          currentFrame.pose
-        );
+        perspectiveCamera.setPose(currentFrame.pose);
         return currentFrame.action;
       }
     } else if (capturing) {

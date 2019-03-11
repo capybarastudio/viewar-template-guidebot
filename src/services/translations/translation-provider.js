@@ -1,7 +1,7 @@
 import React from 'react';
 
-import en from '../../../assets/translations/en.js';
-import de from '../../../assets/translations/de.js';
+import en from '../../../assets/translations/en.json';
+import de from '../../../assets/translations/de.json';
 
 const MOBILEPHONE_SUFFIX = '_Phone';
 const WEBVERSION_SUFFIX = '_Web';

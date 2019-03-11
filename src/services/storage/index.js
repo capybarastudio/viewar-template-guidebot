@@ -111,7 +111,7 @@ const loadTrackingMap = async trackingMap => {
 
   const tracker = Object.values(trackers)[0];
   if (tracker && tracker.loadTrackingMap) {
-    await tracker.loadTrackingMap(trackingMap);
+    return await tracker.loadTrackingMap(trackingMap);
   }
 };
 

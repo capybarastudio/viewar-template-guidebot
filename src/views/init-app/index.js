@@ -21,7 +21,6 @@ import objectAnimation from '../../services/object-animation';
 import sceneDirector from '../../services/scene-director';
 import storage from '../../services/storage';
 import guide from 'viewar-guide';
-import { translate } from '../../services/translations';
 import camera from '../../services/camera';
 import config from '../../services/config';
 import queueSceneUpdate from '../../utils/queue-scene-update';
@@ -117,7 +116,7 @@ export default compose(
         }
       } else {
         await hideDialog();
-        showPrompt(translate('HomeNoProjects', false), translate('OK', false));
+        showPrompt('HomeNoProjects', 'OK');
       }
     },
     downloadModels: ({ setProgress }) => async ids => {

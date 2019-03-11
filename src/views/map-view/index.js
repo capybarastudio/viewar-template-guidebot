@@ -17,7 +17,6 @@ import graphController from '../../services/graph-controller';
 import graphVisualizer from '../../services/graph-visualizer';
 import sceneDirector from '../../services/scene-director';
 import poiPlacement from '../../services/poi-placement';
-import { translate } from '../../services/translations';
 import config from '../../services/config';
 import {
   MODE_POI_PLACEMENT,
@@ -222,23 +221,11 @@ export default compose(
   }),
   withHandlers({
     openActivatePrompt: ({ showPrompt }) => () =>
-      showPrompt(
-        translate('AdminActivateConfirmation', false),
-        translate('AdminActivate', false),
-        'activate'
-      ),
+      showPrompt('AdminActivateConfirmation', 'AdminActivate', 'activate'),
     openDeletePrompt: ({ showPrompt }) => () =>
-      showPrompt(
-        translate('AdminDeleteConfirmation', false),
-        translate('AdminDelete', false),
-        'delete'
-      ),
+      showPrompt('AdminDeleteConfirmation', 'AdminDelete', 'delete'),
     openDeletePoiPrompt: ({ showPrompt }) => () =>
-      showPrompt(
-        translate('AdminDeletePoiConfirmation', false),
-        translate('AdminDelete', false),
-        'deletePoi'
-      ),
+      showPrompt('AdminDeletePoiConfirmation', 'AdminDelete', 'deletePoi'),
     onPromptConfirm: ({
       promptAction,
       closePrompt,

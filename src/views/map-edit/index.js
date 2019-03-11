@@ -56,14 +56,11 @@ export const saveProject = ({
   showToast('AdminProjectSaved', 2000);
 };
 
-export const goBack = ({
-  config,
-  history,
-  appState,
-  viewarApi: { coreInterface },
-}) => async () => {
-  config.app.showFeatures &&
-    (await coreInterface.call('setPointCloudVisibility', false, false));
+export const goBack = ({ config, history, appState }) => async () => {
+  if (config.app.showFeatures) {
+    await viewarApi.cameras.arCamera.hidePointCloud();
+  }
+
   history.push(appState.editBackPath || '/map-view');
 };
 
@@ -102,6 +99,35 @@ export default compose(
     graphController,
     sceneDirector,
     userId: authManager.user.username,
+  }),
+  withHandlers({
+    goBack,
+  }),
+  withState('promptVisible', 'setPromptVisible', false),
+  withState('promptText', 'setPromptText', ''),
+  withState('promptButton', 'setPromptButton', false),
+  withState('promptAction', 'setPromptAction', ''),
+  withHandlers({
+    showPrompt: ({
+      setPromptVisible,
+      setPromptText,
+      setPromptAction,
+      setPromptButton,
+    }) => (text, button, action) => {
+      setPromptText(text);
+      setPromptVisible(true);
+      setPromptAction(action);
+      setPromptButton(button);
+    },
+    closePrompt: ({ goBack, promptAction, setPromptVisible }) => () => {
+      switch (promptAction) {
+        case 'back':
+          goBack();
+          break;
+      }
+
+      setPromptVisible(false);
+    },
   }),
   withHandlers({
     showEdit: ({ setEditVisible }) => () => setEditVisible(true),
@@ -174,7 +200,6 @@ export default compose(
   }),
   withHandlers({
     goTo,
-    goBack,
     saveProject,
     recordWaypoint: ({
       setDeleteVisible,
@@ -242,6 +267,7 @@ export default compose(
         setTrackingMapMessage,
         setTrackingMapProgressVisible,
         setTrackingMapProgress,
+        showPrompt,
       } = this.props;
 
       if (storage.activeProject) {
@@ -265,12 +291,18 @@ export default compose(
           setTrackingMapMessage('TrackingMapLoadInProgress');
           setTrackingMapProgressVisible(true);
           tracker.on('trackingMapLoadProgress', updateTrackingMapProgress);
-          await storage.activeProject.loadTrackingMap();
+          const success = await storage.activeProject.loadTrackingMap();
           tracker.off('trackingMapLoadProgress', updateTrackingMapProgress);
           setTrackingMapProgressVisible(false);
+
+          if (!success) {
+            showPrompt('NavigationTrackingMapNotFound', false, 'back');
+            return;
+          }
         } else {
-          config.app.showFeatures &&
-            coreInterface.call('setPointCloudVisibility', true, true);
+          if (config.app.showFeatures) {
+            await viewarApi.cameras.arCamera.showPointCloud();
+          }
         }
         updateTracking();
       }

@@ -4,6 +4,7 @@ import Button from '../button';
 import IconButton from '../icon-button';
 import Background from '../background';
 import styles from './styles.css';
+import { translate } from '../../services/translations';
 import globalStyles from '../../../css/global.css';
 
 export default ({
@@ -23,13 +24,15 @@ export default ({
   >
     <Background />
     <div className={classNames(styles.text, globalStyles.CustomFont3)}>
-      {promptText}
+      {translate(promptText, false)}
     </div>
-    <Button
-      className={classNames(styles.button)}
-      onClick={() => onPromptConfirm()}
-      label={promptButton}
-    />
+    {promptButton && (
+      <Button
+        className={classNames(styles.button)}
+        onClick={() => onPromptConfirm()}
+        label={translate(promptButton, false)}
+      />
+    )}
     <IconButton
       size="small"
       icon="close"

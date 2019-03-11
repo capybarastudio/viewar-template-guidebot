@@ -5,8 +5,7 @@ export default function createWaypointPlacement({
   getCameraHeight,
   showReticule,
   hideReticule,
-  addWaypointAtFeaturePoint,
-  addWaypointAtReticule,
+  placeWaypoint,
   removeSelection,
   clearSelection,
 }) {
@@ -46,10 +45,8 @@ export default function createWaypointPlacement({
     if (running && !inserting) {
       inserting = true;
       cameraHeight = cameraHeight || getCameraHeight();
-      const success = await addWaypointAtFeaturePoint();
-      if (!success) {
-        await addWaypointAtReticule(reticuleInstance);
-      }
+
+      await placeWaypoint(reticuleInstance);
       inserting = false;
     } else {
       throw new Error('Waypoint capture has not been started!');
