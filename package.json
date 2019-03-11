@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./scripts/run-tests.js './src/**/transducer.test.js'",
-    "clean": "rm -rf build && rm -rf bundle",
+    "clean": "rimraf build && rimraf bundle",
     "build": "npm run clean && webpack -p --config ./config/webpack.config.js --mode production --env production",
     "start": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_core",
     "start:mock": "npm run clean && webpack-dev-server --config ./config/webpack.config.js --open --mode development --env development_mock",
@@ -50,6 +50,7 @@
     "postcss-preset-env": "^6.4.0",
     "prettier": "^1.15.2",
     "react-hot-loader": "^4.3.12",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.25.1",
