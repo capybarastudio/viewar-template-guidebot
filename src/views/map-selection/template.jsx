@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react';
-import styles from './styles.css';
-import Logo from '../../components/logo';
-import LoadProjectDialog from '../../components/load-project-dialog';
-import HeaderBar from '../../components/header-bar';
-import IconButton from '../../components/icon-button';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
-import Background from '../../components/background';
+import styles from './styles.scss';
+import {
+  Logo,
+  LoadProjectDialog,
+  HeaderBar,
+  IconButton,
+  PleaseWaitDialog,
+  Background,
+} from '../../components';
 
 const MapSelectionHeaderBar = ({ headerBarHidden, goBack, ...props }) => (
   <HeaderBar hidden={headerBarHidden} {...props} className={styles.headerBar}>

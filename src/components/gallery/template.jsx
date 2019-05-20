@@ -1,11 +1,10 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import Background from '../background';
-import IconButton from '../icon-button';
+import { Background, IconButton } from '../';
 import cx from 'classnames';
-import './styles.css';
+import './styles.scss';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({ items, closeGallery, galleryVisible, className }) => (
   <div

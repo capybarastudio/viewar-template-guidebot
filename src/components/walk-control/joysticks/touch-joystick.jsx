@@ -2,7 +2,7 @@ import React from 'react';
 
 import Joystick from '../../joystick/index.js';
 
-import styles from '../styles.css';
+import styles from '../styles.scss';
 
 export default ({ updateOffset, baseClass, buttonClass, responseFn }) => (
   <div className={styles.Joystick}>

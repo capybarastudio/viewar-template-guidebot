@@ -1,13 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 import config from '../../services/config';
 
 export default ({ children, className, target }) => (
   <div
-    className={classNames(
+    className={cx(
       styles.targetNotification,
       className,
       (!config.app.showTargetNotification || !target) && styles.isHidden

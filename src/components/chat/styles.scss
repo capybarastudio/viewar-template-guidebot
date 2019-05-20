@@ -1,0 +1,72 @@
+.chat {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - (78px + 80px));
+  /*max-height: calc(2em + (1.5em + 0.6em + 2.4em) * 2.5);*/
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.messages {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column;
+  padding: 0 1em 1em 1em;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.isVisible.chat {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.message {
+  flex: 0 0 auto;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 0.4em 1em 0.2em 1em;
+  border-radius: 1.5em;
+  margin-top: 2.4em;
+  margin-bottom: 0.4em;
+  justify-content: flex-start;
+}
+
+.message:first-child {
+  margin-top: 6em;
+}
+
+.message > span {
+  line-height: 1.5em;
+}
+
+.message.speaker-user {
+  background-color: lightgrey;
+  color: black;
+  margin-left: 2em;
+}
+
+.message.speaker-guide {
+  color: white;
+}
+
+@media only screen and (orientation: landscape) and (max-height: 736px),
+  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+  .robotChat {
+    width: calc(100% - ((100vh / 4 - 30px) + 48px));
+  }
+}
+
+@media only screen and (orientation: portrait) and(max-height: 736px),
+  screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .robotChat {
+    width: calc(100% - (60px + 48px));
+  }
+}

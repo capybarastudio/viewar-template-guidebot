@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({ className, children }) => (
-  <div className={classNames(styles.container, className)}>{children}</div>
+  <div className={cx(styles.container, className)}>{children}</div>
 );

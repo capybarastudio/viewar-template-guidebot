@@ -1,38 +1,32 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
-import IconButton from '../../components/icon-button';
-import Logo from '../../components/logo';
-import Toolbar from '../../components/toolbar';
-import Background from '../../components/background';
-import VersionInfo from '../../components/version-info';
-import { translate } from '../../services/translations';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
+import { IconButton, ToolBar, Background, VersionInfo } from '../../components';
+import { translate } from '../../services';
 
-export default ({ openUrl, infoText, goTo, loading, goToInitTracker }) => (
+export default ({ openUrl, infoText, goTo }) => (
   <div className={styles.container}>
     <Background />
-    <Toolbar>
+    <ToolBar>
       <IconButton
         size="small"
         icon="back"
         className={styles.buttonSmall}
         onClick={() => goTo('/')}
       />
-    </Toolbar>
+    </ToolBar>
 
     <div className={cx(styles.info)}>
       <div>{translate(infoText)}</div>
       <br />
-      <h1 className={cx(globalStyles.CustomFont3)}>
-        {translate('InfoDeveloper')}
-      </h1>
+      <h1 className={cx(global.CustomFont3)}>{translate('InfoDeveloper')}</h1>
       <div className={cx(styles.logo)} />
-      <p className={cx(globalStyles.CustomFont3)}>
+      <p className={cx(global.CustomFont3)}>
         Augmented Reality Solutions
         <br />
         <a
-          className={cx(styles.link, globalStyles.CustomFont3)}
+          className={cx(styles.link, global.CustomFont3)}
           onClick={() => openUrl('http://www.viewar.com')}
         >
           www.viewar.com

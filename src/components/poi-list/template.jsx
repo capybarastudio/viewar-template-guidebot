@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react';
-import classNames from 'classnames';
-import styles from './styles.css';
+import React from 'react';
+import cx from 'classnames';
+import styles from './styles.scss';
 
-import DetailContainer from '../../components/detail-container';
-import IconButton from '../../components/icon-button';
+import { DetailContainer, IconButton } from '../';
 import Header from './header.jsx';
 import Content from './content.jsx';
 
 export default ({ visible, hideButton, togglePoiList, ...props }) => (
-  <div className={classNames(styles.container, visible && styles.isVisible)}>
+  <div className={cx(styles.container, visible && styles.isVisible)}>
     <DetailContainer gap="right1">
       <Header {...props} />
       <Content {...props} />

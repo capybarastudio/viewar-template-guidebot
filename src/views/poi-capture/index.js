@@ -23,6 +23,7 @@ export const goBack = ({ history }) => route => history.goBack();
 
 export default compose(
   withRouter,
+  withState('errorDialogText', 'setErrorDialogText', ''),
   withState('waitDialogText', 'setWaitDialogText', ''),
   withState('poi', 'setPoi', null),
   withState('screenshot', 'setScreenshot', null),
@@ -52,6 +53,8 @@ export default compose(
     },
   }),
   withHandlers({
+    onErrorDialogClose: ({ setErrorDialogText }) => () =>
+      setErrorDialogText(''),
     cancelEdit: ({
       poiPlacement,
       viewarApi: { sceneManager },
@@ -72,9 +75,14 @@ export default compose(
       }
     },
     editBack: ({ setShowEdit }) => () => setShowEdit(false),
-    capturePoi: ({ poiPlacement, setPoi }) => async () => {
+    capturePoi: ({ poiPlacement, setPoi, setErrorDialogText }) => async () => {
       await poiPlacement.start();
-      const poi = await poiPlacement.placePoi();
+      let poi;
+      try {
+        poi = await poiPlacement.placePoi();
+      } catch (e) {
+        setErrorDialogText(`Error: ${e.message}`);
+      }
       setPoi(poi);
     },
     cancelScreenshot: ({

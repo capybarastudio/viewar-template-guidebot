@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import IconButton from '../../components/icon-button';
-import { translate } from '../../services/translations';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
+import { IconButton } from '../';
+import { translate } from '../../services';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({
   projects,
@@ -21,14 +21,17 @@ export default ({
           key={id}
           onClick={() => loadProject(id)}
         >
-          <IconButton
+          {/* <IconButton
             className={styles.icon}
             icon={projectId === id ? 'active' : 'none'}
             size="small"
-          />
+          /> */}
           <div className={styles.details}>
             <div className={styles.title}>
-              <span>{info.name || id}</span>
+              <span>
+                {info.name || id}
+                {projectId === id ? ' (active)' : ''}
+              </span>
             </div>
             {info.timestamp && (
               <div className={styles.timestamp}>
@@ -51,7 +54,7 @@ export default ({
         size="small"
       />
       <div
-        className={cx(styles.project, globalStyles.ButtonColor)}
+        className={cx(styles.project, global.ButtonColor)}
         onClick={() => createNewProject()}
       >
         <div className={styles.title}>{translate('AdminNewProject')}</div>

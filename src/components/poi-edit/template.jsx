@@ -1,12 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
-import Button from '../button';
-import IconButton from '../icon-button';
-import TextInput from '../text-input';
-import TextArea from '../text-area';
-import Background from '../background';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
+import cx from 'classnames';
+import { Button, IconButton, TextInput, TextArea, Background } from '../';
+import styles from './styles.scss';
+import { translate } from '../../services';
 
 export default ({
   visible,
@@ -24,7 +20,7 @@ export default ({
   className,
 }) => (
   <div
-    className={classNames(
+    className={cx(
       styles.container,
       !(visible && poi) && styles.isHidden,
       className
@@ -41,7 +37,7 @@ export default ({
             className={styles.textInput}
           />
         </div>
-        <div className={classNames(styles.input, styles.inputText)}>
+        <div className={cx(styles.input, styles.inputText)}>
           <div className={styles.label}>{translate('AdminPoiDescription')}</div>
           <TextArea
             onChange={setText}
@@ -52,7 +48,7 @@ export default ({
       </div>
     )}
     <Button
-      className={classNames(styles.button)}
+      className={cx(styles.button)}
       onClick={() => saveChanges()}
       label="Save"
     />

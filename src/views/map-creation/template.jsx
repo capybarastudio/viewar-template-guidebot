@@ -1,9 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './styles.css';
-import Background from '../../components/background';
-import MapInfo from '../../components/map-info';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
+import styles from './styles.scss';
+import { Background, MapInfo, PleaseWaitDialog } from '../../components';
 
 export default ({ goTo, ...props }) => (
   <div className={styles.container}>

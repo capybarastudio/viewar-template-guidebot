@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react';
-import classNames from 'classnames';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
-import DetailContainer from '../../components/detail-container';
-import DetailHeader from '../../components/detail-header';
-import DetailContent from '../../components/detail-content';
-import Button from '../../components/button';
+import cx from 'classnames';
+import styles from './styles.scss';
+import { translate } from '../../services';
+import { DetailContainer, DetailHeader, DetailContent, Button } from '../';
 
 export default ({ visible, capturePoi }) => (
-  <div className={classNames(styles.container, visible && styles.isVisible)}>
+  <div className={cx(styles.container, visible && styles.isVisible)}>
     <DetailContainer gap="right2">
       <DetailHeader>
         <h1>{translate('AdminPlacePoiHeader')}</h1>

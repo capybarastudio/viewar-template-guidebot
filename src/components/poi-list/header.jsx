@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import cx from 'classnames';
-import { translate } from '../../services/translations';
-import DetailHeader from '../detail-header';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
+import { translate } from '../../services';
+import { DetailHeader } from '../';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({ query, setQuery, searchVisible, toggleSearch }) => (
   <DetailHeader className={styles.header}>
@@ -13,7 +13,7 @@ export default ({ query, setQuery, searchVisible, toggleSearch }) => (
           className={cx(
             styles.headerButton,
             styles.headerButtonBack,
-            globalStyles.ButtonColor
+            global.ButtonColor
           )}
           onClick={toggleSearch}
         />
@@ -34,7 +34,7 @@ export default ({ query, setQuery, searchVisible, toggleSearch }) => (
       className={cx(
         styles.headerButton,
         styles.headerButtonSearch,
-        globalStyles.ButtonColor
+        global.ButtonColor
       )}
       onClick={toggleSearch}
     />

@@ -45,6 +45,7 @@ export const createNewProject = ({
   history,
   appState,
 }) => async () => {
+  appState.showHelp = true;
   storage.activeProject && (await storage.activeProject.close());
   history.push('/map-creation');
 };
@@ -88,7 +89,7 @@ export default compose(
   lifecycle({
     async componentDidMount() {
       const {
-        viewarApi: { appConfig, trackers },
+        viewarApi: { appConfig, tracker },
         userId,
         storage,
         setProjects,
@@ -97,7 +98,6 @@ export default compose(
         sortByName,
       } = this.props;
 
-      const tracker = Object.values(trackers)[0];
       tracker && (await tracker.deactivate());
       let projects = await storage.fetchProjectIndexFor(userId);
       projects = sortByName(projects);

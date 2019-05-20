@@ -13,8 +13,10 @@ import storage from '../../services/storage';
 
 import render from './template.jsx';
 
+let timeout;
 export default compose(
   withRouter,
+  withState('advancedInitHint', 'setAdvancedInitHint', false),
   withState('deviceType', 'setDeviceType', null),
   withProps({
     viewarApi,
@@ -22,16 +24,18 @@ export default compose(
     storage,
   }),
   withHandlers({
+    onTrackingTimeout: ({ setAdvancedInitHint }) => () => {
+      setAdvancedInitHint('TrackerInitHint');
+    },
+  }),
+  withHandlers({
     updateTracking: ({
-      tracker,
       history,
       appState,
-      viewarApi: { trackers },
-      storage,
+      viewarApi: { tracker },
     }) => async () => {
-      const tracker = Object.values(viewarApi.trackers)[0];
-
       if (tracker.tracking) {
+        clearTimeout(timeout);
         let nextView;
         const hasQrCodes =
           tracker.targets &&
@@ -56,14 +60,13 @@ export default compose(
         history,
         updateTracking,
         setDeviceType,
-        viewarApi: { trackers, appConfig },
-        storage,
+        viewarApi: { tracker, appConfig },
       } = this.props;
       const { deviceType } = appConfig;
 
       setDeviceType(deviceType);
+      timeout = setTimeout(this.props.onTrackingTimeout, 10000);
 
-      const tracker = Object.values(trackers)[0];
       if (tracker) {
         tracker.on('trackingTargetStatusChanged', updateTracking);
         await tracker.reset();
@@ -74,11 +77,12 @@ export default compose(
     componentWillUnmount() {
       const {
         updateTracking,
-        viewarApi: { trackers },
+        viewarApi: { tracker },
       } = this.props;
-
-      const tracker = Object.values(trackers)[0];
-      tracker && tracker.off('trackingTargetStatusChanged', updateTracking);
+      clearTimeout(timeout);
+      if (tracker) {
+        tracker.off('trackingTargetStatusChanged', updateTracking);
+      }
     },
   })
 )(render);

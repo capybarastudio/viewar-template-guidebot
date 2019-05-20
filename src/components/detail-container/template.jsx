@@ -1,16 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({ className, children, gap }) => (
-  <div
-    className={classNames(
-      styles.container,
-      gap && styles[`gap-${gap}`],
-      className
-    )}
-  >
+  <div className={cx(styles.container, gap && styles[`gap-${gap}`], className)}>
     {children}
   </div>
 );

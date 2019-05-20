@@ -152,7 +152,7 @@ export default function createGraphController({
    */
   const addWaypoint = async (pose, canUndo = true) => {
     const nearestWaypoint = getSelectedWaypoint();
-    const existingWaypoint = getNearestWaypoint({ pose }, 500);
+    const existingWaypoint = getNearestWaypoint({ pose }, 300);
 
     if (existingWaypoint) {
       // Insert path to existing waypoint.

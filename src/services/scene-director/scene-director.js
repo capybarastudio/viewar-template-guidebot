@@ -1,4 +1,5 @@
 import { MODE_NONE } from './modes';
+import viewarApi from 'viewar-api';
 
 export default ({
   initialModules,
@@ -43,6 +44,7 @@ export default ({
       mode = newMode || mode;
       await setMode(mode);
       await Promise.all(modules.map(module => module.init()));
+      await viewarApi.cameras.arCamera.startPoseUpdate();
       onTick(updateScene);
     } else {
       newMode && (await setMode(newMode));
@@ -55,6 +57,7 @@ export default ({
       running = false;
       await offTick(updateScene);
       await setMode(MODE_NONE);
+      await viewarApi.cameras.arCamera.stopPoseUpdate();
     } else {
       console.warn('Scene director already stopped.');
     }

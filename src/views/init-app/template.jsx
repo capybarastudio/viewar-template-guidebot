@@ -1,50 +1,50 @@
 import React from 'react';
-import classNames from 'classnames';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
-import IconButton from '../../components/icon-button';
-import Logo from '../../components/logo';
-import Toolbar from '../../components/toolbar';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
-import Background from '../../components/background';
-import Loadingbar from '../../components/loadingbar';
-import PromptPopup from '../../components/prompt-popup';
-import { translate } from '../../services/translations';
+import cx from 'classnames';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
+import {
+  IconButton,
+  Logo,
+  ToolBar,
+  PleaseWaitDialog,
+  ErrorDialog,
+  Background,
+  LoadingBar,
+  PromptPopup,
+} from '../../components';
+import { translate } from '../../services';
 
 export default ({ goTo, goToLogin, loading, loadProject, ...props }) => (
   <div className={styles.container}>
     <Background />
-    <Toolbar hidden={loading}>
+    <ToolBar hidden={loading}>
       <IconButton
         size="small"
         icon="info"
         className={styles.buttonSmall}
         onClick={() => goTo('/info')}
       />
-    </Toolbar>
-    <Toolbar hidden={loading} className={styles.toolbarRight}>
+    </ToolBar>
+    <ToolBar hidden={loading} className={styles.toolBarRight}>
       <IconButton
         size="small"
         icon="login"
         className={styles.buttonSmall}
         onClick={() => goToLogin()}
       />
-    </Toolbar>
+    </ToolBar>
     <PromptPopup {...props} />
     <PleaseWaitDialog {...props} />
+    <ErrorDialog {...props} />
     <Logo size="large" />
-    <Loadingbar
-      className={classNames(styles.loading)}
-      visible={loading}
-      {...props}
-    />
+    <LoadingBar className={cx(styles.loading)} visible={loading} {...props} />
     <div
-      className={classNames(
+      className={cx(
         styles.button,
         !loading && styles.isVisible,
-        globalStyles.StartButtonColor,
-        globalStyles.StartButtonBackgroundColor,
-        globalStyles.CustomFont1
+        global.StartButtonColor,
+        global.StartButtonBackgroundColor,
+        global.CustomFont1
       )}
       onClick={() => loadProject()}
     >

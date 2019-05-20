@@ -12,14 +12,14 @@ const { appId, appVersion } = JSON.parse(
 exports.config = merge([
   {
     entry: {
-      index: [srcPath + '/polyfills.js', srcPath],
+      index: [srcPath + '/polyfills.js', 'react-hot-loader/patch', srcPath],
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: 'babel-loader',
         },
         {
           test: /\.s?css$/,
@@ -37,14 +37,23 @@ exports.config = merge([
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: loader => [require('postcss-preset-env')()],
+                plugins: loader => [
+                  require('postcss-import')({ root: loader.resourcePath }),
+                  require('postcss-preset-env')(),
+                ],
               },
             },
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              query: {
+                sourceMap: true,
+                includePaths: ['./css'],
+              },
+            },
           ],
         },
         {
-          test: /\.(eot|ttf|otf|woff2?)(\?v=\d+\.\d+\.\d+)?|png|jpe?g|svg|gif|ico$/,
+          test: /\.(eot|ttf|otf|woff2|mov?)(\?v=\d+\.\d+\.\d+)?|png|jpe?g|svg|gif|ico$/,
           use: {
             loader: 'file-loader',
             options: {

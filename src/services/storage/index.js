@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { default as viewarApi, coreInterface } from 'viewar-api';
 
 import { createProjectManager } from './project-manager';
@@ -98,26 +97,23 @@ const getContentFromApp = async () => {
 const storage = createOfflineStorage({ storage: viewarApi.storage, navigator });
 
 const saveTrackingMap = async () => {
-  const { trackers } = viewarApi;
+  const { tracker } = viewarApi;
 
-  const tracker = Object.values(trackers)[0];
   if (tracker && tracker.saveTrackingMap) {
     return await tracker.saveTrackingMap();
   }
 };
 
 const loadTrackingMap = async trackingMap => {
-  const { trackers } = viewarApi;
+  const { tracker } = viewarApi;
 
-  const tracker = Object.values(trackers)[0];
   if (tracker && tracker.loadTrackingMap) {
     return await tracker.loadTrackingMap(trackingMap);
   }
 };
 
 const removeTrackingMap = async trackingMap => {
-  const { trackers } = viewarApi;
-  const tracker = Object.values(trackers)[0];
+  const { tracker } = viewarApi;
 
   tracker &&
     tracker.deleteTrackingMap &&

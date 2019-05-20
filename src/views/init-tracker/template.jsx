@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
-import Logo from '../../components/logo';
-import HeaderBar from '../../components/header-bar';
-import IconButton from '../../components/icon-button';
-import TrackingNotification from '../../components/tracking-notification';
-import CalibrationInstruction from '../../components/calibration-instruction';
+import React from 'react';
+import styles from './styles.scss';
+import { translate } from '../../services';
+import {
+  Logo,
+  HeaderBar,
+  IconButton,
+  TrackingNotification,
+  CalibrationInstruction,
+  AdvancedHint,
+} from '../../components';
 
 const InitTrackerBar = ({ toggleHelp, goBack, headerBarHidden, ...props }) => (
   <HeaderBar hidden={headerBarHidden} {...props} className={styles.headerBar}>
@@ -18,13 +21,21 @@ const InitTrackerBar = ({ toggleHelp, goBack, headerBarHidden, ...props }) => (
   </HeaderBar>
 );
 
-export default ({ deviceType, ...props }) => (
-  <Fragment>
+export default ({ deviceType, advancedInitHint, ...props }) => (
+  <div className={styles.container}>
     <InitTrackerBar {...props} />
     <Logo />
-    <CalibrationInstruction deviceType={deviceType} />
-    <TrackingNotification>
-      {translate('TrackingNotification')}
-    </TrackingNotification>
-  </Fragment>
+
+    <div className={styles.animationWrapper}>
+      <AdvancedHint
+        icon="hint"
+        text={advancedInitHint}
+        hidden={!advancedInitHint}
+      />
+      <CalibrationInstruction deviceType={deviceType} />
+      <TrackingNotification>
+        {translate('TrackingNotification')}
+      </TrackingNotification>
+    </div>
+  </div>
 );

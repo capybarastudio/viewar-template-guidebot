@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  &.isHidden {
+    opacity: 0;
+  }
+}
+
+.devicePictogram {
+  width: 50vmax;
+  height: 25vmax;
+  background: center / contain no-repeat;
+}
+
+@media only screen and (orientation: landscape) {
+  /* Mobile phone landscape. */
+  .container.typePhone .devicePictogram {
+    background-image: url('../../../assets/animations/groundconfirm_animation_phone.png');
+  }
+
+  /* Tablet landscape. */
+  .container.typeTablet .devicePictogram {
+    background-image: url('../../../assets/animations/groundconfirm_animation_tablet.png');
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  /* Mobile phone portrait. */
+  .container.typePhone .devicePictogram {
+    background-image: url('../../../assets/animations/groundconfirm_animation_phone.png');
+  }
+
+  /* Tablet portrait. */
+  .container.typeTablet .devicePictogram {
+    background-image: url('../../../assets/animations/groundconfirm_animation_tablet.png');
+  }
+}

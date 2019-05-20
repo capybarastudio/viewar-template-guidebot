@@ -13,8 +13,7 @@ import config from '../../services/config';
 const UPDATE_INTERVAL = 500;
 
 const update = ({ viewarApi, trackedTargets, config, setHidden }) => () => {
-  const { trackers, cameras } = viewarApi;
-  const tracker = Object.values(trackers)[0];
+  const { tracker, cameras } = viewarApi;
   const maxSquaredDistance = config.app.qrCodeNearDistance ** 2;
   const cameraPosition = cameras.arCamera.pose.position;
 
@@ -61,8 +60,7 @@ const startUpdate = ({
   updateTracking,
 }) => () => {
   if (!interval) {
-    const { trackers } = viewarApi;
-    const tracker = Object.values(trackers)[0];
+    const { tracker } = viewarApi;
 
     if (tracker) {
       tracker.on('trackingTargetStatusChanged', updateTracking);
@@ -79,8 +77,7 @@ const startUpdate = ({
 
 const stopUpdate = ({ viewarApi, update, updateTracking }) => () => {
   if (interval) {
-    const { trackers } = viewarApi;
-    const tracker = Object.values(trackers)[0];
+    const { tracker } = viewarApi;
     tracker.off('trackingTargetStatusChanged', updateTracking);
 
     clearInterval(interval);

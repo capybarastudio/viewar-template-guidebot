@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({
   onClick,
@@ -14,7 +14,7 @@ export default ({
   inactive,
 }) => (
   <div
-    className={classNames(
+    className={cx(
       styles.button,
       styles.buttonImage,
       inactive && styles.inactive,
@@ -23,7 +23,7 @@ export default ({
       active && styles.active,
       hidden && styles.hidden,
       className,
-      globalStyles.ButtonColor
+      global.ButtonColor
     )}
     onClick={e => !inactive && onClick && onClick(e)}
   />

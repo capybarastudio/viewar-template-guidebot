@@ -1,10 +1,9 @@
 import React from 'react';
-import classNames from 'classnames';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
-import { translate } from '../../services/translations';
-import TextInput from '../../components/text-input';
-import IconButton from '../icon-button';
+import cx from 'classnames';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
+import { translate } from '../../services';
+import { TextInput, IconButton } from '../';
 
 export default ({
   login,
@@ -14,15 +13,15 @@ export default ({
   setPassword,
   password,
 }) => (
-  <div className={classNames(styles.loginForm, className)}>
-    <div className={classNames(styles.inputWrapper, styles.username)}>
+  <div className={cx(styles.loginForm, className)}>
+    <div className={cx(styles.inputWrapper, styles.username)}>
       <TextInput
         onChange={setUsername}
         value={username}
         placeholder={translate('LoginUsername', false)}
       />
     </div>
-    <div className={classNames(styles.inputWrapper, styles.password)}>
+    <div className={cx(styles.inputWrapper, styles.password)}>
       <TextInput
         onChange={setPassword}
         value={password}

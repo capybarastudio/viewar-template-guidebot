@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react';
-import classNames from 'classnames';
+import React from 'react';
+import cx from 'classnames';
 
-import styles from './styles.css';
-import DetailContent from '../detail-content';
+import styles from './styles.scss';
 import ListItem from './list-item.jsx';
 
+import { DetailContent } from '../';
+
 export default ({ getPois, ...props }) => (
-  <DetailContent className={classNames(styles.list)}>
+  <DetailContent className={cx(styles.list)}>
     {getPois().map(item => (
       <ListItem key={item.$id} item={item} {...props} />
     ))}

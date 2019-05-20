@@ -1,8 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
-import Button from '../button';
-import IconButton from '../icon-button';
-import styles from './styles.css';
+import cx from 'classnames';
+import { IconButton, Button } from '../';
+import styles from './styles.scss';
 
 export default ({
   visible,
@@ -14,7 +13,7 @@ export default ({
   className,
 }) => (
   <div
-    className={classNames(
+    className={cx(
       styles.container,
       !(visible && poiInfo) && styles.isHidden,
       className
@@ -32,12 +31,12 @@ export default ({
     )}
     <div className={styles.buttons}>
       <Button
-        className={classNames(styles.button)}
+        className={cx(styles.button)}
         onClick={() => showEdit()}
         label="Edit"
       />
       <Button
-        className={classNames(styles.button)}
+        className={cx(styles.button)}
         onClick={() => openDeletePoiPrompt()}
         label="Delete"
       />

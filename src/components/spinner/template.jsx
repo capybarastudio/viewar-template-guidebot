@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
+import styles from './styles.scss';
+import { translate } from '../../services';
 
 export default ({ waitDialogText }) => (
   <div className={styles.loadingSpinner}>

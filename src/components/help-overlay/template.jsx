@@ -1,112 +1,60 @@
-import React, { Fragment } from 'react';
-import classNames from 'classnames';
-import Button from '../button';
-import { translate } from '../../services/translations';
-import styles from './styles.css';
+import React from 'react';
+import cx from 'classnames';
+
+import { translate } from '../../services';
+
+import { Icon, IconButton } from '../';
+
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({
-  visible,
-  onClick,
   className,
-  resetTracking,
-  admin,
-  screen,
-  changeScreen,
+  hidden,
+  buttons,
+  getButtonName,
+  initialHelp,
   toggleHelp,
-  undoVisible,
-  placePoiVisible,
-  deleteVisible,
-  saveVisible,
   ...props
 }) => (
-  <div
-    className={classNames(
-      styles.container,
-      visible && styles.isVisible,
-      className
-    )}
-    onClick={toggleHelp}
-  >
-    <div className={styles.buttonContainer}>
-      <Button
-        className={classNames(styles.button)}
-        onClick={resetTracking}
-        label="HelpResetTracking"
-      />
+  <div className={cx(styles.container, hidden && styles.isHidden, className)}>
+    <IconButton
+      icon="close"
+      size="small"
+      className={styles.cancelButton}
+      onClick={toggleHelp}
+    />
+
+    <div className={styles.content}>
+      {buttons.map(button => (
+        <div className={styles.entry} key={button}>
+          <div className={styles.image}>
+            <IconButton className={styles.icon} icon={button} />
+          </div>
+          <div className={styles.text}>
+            <div className={cx(styles.title, global.CustomFont2)}>
+              {translate(`Help${getButtonName(button)}`)}
+            </div>
+            <div className={styles.description}>
+              {translate(`Help${getButtonName(button)}Description`)}
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {initialHelp && (
+        <div
+          className={cx(
+            styles.button,
+            styles.continueButton,
+            global.ButtonColor,
+            global.CustomFont2
+          )}
+          onClick={toggleHelp}
+        >
+          {translate('HelpContinue')}
+        </div>
+      )}
     </div>
-
-    {!admin && (
-      <Fragment>
-        {screen === 'buttons' && (
-          <div>
-            <div
-              className={classNames(styles.help, styles.right1, styles.left)}
-            >
-              <div className={classNames(styles.line)} />
-              <div className={classNames(styles.message)}>
-                {translate('HelpSelectPoi')}
-              </div>
-            </div>
-          </div>
-        )}
-      </Fragment>
-    )}
-
-    {admin && (
-      <Fragment>
-        {screen === 'buttons' && (
-          <div>
-            <div
-              className={classNames(styles.help, styles.right1, styles.left)}
-            >
-              <div className={classNames(styles.line)} />
-              <div className={classNames(styles.message)}>
-                {translate('HelpPlaceWaypoint')}
-              </div>
-            </div>
-            {placePoiVisible && (
-              <div
-                className={classNames(styles.help, styles.right2, styles.left)}
-              >
-                <div className={classNames(styles.line)} />
-                <div className={classNames(styles.message)}>
-                  {translate('HelpPlacePoi')}
-                </div>
-              </div>
-            )}
-            {undoVisible && (
-              <div
-                className={classNames(styles.help, styles.right3, styles.left)}
-              >
-                <div className={classNames(styles.line)} />
-                <div className={classNames(styles.message)}>
-                  {translate('HelpUndo')}
-                </div>
-              </div>
-            )}
-            {deleteVisible && (
-              <div
-                className={classNames(styles.help, styles.right4, styles.left)}
-              >
-                <div className={classNames(styles.line)} />
-                <div className={classNames(styles.message)}>
-                  {translate('HelpDeletePoi')}
-                </div>
-              </div>
-            )}
-            {saveVisible && (
-              <div
-                className={classNames(styles.help, styles.left1, styles.top)}
-              >
-                <div className={classNames(styles.line)} />
-                <div className={classNames(styles.message)}>
-                  {translate('HelpSave')}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-      </Fragment>
-    )}
   </div>
 );

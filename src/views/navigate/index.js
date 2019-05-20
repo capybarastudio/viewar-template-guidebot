@@ -30,9 +30,9 @@ export const goBack = ({ history, appState }) => () => {
 export default compose(
   withState('waitDialogText', 'setWaitDialogText', ''),
   withState('helpVisible', 'setHelpVisible', false),
-  withState('helpTimeout', 'setHelpTimeout', false),
+  withState('initialHelp', 'setInitialHelp', true),
   withState('trackingLost', 'setTrackingLost', false),
-  withState('navigationToolbarActive', 'setNavigationToolbarActive', false),
+  withState('navigationToolBarActive', 'setNavigationToolBarActive', false),
   withState('galleryImages', 'setGalleryImages', []),
   withState('galleryVisible', 'setGalleryVisible', false),
   withState('guideRequested', 'setGuideRequested', false),
@@ -109,18 +109,18 @@ export default compose(
       setWaitDialogText('');
       await waitForUiUpdate();
     },
-    requestGuideWithToolbar: ({
+    requestGuideWithToolBar: ({
       config,
-      setNavigationToolbarActive,
+      setNavigationToolBarActive,
       setGuideRequested,
       guide,
     }) => () => {
       guide.requestGuide(() => {
         setGuideRequested(false);
-        setNavigationToolbarActive(false);
+        setNavigationToolBarActive(false);
       }, config.text.selectPoi);
       setGuideRequested(true);
-      setNavigationToolbarActive(true);
+      setNavigationToolBarActive(true);
     },
     requestGuide: ({ setGuideRequested, guide }) => () => {
       guide.requestGuide(() => {
@@ -134,30 +134,23 @@ export default compose(
     toggleHelp: ({
       helpVisible,
       setHelpVisible,
-      helpTimeout,
-      setHelpTimeout,
+      setInitialHelp,
     }) => visible => {
       const visibility = typeof visible === 'boolean' ? visible : !helpVisible;
       setHelpVisible(visibility);
-
-      if (visibility) {
-        clearTimeout(helpTimeout);
-        setHelpTimeout(setTimeout(() => setHelpVisible(false), 5000));
-      } else {
-        clearTimeout(helpTimeout);
-      }
+      setInitialHelp(false);
     },
     resetTracking: ({ history }) => () => history.push('/init-tracker'),
-    navigateTo: ({ setNavigationToolbarActive, guide }) => async poi => {
-      setNavigationToolbarActive(false);
+    navigateTo: ({ setNavigationToolBarActive, guide }) => async poi => {
+      setNavigationToolBarActive(false);
       guide.pickDestination(poi);
     },
     updateTracking: ({
       setTrackingLost,
-      viewarApi: { trackers },
+      viewarApi: { tracker },
+      setHelpVisible,
+      initialHelp,
     }) => async () => {
-      const tracker = Object.values(trackers)[0];
-
       let tracking = true;
       if (tracker.loadTrackingMap) {
         tracking = tracker.targets.filter(
@@ -168,6 +161,9 @@ export default compose(
       setTrackingLost(!tracking);
 
       if (tracking) {
+        if (initialHelp) {
+          setHelpVisible(true);
+        }
         await sceneDirector.setMode(MODE_NAVIGATION);
       } else {
         await sceneDirector.setMode(MODE_NONE);
@@ -184,7 +180,7 @@ export default compose(
         showDialog,
         sceneDirector,
         hideDialog,
-        viewarApi: { trackers },
+        viewarApi: { tracker },
         setHasQrCodes,
         updateTrackingMapProgress,
         setTrackingMapMessage,
@@ -196,7 +192,6 @@ export default compose(
 
       await sceneDirector.start(MODE_NONE);
 
-      const tracker = Object.values(trackers)[0];
       if (tracker) {
         tracker.on('trackingTargetStatusChanged', updateTracking);
         if (storage.activeProject.trackingMap) {
@@ -230,16 +225,12 @@ export default compose(
     },
     componentWillUnmount() {
       const {
-        viewarApi: { trackers },
+        viewarApi: { tracker },
         guide,
         updateTracking,
-        helpTimeout,
       } = this.props;
-      clearTimeout(helpTimeout);
 
       guide.dismissGuide();
-
-      const tracker = Object.values(trackers)[0];
       tracker && tracker.off('trackingTargetStatusChanged', updateTracking);
     },
   })

@@ -1,10 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({ children, className }) => (
-  <div className={classNames(styles.trackingNotification, className)}>
-    {children}
-  </div>
+  <div className={cx(styles.trackingNotification, className)}>{children}</div>
 );

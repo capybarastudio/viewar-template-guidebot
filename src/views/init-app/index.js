@@ -8,13 +8,7 @@ import {
   withHandlers,
   withProps,
 } from 'recompose';
-import viewarApi, {
-  sceneManager,
-  modelManager,
-  arCamera,
-  vrCamera,
-  coreInterface,
-} from 'viewar-api';
+import viewarApi, { modelManager } from 'viewar-api';
 import appState from '../../services/app-state';
 import authManager from '../../services/auth-manager';
 import objectAnimation from '../../services/object-animation';
@@ -46,6 +40,7 @@ export default compose(
     guide,
     config,
   }),
+  withState('errorDialogText', 'setErrorDialogText', ''),
   withState('waitDialogText', 'setWaitDialogText', ''),
   withState('progress', 'setProgress', 0),
   withState('loading', 'setLoading', true),
@@ -55,6 +50,10 @@ export default compose(
   withState('promptButton', 'setPromptButton', ''),
   withHandlers({
     goTo,
+    showErrorDialog: ({ setErrorDialogText }) => async text => {
+      setErrorDialogText(text);
+      await waitForUiUpdate();
+    },
     showDialog: ({ setWaitDialogText }) => async text => {
       setWaitDialogText(text);
       await waitForUiUpdate();
@@ -164,8 +163,14 @@ export default compose(
         viewarApi,
         guide,
         config,
+        showErrorDialog,
       } = this.props;
-      const { cameras, coreInterface } = viewarApi;
+      const { cameras, coreInterface, trackers } = viewarApi;
+
+      if (!trackers.Placenote && !trackers.ARKit) {
+        await showErrorDialog('ERROR: No valid tracker found.');
+        return;
+      }
 
       const models = Object.entries(config.models)
         .map(([key, id]) => ({

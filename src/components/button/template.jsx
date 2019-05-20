@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
-import { translate } from '../../services/translations';
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
+import { translate } from '../../services';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({ active, onClick, label, className }) => (
   <button
@@ -10,8 +10,8 @@ export default ({ active, onClick, label, className }) => (
       styles.button,
       active && styles.isActive,
       className,
-      globalStyles.ButtonColor,
-      globalStyles.CustomFont1
+      global.ButtonColor,
+      global.CustomFont1
     )}
     onClick={onClick}
   >

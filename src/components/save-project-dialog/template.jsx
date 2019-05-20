@@ -1,9 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
-import Button from '../../components/button';
-import TextInput from '../../components/text-input';
-import ModalDialog from '../../components/modal-dialog';
-import styles from './styles.css';
+import cx from 'classnames';
+import { Button, TextInput, ModalDialog } from '../';
+import styles from './styles.scss';
 
 export default ({
   projectName,

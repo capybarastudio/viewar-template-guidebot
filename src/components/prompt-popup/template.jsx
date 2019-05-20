@@ -1,11 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import Button from '../button';
-import IconButton from '../icon-button';
-import Background from '../background';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
-import globalStyles from '../../../css/global.css';
+import { IconButton, Background } from '../';
+import styles from './styles.scss';
+import { translate } from '../../services';
+import global from '../../../css/global.scss';
 
 export default ({
   promptVisible,
@@ -16,19 +15,19 @@ export default ({
   className,
 }) => (
   <div
-    className={classNames(
+    className={cx(
       styles.container,
       !promptVisible && styles.isHidden,
       className
     )}
   >
     <Background />
-    <div className={classNames(styles.text, globalStyles.CustomFont3)}>
+    <div className={cx(styles.text, global.CustomFont3)}>
       {translate(promptText, false)}
     </div>
     {promptButton && (
       <Button
-        className={classNames(styles.button)}
+        className={cx(styles.button)}
         onClick={() => onPromptConfirm()}
         label={translate(promptButton, false)}
       />

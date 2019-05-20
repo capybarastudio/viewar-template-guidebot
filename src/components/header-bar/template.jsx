@@ -1,16 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({ hidden, className, children }) => (
-  <div
-    className={classNames(
-      styles.headerBar,
-      hidden && styles.isHidden,
-      className
-    )}
-  >
+  <div className={cx(styles.headerBar, hidden && styles.isHidden, className)}>
     {children}
   </div>
 );

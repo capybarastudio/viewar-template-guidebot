@@ -1,7 +1,5 @@
-import axios from 'axios';
 import viewarApi, { coreInterface } from 'viewar-api';
 import authManager from '../auth-manager';
-import storage from '../storage';
 
 const appConfig = viewarApi.appConfig;
 
@@ -16,10 +14,11 @@ export const uploadLearnedQrCodes = async () => {
   payload.append('token', authManager.user.token);
 
   if (navigator.onLine) {
-    await axios.post(
+    await fetch(
       'http://dev2.viewar.com/templates/custom/guidebot/action:saveQRCodes/',
-      payload,
       {
+        method: 'post',
+        body: payload,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       }
     );
@@ -27,7 +26,7 @@ export const uploadLearnedQrCodes = async () => {
 };
 
 export const setCustomTrackingTargets = async qrCodes => {
-  if (Object.keys(viewarApi.trackers)[0] === 'ARKit') {
+  if (viewarApi.tracker.name === 'ARKit') {
     const { trackerList } = appConfig;
 
     const customTrackingConfig = JSON.parse(JSON.stringify(trackerList));
@@ -36,6 +35,8 @@ export const setCustomTrackingTargets = async qrCodes => {
     );
 
     if (customTracker) {
+      const size = customTracker.config.defaultQRCodeSize || 170;
+
       for (let qrCode of qrCodes) {
         const target = customTracker.targets.find(
           target => target.name === qrCode.name
@@ -49,9 +50,10 @@ export const setCustomTrackingTargets = async qrCodes => {
           customTracker.targets.push({
             name: qrCode.name,
             type: 'image',
-            size: 390,
+            size,
             handling: 'camera',
             useTimeout: true,
+            learn: false,
             targetTimeout: 0,
             forceYUp: true,
             pose: {
@@ -68,7 +70,7 @@ export const setCustomTrackingTargets = async qrCodes => {
 };
 
 export const setOriginalTrackingTargets = async () => {
-  if (Object.keys(viewarApi.trackers)[0] === 'ARKit') {
+  if (viewarApi.tracker.name === 'ARKit') {
     const tracker = appConfig.trackerList.find(
       tracker => tracker.name === 'ARKit'
     );
@@ -80,8 +82,7 @@ export const setOriginalTrackingTargets = async () => {
 
 export const getLearnedQrCodes = async () => {
   const qrCodes =
-    coreInterface.platform === 'iOS' &&
-    Object.keys(viewarApi.trackers)[0] === 'ARKit'
+    coreInterface.platform === 'iOS' && viewarApi.tracker.name === 'ARKit'
       ? await coreInterface.call(
           'customTrackingCommand',
           'ARKit',

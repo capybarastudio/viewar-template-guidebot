@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
-import styles from './styles.css';
-import globalStyles from '../../../css/global.css';
+import styles from './styles.scss';
+import global from '../../../css/global.scss';
 
 export default ({ active, conversation, addRef, className }) => (
   <div
@@ -18,7 +18,7 @@ export default ({ active, conversation, addRef, className }) => (
             className={cx(
               styles.message,
               styles[`speaker-${speaker}`],
-              speaker === 'guide' && globalStyles.ButtonColor
+              speaker === 'guide' && global.ButtonColor
             )}
           >
             <span>{sentence}</span>

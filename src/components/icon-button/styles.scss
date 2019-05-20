@@ -1,0 +1,275 @@
+@mixin icon-position($x, $y) {
+  -webkit-mask-position-x: calc(100% / 7 * #{$x});
+  -webkit-mask-position-y: calc(100% / 7 * #{$y});
+}
+
+.button {
+  width: 78px;
+  height: 78px;
+  cursor: pointer;
+  margin: 40px;
+  transition: opacity 0.5s linear;
+  pointer-events: all;
+
+  &.buttonImage {
+    -webkit-mask-size: 800%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: url('../../../assets/images/buttons.svg');
+  }
+
+  &.size-small {
+    width: 48px;
+    height: 48px;
+    margin: 16px;
+
+    @media only screen and (orientation: landscape) and (max-height: 736px),
+      screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+      width: 7vh;
+      height: 7vh;
+    }
+
+    @media only screen and (orientation: portrait) and(max-height: 736px),
+      screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+    }
+  }
+
+  &.size-medium {
+    width: 10vh;
+    height: 10vh;
+    margin: 10px;
+
+    @media only screen and (orientation: portrait) and(max-height: 736px),
+      screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      width: 42px;
+      height: 42px;
+      margin: 5px;
+    }
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media only screen and (orientation: landscape) and (max-height: 736px),
+    screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+    width: calc(100vh / 4 - 30px);
+    height: calc(100vh / 4 - 30px);
+    margin: 24px;
+  }
+
+  @media only screen and (orientation: portrait) and(max-height: 736px),
+    screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 60px;
+    height: 60px;
+    margin: 24px;
+  }
+
+  &.inactive {
+    background-color: grey;
+  }
+
+  &.icon-none {
+    -webkit-mask-image: none;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  &.icon-add {
+    @include icon-position(1, 7);
+  }
+
+  &.icon-openProject {
+    @include icon-position(0, 7);
+  }
+
+  &.icon-undo {
+    @include icon-position(0, 2);
+  }
+
+  &.icon-next {
+    @include icon-position(7, 2);
+    transform: rotate(180deg);
+  }
+
+  &.icon-back {
+    @include icon-position(7, 2);
+  }
+
+  &.icon-help {
+    @include icon-position(0, 3);
+  }
+
+  &.icon-menu {
+    @include icon-position(1, 0);
+  }
+
+  &.icon-screenshot {
+    @include icon-position(6, 0);
+  }
+
+  &.icon-share {
+    @include icon-position(4, 3);
+  }
+
+  &.icon-gallery {
+    @include icon-position(5, 3);
+  }
+
+  &.icon-send {
+    @include icon-position(1, 6);
+  }
+
+  &.icon-save {
+    @include icon-position(5, 0);
+  }
+
+  &.icon-cart {
+    @include icon-position(7, 0);
+  }
+
+  &.icon-delete {
+    @include icon-position(3, 0);
+  }
+
+  &.icon-configure {
+    @include icon-position(4, 0);
+  }
+
+  &.icon-info {
+    @include icon-position(3, 1);
+  }
+
+  &.icon-addProduct {
+    @include icon-position(0, 0);
+  }
+
+  &.icon-open {
+    @include icon-position(2, 1);
+  }
+
+  &.icon-skip {
+    @include icon-position(6, 2);
+  }
+
+  &.icon-finish {
+    @include icon-position(1, 2);
+  }
+
+  &.icon-undo {
+    @include icon-position(0, 2);
+  }
+
+  &.icon-window {
+    @include icon-position(2, 4);
+  }
+
+  &.icon-door {
+    @include icon-position(1, 4);
+  }
+
+  &.icon-capture {
+    @include icon-position(3, 2);
+  }
+
+  &.icon-cancel,
+  &.icon-close,
+  &.icon-abort {
+    @include icon-position(2, 0);
+  }
+
+  &.icon-home {
+    @include icon-position(7, 4);
+  }
+
+  &.icon-hint,
+  &.icon-active {
+    @include icon-position(7, 6);
+  }
+
+  &.icon-confirm {
+    @include icon-position(1, 2);
+  }
+
+  &.icon-scaleGroundDown {
+    @include icon-position(0, 0);
+  }
+
+  &.icon-scaleGroundUp {
+    @include icon-position(2, 6);
+  }
+
+  &.icon-sketch {
+    @include icon-position(4, 1);
+  }
+
+  &.icon-move {
+    @include icon-position(2, 2);
+  }
+
+  &.icon-room {
+    @include icon-position(1, 1);
+  }
+
+  &.icon-resetTracking {
+    @include icon-position(3, 2);
+  }
+
+  &.icon-play {
+    @include icon-position(5, 4);
+  }
+
+  &.icon-play_outlined {
+    @include icon-position(4, 5);
+  }
+
+  &.icon-pause_outlined {
+    @include icon-position(3, 5);
+  }
+
+  &.icon-stop_outlined {
+    @include icon-position(5, 5);
+  }
+
+  &.icon-pause {
+    @include icon-position(6, 4);
+  }
+
+  &.icon-stop {
+    @include icon-position(2, 5);
+  }
+
+  &.icon-login {
+    @include icon-position(0, 5);
+  }
+
+  &.icon-add_outline {
+    @include icon-position(7, 5);
+  }
+
+  &.icon-remove_outline {
+    @include icon-position(0, 6);
+  }
+
+  &.icon-share_outline {
+    @include icon-position(6, 5);
+  }
+
+  &.icon-poi {
+    @include icon-position(3, 6);
+  }
+
+  &.icon-placepoi {
+    @include icon-position(4, 6);
+  }
+
+  &.icon-placewaypoint {
+    @include icon-position(5, 6);
+  }
+
+  .button.active {
+    @include icon-position(2, 0);
+  }
+}

@@ -1,11 +1,15 @@
 import React, { Fragment } from 'react';
-import styles from './styles.css';
-import Logo from '../../components/logo';
-import IconButton from '../../components/icon-button';
-import PoiPlacement from '../../components/poi-placement';
-import PoiScreenshot from '../../components/poi-screenshot';
-import PoiEdit from '../../components/poi-edit';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
+import styles from './styles.scss';
+
+import {
+  Logo,
+  IconButton,
+  PoiPlacement,
+  PoiScreenshot,
+  PoiEdit,
+  PleaseWaitDialog,
+  ErrorDialog,
+} from '../../components';
 
 export default ({
   poi,
@@ -32,6 +36,7 @@ export default ({
       back
       close
     />
+    <ErrorDialog {...props} />
     <IconButton
       onClick={() => goTo('/map-edit')}
       className={styles.closeButton}

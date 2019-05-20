@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
-import IconButton from '../icon-button';
-import styles from './styles.css';
-import { translate } from '../../services/translations';
+import cx from 'classnames';
+import { IconButton } from '../';
+import styles from './styles.scss';
+import { translate } from '../../services';
 
 export default ({
   visible,
@@ -12,13 +12,7 @@ export default ({
   className,
   onCancel,
 }) => (
-  <div
-    className={classNames(
-      styles.container,
-      !visible && styles.isHidden,
-      className
-    )}
-  >
+  <div className={cx(styles.container, !visible && styles.isHidden, className)}>
     <div className={styles.background} />
     <div className={styles.title}>{translate('AdminTakeScreenshot')}</div>
     <div

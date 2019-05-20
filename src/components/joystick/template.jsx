@@ -1,7 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
-import styles from './styles.css';
+import styles from './styles.scss';
 
 export default ({
   updateOffset,
@@ -12,14 +12,14 @@ export default ({
 }) => (
   <div>
     <div
-      className={classNames(styles.Button, buttonClass)}
+      className={cx(styles.Button, buttonClass)}
       style={{
         top: `${touchInfo.offset.y * 100}%`,
         left: `${touchInfo.offset.x * 100}%`,
       }}
     />
     <div
-      className={classNames(styles.Base, baseClass)}
+      className={cx(styles.Base, baseClass)}
       onTouchStart={updateOffset}
       onTouchMove={updateOffset}
       onTouchEnd={resetOffset}

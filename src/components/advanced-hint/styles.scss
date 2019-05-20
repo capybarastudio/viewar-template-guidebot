@@ -1,0 +1,54 @@
+$margin: 3rem;
+
+body .container {
+  position: absolute;
+  border-radius: 1000px;
+  padding: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  bottom: $margin;
+  max-width: 400px;
+  width: calc(100% - 2 * #{$margin});
+  border: 1px solid white;
+
+  &.isCenter {
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
+
+  &.isHidden {
+    opacity: 0;
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    margin: 0;
+    background-color: white;
+  }
+
+  .text {
+    flex: 1 1 auto;
+    font-size: 0.8em;
+    color: white;
+    text-align: left;
+    padding: 0 0.5rem;
+  }
+
+  &.noIcon {
+    .text {
+      padding: 0 1rem;
+    }
+
+    .icon {
+      width: 0;
+    }
+  }
+}

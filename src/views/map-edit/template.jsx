@@ -1,20 +1,19 @@
 import React, { Fragment } from 'react';
-import styles from './styles.css';
-import Logo from '../../components/logo';
-import MainToolbar from '../../components/main-toolbar';
-import PoiView from '../../components/poi-view';
-import PoiEdit from '../../components/poi-edit';
-import HeaderBar from '../../components/header-bar';
-import HelpOverlay from '../../components/help-overlay';
-import IconButton from '../../components/icon-button';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
-import WalkControl from '../../components/walk-control';
-import Toast from '../../components/toast';
-import DebugConsole from '../../components/debug-console';
-import PromptPopup from '../../components/prompt-popup';
-import TrackingLost from '../../components/tracking-lost';
-import TargetNotification from '../../components/target-notification';
-import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
+import styles from './styles.scss';
+import {
+  Logo,
+  MainToolBar,
+  PoiEdit,
+  HeaderBar,
+  HelpOverlay,
+  IconButton,
+  PleaseWaitDialog,
+  Toast,
+  PromptPopup,
+  TrackingLost,
+  TargetNotification,
+  TrackingMapProgress,
+} from '../../components';
 
 const MapEditHeaderBar = ({
   headerBarHidden,
@@ -65,13 +64,13 @@ export default ({
     <Logo admin />
     <PoiEdit visible={editVisible} {...props} close />
     <HelpOverlay
-      visible={helpVisible}
-      {...props}
+      hidden={!helpVisible}
+      type={'map-edit'}
       deleteVisible={deleteVisible}
       saveVisible={saveVisible}
       undoVisible={undoVisible}
       placePoiVisible={placePoiVisible}
-      admin
+      {...props}
     />
     <TrackingLost hidden={!trackingLost} />
     <PromptPopup {...props} />
@@ -80,7 +79,7 @@ export default ({
       icon="save"
       onClick={() => saveProject()}
       className={styles.buttonSave}
-      hidden={!saveVisible}
+      hidden={!saveVisible || trackingLost}
     />
 
     <TrackingMapProgress
@@ -89,7 +88,12 @@ export default ({
       message={trackingMapMessage}
     />
 
-    <MainToolbar {...props} position="right" className={styles.toolbar}>
+    <MainToolBar
+      {...props}
+      position="right"
+      className={styles.toolBar}
+      hidden={trackingLost}
+    >
       <IconButton
         icon="delete"
         onClick={deleteWaypoint}
@@ -113,7 +117,7 @@ export default ({
         onClick={() => recordWaypoint()}
         className={styles.button}
       />
-    </MainToolbar>
+    </MainToolBar>
 
     <TargetNotification />
   </Fragment>

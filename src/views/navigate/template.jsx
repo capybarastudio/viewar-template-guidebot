@@ -1,21 +1,30 @@
 import React, { Fragment } from 'react';
-import styles from './styles.css';
-import MainToolbar from '../../components/main-toolbar';
-import NavigationToolbar from '../../components/navigation-toolbar';
-import ReplayToolbar from '../../components/replay-toolbar';
-import HeaderBar from '../../components/header-bar';
-import IconButton from '../../components/icon-button';
-import HelpOverlay from '../../components/help-overlay';
-import TrackingLost from '../../components/tracking-lost';
-import Logo from '../../components/logo';
-import PleaseWaitDialog from '../../components/please-wait-dialog';
-import Gallery from '../../components/gallery';
-import Chat from '../../components/chat';
-import PromptPopup from '../../components/prompt-popup';
-import NearbyQrCodeHint from '../../components/nearby-qr-code-hint';
-import TrackingMapProgress from '../../components/tracking-map-progress/tracking-map-progress';
+import styles from './styles.scss';
 
-const MainHeaderBar = ({ headerBarHidden, toggleHelp, goBack, ...props }) => (
+import {
+  MainToolBar,
+  NavigationToolBar,
+  ReplayToolBar,
+  HeaderBar,
+  IconButton,
+  HelpOverlay,
+  TrackingLost,
+  Logo,
+  PleaseWaitDialog,
+  Gallery,
+  Chat,
+  PromptPopup,
+  NearbyQrCodeHint,
+  TrackingMapProgress,
+} from '../../components';
+
+const MainHeaderBar = ({
+  headerBarHidden,
+  hideHelpButton,
+  toggleHelp,
+  goBack,
+  ...props
+}) => (
   <HeaderBar hidden={headerBarHidden} {...props} className={styles.headerBar}>
     <IconButton
       onClick={goBack}
@@ -23,12 +32,14 @@ const MainHeaderBar = ({ headerBarHidden, toggleHelp, goBack, ...props }) => (
       icon="back"
       className={styles.headerBarButton}
     />
-    <IconButton
-      onClick={() => toggleHelp(true)}
-      size="small"
-      icon="help"
-      className={styles.headerBarButton}
-    />
+    {!hideHelpButton && (
+      <IconButton
+        onClick={() => toggleHelp(true)}
+        size="small"
+        icon="help"
+        className={styles.headerBarButton}
+      />
+    )}
   </HeaderBar>
 );
 
@@ -37,8 +48,8 @@ export default ({
   hasQrCodes,
   speechDisabled,
   trackingLost,
-  navigationToolbarActive,
-  requestGuideWithToolbar,
+  navigationToolBarActive,
+  requestGuideWithToolBar,
   requestGuide,
   dismissGuide,
   guideRequested,
@@ -51,11 +62,16 @@ export default ({
 }) => (
   <Fragment>
     <Logo admin={admin} />
-    <HelpOverlay visible={helpVisible} {...props} />
-    <MainHeaderBar {...props} />
+    <HelpOverlay
+      hidden={!helpVisible}
+      speechDisabled={speechDisabled}
+      type={'navigate'}
+      {...props}
+    />
+    <MainHeaderBar hideHelpButton={guideRequested} {...props} />
     <PleaseWaitDialog {...props} />
     <TrackingLost hidden={!trackingLost} />
-    <NavigationToolbar visible={navigationToolbarActive} {...props} />
+    <NavigationToolBar visible={navigationToolBarActive} {...props} />
     <PromptPopup {...props} />
 
     <TrackingMapProgress
@@ -64,23 +80,34 @@ export default ({
       message={trackingMapMessage}
     />
 
-    <MainToolbar
+    <MainToolBar
       {...props}
-      hidden={guideRequested || trackingLost}
+      hidden={guideRequested || trackingLost || helpVisible}
+      className={styles.toolBar}
       position="right"
     >
-      <IconButton icon="menu" onClick={requestGuideWithToolbar} />
-      {!speechDisabled && <IconButton icon="poi" onClick={requestGuide} />}
-    </MainToolbar>
+      <IconButton
+        icon="menu"
+        className={styles.button}
+        onClick={requestGuideWithToolBar}
+      />
+      {!speechDisabled && (
+        <IconButton
+          icon="poi"
+          className={styles.button}
+          onClick={requestGuide}
+        />
+      )}
+    </MainToolBar>
     <NearbyQrCodeHint enabled={hasQrCodes} />
-    <MainToolbar
+    <MainToolBar
       {...props}
       hidden={!guideRequested || trackingLost}
       position="right"
     >
       <IconButton icon="abort" onClick={dismissGuide} />
-    </MainToolbar>
-    <ReplayToolbar />
+    </MainToolBar>
+    <ReplayToolBar />
     <Gallery {...props} />
     <Chat active={guideRequested && !trackingLost} />
   </Fragment>

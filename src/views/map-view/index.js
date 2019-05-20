@@ -113,6 +113,7 @@ export const goToMapEdit = ({
 }) => async () => {
   appState.qrScanPath = '/map-edit';
   appState.editBackPath = `/map-view`;
+  appState.showHelp = true;
   await showDialog('Please wait...');
   await hideDialog();
 

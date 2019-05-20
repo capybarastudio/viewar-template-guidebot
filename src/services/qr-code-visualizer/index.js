@@ -98,8 +98,7 @@ const offTrackingChanged = listener => {
   }
 };
 
-const hasQRCodeCapability = () =>
-  Object.keys(viewarApi.trackers)[0] === 'ARKit';
+const hasQRCodeCapability = () => viewarApi.trackers.name === 'ARKit';
 
 export default createQrCodeVisualizer({
   insertContainer,

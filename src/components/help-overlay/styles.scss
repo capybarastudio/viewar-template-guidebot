@@ -1,0 +1,113 @@
+body .container .cancelButton {
+  position: absolute;
+  right: 1.3rem;
+  top: 0;
+  margin-right: 0;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  font-size: 1.4em;
+  background-color: rgba(40, 47, 57, 0.6);
+  transition: 0.5s cubic-bezier(0.38, 1.38, 0.73, 0.98);
+  transition-property: transform, opacity;
+
+  @media only screen and (max-height: 736px) {
+    font-size: 1.1em;
+  }
+
+  &.isHidden {
+    opacity: 0;
+    pointer-events: none;
+
+    .cancelButton {
+      pointer-events: none;
+    }
+  }
+
+  .button {
+    flex: 0 0 auto;
+    margin-top: 2em;
+    box-sizing: border-box;
+    border-radius: 24px;
+    height: 2.5rem;
+    padding: 0 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    max-width: 400px;
+    width: 60vw;
+  }
+
+  .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100vh - 6em);
+    width: calc(100vw - 6em);
+    overflow-y: auto;
+    /* Webkit-overflow-scrolling auto will destroy the buttons (this will result in borders with webkit-mask-image). */
+    /* -webkit-overflow-scrolling: touch; */
+    -webkit-overflow-scrolling: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    margin: 0;
+    width: 3em;
+    height: 3em;
+    background-color: white;
+  }
+
+  .entry {
+    flex: 0 0 auto;
+    margin: 2em 0 0 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    color: white;
+
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    line-height: 1.2em;
+    flex: 1 1 auto;
+    flex-flow: column;
+    max-width: 70%;
+    margin-left: 1em;
+  }
+
+  .title {
+    font-size: 1.1em;
+    flex: 0 0 auto;
+    line-height: 1.3em;
+    margin-bottom: 0.35em;
+  }
+
+  .description {
+    flex: 0 0 auto;
+    line-height: 1.2em;
+  }
+
+  .image {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}

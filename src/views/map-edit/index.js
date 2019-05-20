@@ -76,7 +76,7 @@ export default compose(
   withState('placePoiVisible', 'setPlacePoiVisible', false),
   withState('trackingLost', 'setTrackingLost', false),
   withState('helpVisible', 'setHelpVisible', false),
-  withState('helpTimeout', 'setHelpTimeout', false),
+  withState('initialHelp', 'setInitialHelp', true),
   withState('deleteVisible', 'setDeleteVisible', false),
   withState(
     'trackingMapMessage',
@@ -151,25 +151,18 @@ export default compose(
     toggleHelp: ({
       helpVisible,
       setHelpVisible,
-      helpTimeout,
-      setHelpTimeout,
+      setInitialHelp,
     }) => visible => {
       const visibility = typeof visible === 'boolean' ? visible : !helpVisible;
       setHelpVisible(visibility);
-
-      if (visibility) {
-        clearTimeout(helpTimeout);
-        setHelpTimeout(setTimeout(() => setHelpVisible(false), 5000));
-      } else {
-        clearTimeout(helpTimeout);
-      }
+      setInitialHelp(false);
     },
     updateTracking: ({
       setTrackingLost,
-      viewarApi: { trackers },
+      viewarApi: { tracker },
+      initialHelp,
+      setHelpVisible,
     }) => async () => {
-      const tracker = Object.values(trackers)[0];
-
       let tracking = true;
       if (tracker.loadTrackingMap) {
         tracking = tracker.targets.filter(
@@ -180,6 +173,10 @@ export default compose(
       setTrackingLost(!tracking);
 
       if (tracking) {
+        if (appState.showHelp && initialHelp) {
+          appState.showHelp = false;
+          setHelpVisible(true);
+        }
         await sceneDirector.setMode(MODE_WAYPOINT_PLACEMENT);
       } else {
         await sceneDirector.setMode(MODE_NONE);
@@ -257,7 +254,7 @@ export default compose(
         setPlacePoiVisible,
         setSaveVisible,
         sceneDirector,
-        viewarApi: { trackers, coreInterface },
+        viewarApi: { tracker },
         storage,
         setProject,
         graphController,
@@ -281,7 +278,6 @@ export default compose(
 
       await sceneDirector.start(MODE_WAYPOINT_PLACEMENT);
 
-      const tracker = Object.values(trackers)[0];
       if (tracker) {
         tracker.on('trackingTargetStatusChanged', updateTracking);
         if (storage.activeProject.trackingMap) {
@@ -310,15 +306,12 @@ export default compose(
     async componentWillUnmount() {
       const {
         waypointPlacement,
-        viewarApi: { trackers, coreInterface },
-        helpTimeout,
+        viewarApi: { tracker },
         updateTracking,
       } = this.props;
 
-      const tracker = Object.values(trackers)[0];
       tracker && tracker.off('trackingTargetStatusChanged', updateTracking);
 
-      clearTimeout(helpTimeout);
       await waypointPlacement.stop();
     },
   })
