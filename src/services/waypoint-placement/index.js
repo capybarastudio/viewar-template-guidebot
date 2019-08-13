@@ -1,9 +1,7 @@
 import createWaypointPlacement from './waypoint-placement';
 import graphController from '../graph-controller';
 import { coreInterface, modelManager, sceneManager } from 'viewar-api';
-import config from '../config';
-import appState from '../../services/app-state';
-import camera from '../camera';
+import { appState, config, camera } from '../';
 import { getPosition } from './utils';
 
 const showReticule = reticuleInstance =>

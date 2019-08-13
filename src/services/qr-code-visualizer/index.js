@@ -7,13 +7,14 @@ import viewarApi, {
 import storage from '../storage';
 
 import { QR_CODES_CONTAINER_ID, NO_INTERACTION } from '../../constants';
-import config from '../../services/config';
+import { config, trackingTargets } from '../../services';
 import createQrCodeVisualizer from './qr-code-visualizer';
+import { getQrCodeType } from '../../utils';
 
 const insertContainer = async () => {
   const newContainer = {
     id: QR_CODES_CONTAINER_ID,
-    type: 'grouped',
+    grouped: false,
     interaction: NO_INTERACTION,
     children: [],
   };
@@ -37,21 +38,17 @@ const insertVisualization = async ({ name, pose }, parent) => {
 export const isEnabled = () => config.app.visualizeQrCodes;
 
 const getInitialQrCodes = () => {
-  const tracker = viewarApi.appConfig.trackerList.find(
-    tracker => tracker.name === 'ARKit'
+  const targets = trackingTargets.getTargets(
+    storage.activeProject && storage.activeProject.qrCodes
   );
-  if (tracker) {
-    return JSON.parse(
-      JSON.stringify(tracker.targets.filter(target => target.type === 'image'))
-    );
-  } else {
-    return [];
-  }
+  return JSON.parse(
+    JSON.stringify(targets.filter(target => target.type === getQrCodeType()))
+  );
 };
 
 const getTrackedQrCodes = () =>
-  viewarApi.trackers.ARKit
-    ? viewarApi.trackers.ARKit.targets
+  viewarApi.tracker
+    ? viewarApi.tracker.targets
         .filter(target => target.tracked)
         .reduce((targets, target) => {
           targets.push(target.name);
@@ -65,7 +62,7 @@ const getLearnedQrCodes = throttle(async () => {
   if (coreInterface.platform === 'iOS') {
     let learnedQrCodes = await coreInterface.call(
       'customTrackingCommand',
-      'ARKit',
+      viewarApi.tracker.name,
       'getLearnedTargets',
       ''
     );
@@ -85,20 +82,28 @@ const getLearnedQrCodes = throttle(async () => {
 const removeVisualization = sceneManager.removeNode;
 
 const onTrackingChanged = listener => {
-  const { coreInterface, trackers } = viewarApi;
-  if (coreInterface.platform === 'iOS') {
-    trackers.ARKit.on('trackingTargetStatusChanged', listener);
+  const { coreInterface, tracker } = viewarApi;
+  if (
+    coreInterface.platform === 'iOS' ||
+    coreInterface.platform === 'Android'
+  ) {
+    tracker.on('trackingTargetStatusChanged', listener);
   }
 };
 
 const offTrackingChanged = listener => {
-  const { coreInterface, trackers } = viewarApi;
-  if (coreInterface.platform === 'iOS') {
-    trackers.ARKit.off('trackingTargetStatusChanged', listener);
+  const { coreInterface, tracker } = viewarApi;
+  if (
+    coreInterface.platform === 'iOS' ||
+    coreInterface.platform === 'Android'
+  ) {
+    tracker.off('trackingTargetStatusChanged', listener);
   }
 };
 
-const hasQRCodeCapability = () => viewarApi.trackers.name === 'ARKit';
+const hasQRCodeCapability = () =>
+  viewarApi.tracker &&
+  (viewarApi.tracker.name === 'ARKit' || viewarApi.tracker.name === 'ARCore');
 
 export default createQrCodeVisualizer({
   insertContainer,

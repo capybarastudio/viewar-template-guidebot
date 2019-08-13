@@ -1,17 +1,19 @@
 .toolBar .buttonSmall {
-  margin-right: 0;
+  padding-right: 0;
 }
 
-.headerBar .headerBarButton {
-  margin-right: 0;
+.headerBar {
+  .headerBarButton {
+    padding-left: 0;
+  }
 }
 
 .button {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 .toolBar .button {
-  margin-top: 0;
+  padding-top: 0;
 }
 
 .buttonSave {

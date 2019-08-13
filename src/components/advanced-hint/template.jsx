@@ -6,7 +6,7 @@ import { translate } from '../../services';
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
 
-import { IconButton } from '..';
+import { Icon } from '..';
 
 export default ({ icon, text, hidden, center, className }) => (
   <div
@@ -19,7 +19,9 @@ export default ({ icon, text, hidden, center, className }) => (
       className
     )}
   >
-    <IconButton className={cx(styles.icon)} size="small" icon={icon} />
-    <div className={styles.text}>{translate(text)}</div>
+    <div className={styles.content}>
+      <Icon className={cx(styles.icon)} size="small" icon={icon} />
+      <div className={styles.text}>{translate(text)}</div>
+    </div>
   </div>
 );

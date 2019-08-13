@@ -9,7 +9,7 @@ import config from '../config';
 import createPoiCapture from './poi-placement';
 import graphController from '../graph-controller';
 import createObjectProxy from '../object-proxy';
-import generateId from '../../utils/generate-id';
+import { generateId } from '../../utils';
 import camera from '../camera';
 import { translate } from '../translations';
 

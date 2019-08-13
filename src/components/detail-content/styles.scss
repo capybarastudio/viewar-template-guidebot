@@ -1,9 +1,17 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   margin: 3px 0 0 0;
   display: flex;
   flex-flow: column;
   overflow-y: auto;
   flex: 1 1 auto;
-  padding: 20px;
+  padding: $icon-padding-small;
   background: white;
+
+  &.isDark {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+  }
 }

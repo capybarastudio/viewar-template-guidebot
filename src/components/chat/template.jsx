@@ -4,12 +4,15 @@ import cx from 'classnames';
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
 
-export default ({ active, conversation, addRef, className }) => (
+export default ({ active, conversation, refs, className }) => (
   <div
     className={cx(styles.chat, className, active && styles.isVisible)}
-    ref={addRef('chat')}
+    ref={element => refs.set('chat', element)}
   >
-    <div className={styles.messages} ref={addRef('messages')}>
+    <div
+      className={styles.messages}
+      ref={element => refs.set('messages', element)}
+    >
       {conversation
         .filter((message, index) => index >= conversation.length - 2)
         .map(({ speaker, sentence }, index) => (

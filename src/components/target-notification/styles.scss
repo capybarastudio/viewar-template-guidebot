@@ -1,25 +1,40 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .targetNotification {
   position: absolute;
-  left: 1.3rem;
-  bottom: 1.3rem;
-  right: 1.3rem;
+  bottom: $icon-padding;
+  left: calc(#{$icon-padding} * 2 + #{$icon-size});
+  right: calc(#{$icon-padding} * 2 + #{$icon-size});
   font-size: 1.1em;
-  line-height: 1.3em;
+  line-height: $icon-size;
+  height: $icon-size;
   background: white;
   color: black;
-  height: 2.6em;
-  border-radius: 1.9em;
-  padding: 0.6em 1.6em;
+  border-radius: $icon-size;
+  padding: 1em;
+  box-sizing: border-box;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  pointer-events: none;
   font-size: 0.8em;
-  z-index: 400;
+  z-index: 20;
+  opacity: 0.8;
+
+  @include phone-landscape {
+    line-height: $icon-size-phone-landscape;
+    height: $icon-size-phone-landscape;
+    border-radius: $icon-size-phone-landscape;
+  }
+
+  @include phone-portrait {
+    left: $icon-padding;
+    right: $icon-padding;
+  }
 }
 
 .isHidden.targetNotification {
-  pointer-events: none;
   opacity: 0;
 }

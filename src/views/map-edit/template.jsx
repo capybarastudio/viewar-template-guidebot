@@ -18,6 +18,7 @@ import {
 const MapEditHeaderBar = ({
   headerBarHidden,
   toggleHelp,
+  helpButtonHidden,
   goBack,
   ...props
 }) => (
@@ -28,12 +29,14 @@ const MapEditHeaderBar = ({
       icon="back"
       className={styles.headerBarButton}
     />
-    <IconButton
-      onClick={() => toggleHelp(true)}
-      size="small"
-      icon="help"
-      className={styles.headerBarButton}
-    />
+    {!helpButtonHidden && (
+      <IconButton
+        onClick={() => toggleHelp(true)}
+        size="small"
+        icon="help"
+        className={styles.headerBarButton}
+      />
+    )}
   </HeaderBar>
 );
 
@@ -55,6 +58,8 @@ export default ({
   trackingMapProgress,
   trackingMapProgressVisible,
   trackingMapMessage,
+  mainToolbarHidden,
+  saveButtonHidden,
   ...props
 }) => (
   <Fragment>
@@ -79,7 +84,7 @@ export default ({
       icon="save"
       onClick={() => saveProject()}
       className={styles.buttonSave}
-      hidden={!saveVisible || trackingLost}
+      hidden={saveButtonHidden}
     />
 
     <TrackingMapProgress
@@ -92,7 +97,7 @@ export default ({
       {...props}
       position="right"
       className={styles.toolBar}
-      hidden={trackingLost}
+      hidden={mainToolbarHidden}
     >
       <IconButton
         icon="delete"

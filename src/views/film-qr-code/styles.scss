@@ -1,4 +1,25 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
+  .skipButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .notification {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -100%);
+    line-height: $icon-size-small;
+    white-space: nowrap;
+
+    @include phone-landscape {
+      line-height: $icon-size-small-phone-landscape;
+    }
+  }
 }
 
 .qrScanArea {
@@ -31,11 +52,4 @@
   opacity: 0.3;
   border-radius: 8px;
   flex: 1 0 auto;
-}
-
-.container .skipButton {
-  position: absolute;
-  right: 1.3rem;
-  top: 0;
-  margin-right: 0;
 }

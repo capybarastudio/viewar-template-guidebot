@@ -6,46 +6,39 @@ import {
   lifecycle,
   withPropsOnChange,
 } from 'recompose';
-import graphController from '../../services/graph-controller';
-import storage from '../../services/storage';
-import appState from '../../services/app-state';
+import { graphController, storage, appState } from '../../services';
 import { sceneManager } from 'viewar-api';
 
 import render from './template.jsx';
+
+export const saveChanges = ({
+  savePoi,
+  poi,
+  text,
+  title,
+  hideEdit,
+  showDialog,
+  hideDialog,
+}) => async e => {
+  e.preventDefault();
+  await showDialog('Please wait...');
+  Object.assign(poi.data, {
+    name: title,
+    description: text,
+  });
+
+  await sceneManager.clearSelection();
+  savePoi && (await savePoi());
+  await hideDialog();
+  hideEdit();
+};
 
 export default compose(
   withState('poiInfo', 'setPoiInfo', null),
   withState('title', 'setTitle', ''),
   withState('text', 'setText', ''),
-  withProps({
-    appState,
-    storage,
-    sceneManager,
-    graphController,
-  }),
   withHandlers({
-    saveChanges: ({
-      savePoi,
-      poi,
-      text,
-      title,
-      sceneManager,
-      hideEdit,
-      showDialog,
-      hideDialog,
-      appState,
-    }) => async () => {
-      await showDialog('Please wait...');
-      Object.assign(poi.data, {
-        name: title,
-        description: text,
-      });
-
-      await sceneManager.clearSelection();
-      savePoi && (await savePoi());
-      hideEdit();
-      await hideDialog();
-    },
+    saveChanges,
   }),
   withPropsOnChange(['poi'], ({ poi, setPoiInfo, setTitle, setText }) => {
     if (poi) {

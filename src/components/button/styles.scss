@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .button {
   font-family: 'Catamaran', sans-serif;
   font-size: 16px;
@@ -9,22 +12,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1em;
   padding: 0 14px;
   width: 200px;
   cursor: pointer;
-  line-height: 2em;
-  height: 2em;
+  border-radius: calc(#{$icon-size-small} / 2);
+  line-height: $icon-size-small;
+  height: $icon-size-small;
   flex: 0 0 auto;
-}
 
-.button span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: black;
-  font-weight: 500;
-}
+  @include phone-landscape {
+    height: $icon-size-small-phone-landscape;
+    line-height: $icon-size-small-phone-landscape;
+  }
 
-.button.isActive {
+  &.isActive {
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    font-weight: 500;
+  }
 }

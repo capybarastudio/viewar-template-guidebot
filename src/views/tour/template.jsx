@@ -3,7 +3,6 @@ import styles from './styles.scss';
 
 import {
   MainToolBar,
-  NavigationToolBar,
   ReplayToolBar,
   HeaderBar,
   IconButton,
@@ -16,11 +15,14 @@ import {
   PromptPopup,
   NearbyQrCodeHint,
   TrackingMapProgress,
+  SkipPoiButton,
+  TourToolbar,
+  DebugStateMachine,
 } from '../../components';
 
 const MainHeaderBar = ({
   headerBarHidden,
-  hideHelpButton,
+  helpButtonHidden,
   toggleHelp,
   goBack,
   ...props
@@ -32,7 +34,7 @@ const MainHeaderBar = ({
       icon="back"
       className={styles.headerBarButton}
     />
-    {!hideHelpButton && (
+    {!helpButtonHidden && (
       <IconButton
         onClick={() => toggleHelp(true)}
         size="small"
@@ -46,32 +48,39 @@ const MainHeaderBar = ({
 export default ({
   admin,
   hasQrCodes,
-  speechDisabled,
   trackingLost,
-  navigationToolBarActive,
-  requestGuideWithToolBar,
+  tourToolBarActive,
+  toggleTourToolBar,
   requestGuide,
   dismissGuide,
-  guideRequested,
   navigationActive,
   helpVisible,
   trackingMapProgress,
   trackingMapProgressVisible,
   trackingMapMessage,
+  skipPoi,
+  nextPoi,
+  selectPoi,
+  poiIndex,
+  pois,
+  tourName,
+  resetGuidePosition,
+  goToPerspective,
+  poi,
   ...props
 }) => (
   <Fragment>
     <Logo admin={admin} />
-    <HelpOverlay
-      hidden={!helpVisible}
-      speechDisabled={speechDisabled}
-      type={'navigate'}
-      {...props}
-    />
-    <MainHeaderBar hideHelpButton={guideRequested} {...props} />
+    <HelpOverlay hidden={!helpVisible} type={'tour'} {...props} />
+    <MainHeaderBar {...props} />
     <PleaseWaitDialog {...props} />
-    <TrackingLost hidden={!trackingLost} />
-    <NavigationToolBar visible={navigationToolBarActive} {...props} />
+    <TrackingLost hidden={!trackingLost || helpVisible} />
+    <TourToolbar
+      title={tourName}
+      visible={tourToolBarActive}
+      pois={pois}
+      onSelect={selectPoi}
+    />
     <PromptPopup {...props} />
 
     <TrackingMapProgress
@@ -80,35 +89,54 @@ export default ({
       message={trackingMapMessage}
     />
 
+    <DebugStateMachine />
+
     <MainToolBar
       {...props}
-      hidden={guideRequested || trackingLost || helpVisible}
+      hidden={trackingLost || helpVisible}
       className={styles.toolBar}
       position="right"
     >
       <IconButton
         icon="menu"
         className={styles.button}
-        onClick={requestGuideWithToolBar}
+        onClick={toggleTourToolBar}
+        active={tourToolBarActive}
       />
-      {!speechDisabled && (
-        <IconButton
-          icon="poi"
-          className={styles.button}
-          onClick={requestGuide}
-        />
-      )}
     </MainToolBar>
-    <NearbyQrCodeHint enabled={hasQrCodes} />
+
     <MainToolBar
       {...props}
-      hidden={!guideRequested || trackingLost}
-      position="right"
+      hidden={trackingLost || helpVisible || tourToolBarActive}
+      className={styles.toolBar}
+      position="left"
     >
-      <IconButton icon="abort" onClick={dismissGuide} />
+      <IconButton
+        icon="pause"
+        className={styles.button}
+        onClick={goToPerspective}
+      />
+      {/* <IconButton
+        icon="reset"
+        className={styles.button}
+        onClick={resetGuidePosition}
+      /> */}
     </MainToolBar>
+
+    <NearbyQrCodeHint enabled={hasQrCodes && !helpVisible} />
     <ReplayToolBar />
     <Gallery {...props} />
-    <Chat active={guideRequested && !trackingLost} />
+    <Chat
+      className={styles.chat}
+      active={!trackingLost && !helpVisible && !tourToolBarActive}
+    />
+
+    {nextPoi && !helpVisible && (
+      <SkipPoiButton
+        onClick={skipPoi}
+        poi={nextPoi}
+        label={poiIndex === -1 ? 'TourStart' : 'TourSkipPoi'}
+      />
+    )}
   </Fragment>
 );

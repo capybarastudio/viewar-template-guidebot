@@ -6,7 +6,7 @@ import { NO_INTERACTION } from '../../constants';
 import createGraphController from './graph-controller';
 
 import createObjectProxy from '../object-proxy';
-import generateId from '../../utils/generate-id';
+import { generateId } from '../../utils';
 
 const fetchModel = async (id, fallbackId) =>
   modelManager.findModelById(id) ||

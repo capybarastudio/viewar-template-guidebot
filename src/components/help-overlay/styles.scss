@@ -1,9 +1,5 @@
-body .container .cancelButton {
-  position: absolute;
-  right: 1.3rem;
-  top: 0;
-  margin-right: 0;
-}
+@import 'constants.scss';
+@import 'media-queries.scss';
 
 .container {
   position: absolute;
@@ -11,14 +7,15 @@ body .container .cancelButton {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 200;
-  font-size: 1.4em;
-  background-color: rgba(40, 47, 57, 0.6);
+  z-index: 25;
+  font-size: 1em;
   transition: 0.5s cubic-bezier(0.38, 1.38, 0.73, 0.98);
   transition-property: transform, opacity;
+  background-color: rgba(40, 47, 57, 0.6);
+  color: white;
 
-  @media only screen and (max-height: 736px) {
-    font-size: 1.1em;
+  @include phone-landscape {
+    font-size: 1.2em;
   }
 
   &.isHidden {
@@ -30,19 +27,20 @@ body .container .cancelButton {
     }
   }
 
+  .cancelButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
   .button {
-    flex: 0 0 auto;
     margin-top: 2em;
-    box-sizing: border-box;
-    border-radius: 24px;
-    height: 2.5rem;
-    padding: 0 1.4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    max-width: 400px;
+    max-width: 200px;
     width: 60vw;
+
+    @include phone-landscape {
+      margin-top: 1.5em;
+    }
   }
 
   .content {
@@ -52,13 +50,29 @@ body .container .cancelButton {
     transform: translate(-50%, -50%);
     max-height: calc(100vh - 6em);
     width: calc(100vw - 6em);
+    max-width: 600px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    @include phone-landscape {
+      width: calc(100vw - 3em);
+      max-height: calc(100vh - 4em);
+    }
+
+    @include tablet {
+      max-height: 60vh;
+    }
+  }
+
+  .help {
+    flex: 0 1 auto;
     overflow-y: auto;
     /* Webkit-overflow-scrolling auto will destroy the buttons (this will result in borders with webkit-mask-image). */
     /* -webkit-overflow-scrolling: touch; */
     -webkit-overflow-scrolling: auto;
     display: flex;
     flex-flow: column;
-    align-items: center;
   }
 
   .icon {
@@ -76,10 +90,13 @@ body .container .cancelButton {
     flex-flow: row;
     justify-content: center;
     width: 100%;
-    color: white;
 
     &:first-of-type {
       margin: 0;
+    }
+
+    @include phone-landscape {
+      margin-top: 1em;
     }
   }
 
@@ -91,6 +108,10 @@ body .container .cancelButton {
     flex-flow: column;
     max-width: 70%;
     margin-left: 1em;
+
+    @include tablet {
+      max-width: 40%;
+    }
   }
 
   .title {
@@ -103,11 +124,18 @@ body .container .cancelButton {
   .description {
     flex: 0 0 auto;
     line-height: 1.2em;
+
+    // Add padding-bottom to avoid scrolling bug (wrong flex calculation).
+    padding-bottom: 4px;
   }
 
   .image {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
+  }
+
+  .continueButton {
+    margin-top: $icon-padding;
   }
 }

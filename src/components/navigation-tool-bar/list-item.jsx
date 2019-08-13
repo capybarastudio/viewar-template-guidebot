@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { compose, withProps } from 'recompose';
 import styles from './styles.scss';
+import guide from 'viewar-guide';
 
 export default compose(
   withProps(({ poi, usePoiImages }) => ({
@@ -10,7 +11,7 @@ export default compose(
       (poi.data.localScreenshotUrl || poi.data.cloudScreenshotUrl),
     imageUrl: poi.data.localScreenshotUrl || poi.data.cloudScreenshotUrl,
   }))
-)(({ imageUrl, poi, navigateTo, getDistance, guide, showPoiOriginalNames }) => (
+)(({ imageUrl, poi, navigateTo, getDistance, showPoiOriginalNames }) => (
   <div
     className={cx(styles.item, guide.destination === poi && styles.isActive)}
     onClick={() => navigateTo(poi)}

@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   position: absolute;
   left: 0;
@@ -10,30 +13,34 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-}
 
-.isHidden.container {
-  pointer-events: none;
-  opacity: 0;
-}
+  &.isHidden {
+    pointer-events: none;
+    opacity: 0;
 
-.isHidden.container * {
-  pointer-events: none;
-}
+    * {
+      pointer-events: none;
+    }
+  }
 
-.container .closeButton {
-  position: absolute;
-  right: 1.3rem;
-  margin-right: 0;
-  top: 0;
+  .closeButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 .text {
   max-width: 80%;
   color: white;
-  margin-bottom: 1em;
+  margin-bottom: $icon-size-small;
+  line-height: $icon-size-small;
   text-align: center;
-  line-height: 1.2em;
   font-size: 1.2em;
   font-weight: 200;
+
+  @include phone-landscape {
+    margin-bottom: $icon-size-small-phone-landscape;
+    line-height: $icon-size-small-phone-landscape;
+  }
 }

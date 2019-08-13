@@ -1,0 +1,61 @@
+@import 'media-queries.scss';
+@import 'clip-path/gap-left.scss';
+@import 'clip-path/gap-right.scss';
+
+// Gap right.
+@mixin clipPathGapRight1() {
+  @include clipPathGapRight1Normal();
+
+  @include phone-landscape {
+    @include clipPathGapRight1LandscapePhone();
+  }
+}
+
+@mixin clipPathGapRight2() {
+  @include clipPathGapRight2Normal();
+
+  @include phone-landscape {
+    @include clipPathGapRight2LandscapePhone();
+  }
+}
+
+@mixin clipPathGapRight3() {
+  @include clipPathGapRight3Normal();
+
+  @include phone-landscape {
+    @include clipPathGapRight3LandscapePhone();
+  }
+}
+
+@mixin clipPathGapRight4() {
+  @include clipPathGapRight4Normal();
+
+  @include phone-landscape {
+    @include clipPathGapRight4LandscapePhone();
+  }
+}
+
+// Gap left.
+@mixin clipPathGapLeft1() {
+  @include clipPathGapLeft1Normal();
+
+  @include phone-landscape {
+    @include clipPathGapLeft1LandscapePhone();
+  }
+}
+
+@mixin clipPathGapLeft2() {
+  @include clipPathGapLeft2Normal();
+
+  @include phone-landscape {
+    @include clipPathGapLeft2LandscapePhone();
+  }
+}
+
+@mixin clipPathGapLeft3() {
+  @include clipPathGapLeft3Normal();
+
+  @include phone-landscape {
+    @include clipPathGapLeft3LandscapePhone();
+  }
+}

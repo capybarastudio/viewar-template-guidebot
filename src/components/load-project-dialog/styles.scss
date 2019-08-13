@@ -1,58 +1,76 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+$project-height: calc(#{$icon-size-small} + #{$icon-padding-small} * 2);
+$project-radius: calc(#{$project-height} / 2);
+
+$project-height-phone-landscape: calc(
+  #{$icon-size-small-phone-landscape} + #{$icon-padding-small} * 2
+);
+$project-radius-phone-landscape: calc(#{$project-height-phone-landscape} / 2);
+
 .loadDialog {
   position: absolute;
-  padding: calc(2.6rem + 2rem) 0 1.3rem 1.3rem;
   box-sizing: border-box;
-  top: 0;
-  left: 0;
+  top: calc(2.6rem + 2rem);
+  left: $icon-padding-small;
+  right: $icon-padding-small;
+  bottom: $icon-padding-small;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   display: flex;
   flex-flow: column;
-}
 
-.projects {
-  padding-right: 1.3rem;
-  flex: 0 1 auto;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+  &.isVisible {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-.isVisible.loadDialog {
-  opacity: 1;
-  pointer-events: all;
-}
+  .iconButton {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 0;
+    margin-right: $icon-padding-small;
+  }
 
-.project {
-  border: 1px solid #00ccff;
-  box-sizing: border-box;
-  color: #00ccff;
-  height: calc(48px + 32px);
-  border-radius: calc(24px + 16px);
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  flex: 0 0 auto;
-}
+  .projects {
+    flex: 0 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 
-.project:last-child {
-  margin-bottom: 0;
-}
+    .project {
+      border: 1px solid #00ccff;
+      box-sizing: border-box;
+      color: #00ccff;
+      height: $project-height;
+      border-radius: $project-radius;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      margin-bottom: $icon-padding-small / 2;
+      cursor: pointer;
+      flex: 0 0 auto;
 
-.isActive.project .icon {
-  border: 0;
-}
+      @include phone-landscape {
+        height: $project-height-phone-landscape;
+        border-radius: $project-radius-phone-landscape;
+      }
 
-.isActive.project {
-  border-width: 3px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.isActive {
+        border-width: 3px;
+      }
+    }
+  }
 }
 
 .details {
@@ -61,15 +79,16 @@
   flex-flow: column;
   justify-content: center;
   overflow: hidden;
-  margin-left: 30px;
+  margin-left: $icon-size-small;
+
+  @include phone-landscape {
+    margin-left: $icon-size-small-phone-landscape;
+  }
 }
 
 .timestamp {
   font-size: 0.7em;
   line-height: 1.2em;
-}
-
-.title {
 }
 
 .timestamp span,
@@ -88,63 +107,39 @@
 
 .newProject {
   flex: 0 0 auto;
-  padding-right: 1.3rem;
   margin-top: 1rem;
   box-sizing: border-box;
   display: flex;
-}
 
-.newProject .icon {
-  width: calc(48px + 32px);
-  height: calc(48px + 32px);
-  margin: 0;
-  border-radius: 0;
-  flex: 0 0 auto;
-  z-index: 10;
-}
+  .icon {
+    width: $project-height;
+    height: $project-height;
+    margin: 0;
+    border-radius: 0;
+    flex: 0 0 auto;
+    z-index: 10;
 
-.newProject .project {
-  flex: 1 1 auto;
-  border-radius: 0 calc(24px + 16px) calc(24px + 16px) 0;
-  height: calc(48px + 32px - 2px);
-  border: 0;
-  color: black;
-  margin: 1px 0 1px -3px;
-  z-index: 12;
-}
+    @include phone-landscape {
+      width: $project-height-phone-landscape;
+      height: $project-height-phone-landscape;
+    }
+  }
 
-@media only screen and (orientation: landscape) and (max-height: 736px),
-  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
   .project {
-    height: calc(7vh + 32px);
-    border-radius: calc(3.5vh + 16px);
-  }
+    flex: 1 1 auto;
+    border-radius: 0 $project-radius $project-radius 0;
+    height: calc(#{$project-height} - 2px);
+    border: 0;
+    color: black;
+    margin: 1px 0 1px -3px;
+    z-index: 12;
+    align-items: center;
+    display: flex;
 
-  .newProject .project {
-    border-radius: 0 calc(3.5vh + 16px) calc(3.5vh + 16px) 0;
-    height: calc(7vh + 32px - 2px);
-  }
-
-  .newProject .icon {
-    height: calc(7vh + 32px);
-    width: calc(7vh + 32px);
-  }
-}
-
-@media only screen and (orientation: portrait) and(max-height: 736px),
-  screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .project {
-    height: calc(40px + 20px);
-    border-radius: calc(20px + 10px);
-  }
-
-  .newProject .project {
-    border-radius: 0 calc(20 + 10px) calc(20px + 10px) 0;
-    height: calc(40px + 20px - 2px);
-  }
-
-  .newProject .icon {
-    width: calc(40px + 20px);
-    height: calc(40px + 20px);
+    @include phone-landscape {
+      border-radius: 0 $project-radius-phone-landscape
+        $project-radius-phone-landscape 0;
+      height: calc(#{$project-height-phone-landscape} - 2px);
+    }
   }
 }

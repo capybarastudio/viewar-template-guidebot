@@ -4,6 +4,8 @@ import cx from 'classnames';
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
 
+import { Icon } from '../';
+
 export default ({
   onClick,
   icon,
@@ -15,16 +17,18 @@ export default ({
 }) => (
   <div
     className={cx(
-      styles.button,
-      styles.buttonImage,
-      inactive && styles.inactive,
-      icon && styles[`icon-${icon}`],
+      styles.container,
       size && styles[`size-${size}`],
       active && styles.active,
+      inactive && styles.inactive,
       hidden && styles.hidden,
-      className,
-      global.ButtonColor
+      className
     )}
     onClick={e => !inactive && onClick && onClick(e)}
-  />
+  >
+    <Icon
+      className={cx(styles.icon, global.ButtonColor)}
+      icon={active ? 'active' : icon}
+    />
+  </div>
 );

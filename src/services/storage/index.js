@@ -47,8 +47,7 @@ const processState = ({
 const setContentToApp = async state => {
   const processedState = processState(state);
   graphController.importState(processedState);
-  // We don't display poi-screenshots in user mode so we don't need to download them at the moment.
-  //await downloadScreenshots(processedState)
+  await downloadScreenshots(processedState);
 };
 
 const unloadContentFromApp = async state => graphController.clearState();
@@ -94,7 +93,12 @@ const getContentFromApp = async () => {
   };
 };
 
-const storage = createOfflineStorage({ storage: viewarApi.storage, navigator });
+// Don't use offline storage because of core bug on emscripten with utf8 strings.
+// const storage = createOfflineStorage({ storage: viewarApi.storage, navigator });
+const getStorage = () =>
+  viewarApi.coreInterface.platform === 'Emscripten'
+    ? viewarApi.storage.cloud
+    : createOfflineStorage({ storage: viewarApi.storage, navigator });
 
 const saveTrackingMap = async () => {
   const { tracker } = viewarApi;
@@ -121,7 +125,7 @@ const removeTrackingMap = async trackingMap => {
 };
 
 export default createProjectManager({
-  storage,
+  getStorage,
   setContentToApp,
   getContentFromApp,
   unloadContentFromApp,

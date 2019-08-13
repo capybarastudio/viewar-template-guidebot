@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 
-import generateId from '../../utils/generate-id';
+import { generateId, getUiConfigPath } from '../../utils';
 import { findPointsInRadius, calculateEdgePose } from '../../math/math';
 import {
   GRAPH_CONTAINER_ID,
@@ -8,7 +8,10 @@ import {
   NO_INTERACTION,
   GRAPH_REDRAW_DELAY,
 } from '../../constants';
-import appState from '../../services/app-state';
+import { appState, config } from '../../services';
+
+const pathModelForeignKey = getUiConfigPath('models.path');
+const pathModelId = getUiConfigPath('fallbackModels.path');
 
 const selected = { state: 'selected' };
 const normal = { state: 'normal' };
@@ -18,8 +21,6 @@ import {
   MODE_POI_PLACEMENT,
   MODE_NAVIGATION,
 } from '../scene-director/modes';
-
-import config from '../../services/config';
 
 //======================================================================================================================
 
@@ -79,7 +80,7 @@ export default function createGraphVisualizer({
     } else {
       const newContainer = {
         id: GRAPH_CONTAINER_ID,
-        type: 'ungrouped',
+        grouped: false,
         children: [],
       };
       sceneState.children.push(newContainer);
@@ -118,6 +119,7 @@ export default function createGraphVisualizer({
           pose: updatedPoses[object.$id] || object.pose,
           visible: false,
         };
+
         storeId(object.model.id, object.id);
       }
     }
@@ -127,13 +129,20 @@ export default function createGraphVisualizer({
         ? getId(object.model.id)
         : object.id;
 
+      let propertyValues = {};
+      if (
+        object.model.foreignKey === getUiConfigPath('models.waypoint') ||
+        object.model.id === getUiConfigPath('fallbackModels.waypoint')
+      ) {
+        propertyValues = {
+          ...(object === selection ? selected : normal),
+        };
+      }
+
       children[object.id] = {
         id: object.id,
         model: object.model,
-        propertyValues: {
-          ...normal,
-          ...(object === selection && selected),
-        },
+        propertyValues,
         pose: updatedPoses[object.$id] || object.pose,
         visible: true,
         interaction: selectable ? INTERACTION : NO_INTERACTION,
@@ -188,7 +197,10 @@ export default function createGraphVisualizer({
 
     const sceneState = await getSceneState();
     if (!isEqual(objectsById, oldObjectsById)) {
-      oldObjectsById = objectsById;
+      // HotFix for wrong path scaling after clipping.
+      fixPathScaling(objectsById);
+
+      oldObjectsById = JSON.parse(JSON.stringify(objectsById));
       getGraphContainer(sceneState).children = Object.values(objectsById);
       await setSceneState(sceneState);
     }
@@ -196,6 +208,20 @@ export default function createGraphVisualizer({
     if (zoomOut) {
       await zoomToFit();
       zoomOut = false;
+    }
+  };
+
+  const fixPathScaling = objectsById => {
+    for (let id of Object.keys(objectsById)) {
+      if (
+        objectsById[id].model.foreignKey === pathModelForeignKey ||
+        objectsById[id].model.id === pathModelId
+      ) {
+        Object.assign(objectsById[id].pose.scale, {
+          y: 0.1,
+          z: 0.1,
+        });
+      }
     }
   };
 

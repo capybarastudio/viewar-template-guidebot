@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   position: absolute;
   left: 0;
@@ -5,22 +8,23 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding: 1.3rem;
+  padding: $icon-padding-small;
   box-sizing: border-box;
   transition: opacity 0.5s ease;
-}
+  z-index: 20;
 
-.isHidden.container {
-  pointer-events: none;
-  opacity: 0;
-}
+  &.isHidden {
+    pointer-events: none;
+    opacity: 0;
+  }
 
-.container .button {
-  width: auto;
-  margin: 0.5em 0.5em 0 0;
-  flex: 0 0 calc(50% - 0.5em);
-}
+  .button {
+    width: auto;
+    margin: $icon-padding-small $icon-padding-small 0 0;
+    flex: 0 0 calc(50% - #{$icon-padding-small} / 2);
 
-.container .button:nth-child(2n) {
-  margin-right: 0;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
 }

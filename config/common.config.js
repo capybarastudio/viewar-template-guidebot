@@ -1,13 +1,10 @@
 const merge = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { srcPath } = require('./utils');
-const fs = require('fs');
+const { srcPath, getViewARConfig } = require('./utils');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { appId, appVersion } = JSON.parse(
-  fs.readFileSync(`${__dirname}/../.viewar-config`)
-);
+const { appId, appVersion } = getViewARConfig();
 
 exports.config = merge([
   {
@@ -19,7 +16,7 @@ exports.config = merge([
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: 'babel-loader',
+          use: ['babel-loader'],
         },
         {
           test: /\.s?css$/,
@@ -37,23 +34,20 @@ exports.config = merge([
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: loader => [
-                  require('postcss-import')({ root: loader.resourcePath }),
-                  require('postcss-preset-env')(),
-                ],
+                plugins: loader => [require('postcss-preset-env')()],
               },
             },
             {
               loader: 'sass-loader',
               query: {
                 sourceMap: true,
-                includePaths: ['./css'],
+                includePaths: ['css/'],
               },
             },
           ],
         },
         {
-          test: /\.(eot|ttf|otf|woff2|mov?)(\?v=\d+\.\d+\.\d+)?|png|jpe?g|svg|gif|ico$/,
+          test: /\.(eot|ttf|otf|woff2?)(\?v=\d+\.\d+\.\d+)?|png|jpe?g|svg|gif|ico$/,
           use: {
             loader: 'file-loader',
             options: {

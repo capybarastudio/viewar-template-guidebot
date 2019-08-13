@@ -1,0 +1,71 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+.container {
+  color: white;
+  padding: calc(#{$icon-size-small} + #{$icon-padding-small} * 2);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  flex: 1 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+}
+
+.items {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.item {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    color: white;
+    font-size: 1.4rem;
+    flex: 0 0 auto;
+  }
+
+  .details {
+    flex: 1 1 auto;
+    margin-top: $icon-padding;
+    line-height: 1.2em;
+    overflow-y: auto;
+  }
+
+  .button {
+    flex: 0 0 auto;
+    margin-top: $icon-padding;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-top: $icon-padding;
+
+  .dot {
+    flex: 0 0 auto;
+    border-radius: 100%;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #ccc;
+    margin: 0 0.25em;
+
+    &.isActive {
+      background-color: #00ccff;
+    }
+  }
+}

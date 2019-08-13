@@ -1,0 +1,14 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+.headerBar div.headerBarButton {
+  padding-left: 0;
+}
+
+.toolBar .button {
+  padding-top: 0;
+}
+
+.chat {
+  bottom: calc(#{$icon-padding} * 2 + #{$icon-size});
+}

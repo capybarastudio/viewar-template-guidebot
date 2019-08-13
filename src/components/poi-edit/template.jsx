@@ -29,29 +29,30 @@ export default ({
     <Background />
     {poiInfo && (
       <div className={styles.poi}>
-        <div className={styles.input}>
-          <div className={styles.label}>{translate('AdminPoiTitle')}</div>
-          <TextInput
-            onChange={setTitle}
-            value={title}
-            className={styles.textInput}
-          />
-        </div>
-        <div className={cx(styles.input, styles.inputText)}>
-          <div className={styles.label}>{translate('AdminPoiDescription')}</div>
-          <TextArea
-            onChange={setText}
-            value={text}
-            className={styles.textArea}
-          />
-        </div>
+        <form onSubmit={saveChanges}>
+          <div className={styles.input}>
+            <div className={styles.label}>{translate('AdminPoiTitle')}</div>
+            <TextInput
+              onChange={setTitle}
+              value={title}
+              className={styles.textInput}
+            />
+          </div>
+          <div className={cx(styles.input, styles.inputText)}>
+            <div className={styles.label}>
+              {translate('AdminPoiDescription')}
+            </div>
+            <TextArea
+              onChange={setText}
+              value={text}
+              className={styles.textArea}
+            />
+          </div>
+          <input type="submit" />
+        </form>
       </div>
     )}
-    <Button
-      className={cx(styles.button)}
-      onClick={() => saveChanges()}
-      label="Save"
-    />
+    <Button className={cx(styles.button)} onClick={saveChanges} label="Save" />
     {close && (
       <IconButton
         size="small"

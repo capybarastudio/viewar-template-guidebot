@@ -1,0 +1,97 @@
+@import '../constants.scss';
+@import './math.scss';
+
+@function clipPathRight($size, $height) {
+  $radius: calc(#{$size} / 2 + #{$clip-outline-width});
+  $heightOffset: calc(100% - (#{$height}));
+  $vertices: ();
+  $vertices: $vertices, 0% 0%;
+  $vertices: $vertices, 100% 0%;
+
+  @for $i from 0 to $clip-precision + 1 {
+    $deg: 90 + (180 / $clip-precision) * $i;
+    $x: round(cos($deg / 180 * $pi) * 1000) / 1000;
+    $y: round(sin($deg / 180 * $pi) * 1000) / 1000;
+
+    $xOffset: #{$radius} * $x;
+    $yOffset: #{$heightOffset} - (#{$radius} * $y);
+    $vertices: $vertices, calc(100% + #{$xOffset}) calc(0% + #{$yOffset});
+  }
+
+  $vertices: $vertices, 100% 100%;
+  $vertices: $vertices, 0% 100%;
+
+  @return $vertices;
+}
+
+@mixin clipPathGapRight1LandscapePhone() {
+  clip-path: polygon(
+    clipPathRight(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 0.5 + #{$icon-padding-phone-landscape} *
+          1
+      )
+    )
+  );
+}
+
+@mixin clipPathGapRight2LandscapePhone() {
+  clip-path: polygon(
+    clipPathRight(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 1.5 + #{$icon-padding-phone-landscape} *
+          2
+      )
+    )
+  );
+}
+
+@mixin clipPathGapRight3LandscapePhone() {
+  clip-path: polygon(
+    clipPathRight(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 2.5 + #{$icon-padding-phone-landscape} *
+          3
+      )
+    )
+  );
+}
+
+@mixin clipPathGapRight4LandscapePhone() {
+  clip-path: polygon(
+    clipPathRight(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 3.5 + #{$icon-padding-phone-landscape} *
+          4
+      )
+    )
+  );
+}
+
+@mixin clipPathGapRight1Normal() {
+  clip-path: polygon(
+    clipPathRight($icon-size, calc(#{$icon-size} * 0.5 + #{$icon-padding} * 1))
+  );
+}
+
+@mixin clipPathGapRight2Normal() {
+  clip-path: polygon(
+    clipPathRight($icon-size, calc(#{$icon-size} * 1.5 + #{$icon-padding} * 2))
+  );
+}
+
+@mixin clipPathGapRight3Normal() {
+  clip-path: polygon(
+    clipPathRight($icon-size, calc(#{$icon-size} * 2.5 + #{$icon-padding} * 3))
+  );
+}
+
+@mixin clipPathGapRight4Normal() {
+  clip-path: polygon(
+    clipPathRight($icon-size, calc(#{$icon-size} * 3.5 + #{$icon-padding} * 4))
+  );
+}

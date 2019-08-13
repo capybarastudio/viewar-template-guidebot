@@ -1,6 +1,9 @@
+import { trackingConfig } from '..';
+
 export default function createProject({
   id,
   file,
+  tours = [],
   content,
   info,
   userId,
@@ -29,6 +32,9 @@ export default function createProject({
     },
     get readOnly() {
       return readOnly;
+    },
+    get tours() {
+      return tours || [];
     },
     content,
     info,
@@ -98,7 +104,7 @@ export default function createProject({
           setActiveProject(project);
         }
       } catch (e) {
-        console.log(e);
+        console.error(e);
       }
     }
   }

@@ -8,81 +8,90 @@ import {
   withHandlers,
 } from 'recompose';
 import viewarApi from 'viewar-api';
-import appState from '../../services/app-state';
-import storage from '../../services/storage';
+import { appState, storage } from '../../services';
 
 import render from './template.jsx';
+import { getQrCodeType } from '../../utils';
+
+export const onTrackingTimeout = ({ setAdvancedInitHint }) => () => {
+  setAdvancedInitHint('TrackerInitHint');
+};
+
+export const updateTracking = ({ history }) => async () => {
+  const tracker = viewarApi.tracker;
+
+  if (tracker.tracking) {
+    clearTimeout(timeout);
+    let nextView;
+    const hasQrCodes =
+      tracker.targets &&
+      !!tracker.targets.filter(target => target.type === getQrCodeType())
+        .length;
+
+    if (tracker.loadTrackingMap || !hasQrCodes) {
+      await tracker.confirmGroundPosition();
+      nextView = appState.qrScanPath || '/mode-selection';
+    } else {
+      nextView = 'film-qr-code';
+    }
+    history.push(nextView);
+  }
+};
+
+export const goBack = ({ history }) => () => {
+  history.push(appState.modeBackPath || appState.editBackPath || '/');
+};
+
+export const init = ({
+  history,
+  updateTracking,
+  setDeviceType,
+  onTrackingTimeout,
+}) => async () => {
+  const tracker = viewarApi.tracker;
+
+  setDeviceType(viewarApi.appConfig.deviceType);
+  timeout = setTimeout(onTrackingTimeout, 10000);
+
+  if (tracker) {
+    tracker.on('trackingTargetStatusChanged', updateTracking);
+    await tracker.reset();
+  } else {
+    history.push(appState.qrScanPath || '/mode-selection');
+  }
+};
+
+export const destroy = ({ updateTracking }) => () => {
+  const tracker = viewarApi.tracker;
+
+  clearTimeout(timeout);
+  if (tracker) {
+    tracker.off('trackingTargetStatusChanged', updateTracking);
+  }
+};
 
 let timeout;
 export default compose(
   withRouter,
   withState('advancedInitHint', 'setAdvancedInitHint', false),
   withState('deviceType', 'setDeviceType', null),
-  withProps({
-    viewarApi,
-    appState,
-    storage,
+  withHandlers({
+    onTrackingTimeout,
   }),
   withHandlers({
-    onTrackingTimeout: ({ setAdvancedInitHint }) => () => {
-      setAdvancedInitHint('TrackerInitHint');
-    },
+    updateTracking,
+    goBack,
   }),
   withHandlers({
-    updateTracking: ({
-      history,
-      appState,
-      viewarApi: { tracker },
-    }) => async () => {
-      if (tracker.tracking) {
-        clearTimeout(timeout);
-        let nextView;
-        const hasQrCodes =
-          tracker.targets &&
-          !!tracker.targets.filter(target => target.type === 'image').length;
-
-        if (tracker.loadTrackingMap || !hasQrCodes) {
-          await tracker.confirmGroundPosition();
-          nextView = appState.qrScanPath || '/navigate';
-        } else {
-          nextView = 'film-qr-code';
-        }
-        history.push(nextView);
-      }
-    },
-    goBack: ({ history, appState }) => () => {
-      history.push(appState.navigateBackPath || appState.editBackPath || '/');
-    },
+    init,
+    destroy,
   }),
   lifecycle({
-    async componentDidMount() {
-      const {
-        history,
-        updateTracking,
-        setDeviceType,
-        viewarApi: { tracker, appConfig },
-      } = this.props;
-      const { deviceType } = appConfig;
-
-      setDeviceType(deviceType);
-      timeout = setTimeout(this.props.onTrackingTimeout, 10000);
-
-      if (tracker) {
-        tracker.on('trackingTargetStatusChanged', updateTracking);
-        await tracker.reset();
-      } else {
-        history.push(appState.qrScanPath || '/navigate');
-      }
+    componentDidMount() {
+      this.props.init();
     },
     componentWillUnmount() {
-      const {
-        updateTracking,
-        viewarApi: { tracker },
-      } = this.props;
-      clearTimeout(timeout);
-      if (tracker) {
-        tracker.off('trackingTargetStatusChanged', updateTracking);
-      }
+      this.props.destroy();
     },
   })
 )(render);

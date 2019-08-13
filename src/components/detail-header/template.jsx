@@ -3,6 +3,8 @@ import cx from 'classnames';
 
 import styles from './styles.scss';
 
-export default ({ className, children }) => (
-  <div className={cx(styles.container, className)}>{children}</div>
+export default ({ className, dark, children }) => (
+  <div className={cx(styles.container, dark && styles.isDark, className)}>
+    {children}
+  </div>
 );

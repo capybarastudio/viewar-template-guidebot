@@ -1,7 +1,7 @@
 import { sceneManager, coreInterface, modelManager } from 'viewar-api';
 import { OBJECT_DEFAULT_POSE } from './constants';
 import objectsDefinition from './objects.json';
-import config from '../../services/config';
+import { config } from '../../services';
 import merge from 'lodash/merge';
 import createObjectAnimation from './object-animation';
 

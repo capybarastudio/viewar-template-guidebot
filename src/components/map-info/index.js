@@ -12,6 +12,9 @@ export default compose(
   withState('name', 'setName', ''),
   withProps({}),
   withHandlers({
-    saveChanges: ({ name, onMapInfoChanged }) => () => onMapInfoChanged(name),
+    saveChanges: ({ name, onMapInfoChanged }) => e => {
+      e.preventDefault();
+      onMapInfoChanged(name);
+    },
   })
 )(render);

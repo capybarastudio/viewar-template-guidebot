@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   top: 0;
   left: 0;
@@ -22,7 +25,7 @@
 
 .info {
   color: white;
-  margin: calc(48px + 16px);
+  margin: calc(#{$icon-size-small} + #{$icon-padding-small} * 2);
   flex: 1 0 auto;
   justify-content: center;
   align-items: center;

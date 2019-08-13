@@ -1,3 +1,5 @@
+@import 'media-queries.scss';
+
 .logo {
   position: absolute;
   margin: 1.3rem;
@@ -6,34 +8,43 @@
   align-items: center;
   font-size: 0.5em;
   z-index: 100;
-}
 
-.logo.size-large {
-  font-size: 1.4em;
-  margin: 0;
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%, -50%);
-  z-index: 80;
-}
+  &.size-large {
+    font-size: 1.4em;
+    margin: 0;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 80;
 
-.image {
-  background-size: contain;
-  background-position: center left;
-  background-repeat: no-repeat;
-  width: 180px;
-  height: 38px;
-}
+    @include phone-landscape {
+      top: 25%;
+    }
 
-.size-large .image {
-  height: 9rem;
-  width: 17rem;
-  max-width: 53vw;
-  max-height: calc(53vw / 17 * 9);
-  background-position: center top;
-}
+    .image {
+      height: 9rem;
+      width: 17rem;
+      max-width: 53vw;
+      max-height: calc(53vw / 17 * 9);
+      background-position: center top;
 
-.banner {
-  font-size: 1em;
-  color: white;
+      @include phone-landscape {
+        max-width: 30vw;
+        max-height: calc(30vw / 17 * 9);
+      }
+    }
+  }
+
+  .image {
+    background-size: contain;
+    background-position: center left;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 38px;
+  }
+
+  .banner {
+    font-size: 1em;
+    color: white;
+  }
 }

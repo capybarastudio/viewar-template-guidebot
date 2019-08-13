@@ -1,6 +1,6 @@
-import clone from '../../utils/clone';
 import pick from 'lodash/pick';
-import appState from '../../services/app-state';
+import { clone } from '../../utils';
+import { appState } from '../../services';
 export default ({ findInstance, removeInstance, ...initialProps }) => {
   const props = clone(initialProps);
 

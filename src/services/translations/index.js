@@ -8,12 +8,11 @@ const getLanguage = () => getLanguageKey().replace(/(\w{2})-\w{2}/, '$1');
 const getIsWebVersion = () => viewarApi.coreInterface.platform === 'Emscripten';
 const getIsMobilePhoneDevice = () => viewarApi.appConfig.deviceType === 'phone';
 
-const translationProvider = createTranslationProvider({
+export const translationProvider = createTranslationProvider({
   getIsWebVersion,
   getIsMobilePhoneDevice,
   getLanguage,
 });
-export default translationProvider;
 
 export const translate = (id, asHtml) =>
   translationProvider ? translationProvider.translate(id, asHtml) : id;

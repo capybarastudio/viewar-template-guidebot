@@ -17,7 +17,7 @@ export default ({
   const modules = [...initialModules];
 
   const updateScene = async timerInfo => {
-    if (!updating) {
+    if (!updating || !running) {
       try {
         updating = true;
 
@@ -48,7 +48,6 @@ export default ({
       onTick(updateScene);
     } else {
       newMode && (await setMode(newMode));
-      console.warn('Scene director already running.');
     }
   };
 
@@ -58,8 +57,6 @@ export default ({
       await offTick(updateScene);
       await setMode(MODE_NONE);
       await viewarApi.cameras.arCamera.stopPoseUpdate();
-    } else {
-      console.warn('Scene director already stopped.');
     }
   };
 

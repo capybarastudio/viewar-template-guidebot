@@ -7,9 +7,7 @@ import { DetailContainer, DetailHeader, DetailContent, Button } from '../';
 export default ({ visible, capturePoi }) => (
   <div className={cx(styles.container, visible && styles.isVisible)}>
     <DetailContainer gap="right2">
-      <DetailHeader>
-        <h1>{translate('AdminPlacePoiHeader')}</h1>
-      </DetailHeader>
+      <DetailHeader>{translate('AdminPlacePoiHeader')}</DetailHeader>
       <DetailContent>
         <div className={styles.info}>
           {translate('AdminPlacePoiDescription')}

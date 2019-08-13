@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   position: absolute;
   left: 0;
@@ -10,6 +13,10 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  form input[type='submit'] {
+    display: none;
+  }
 }
 
 .isHidden.container {
@@ -23,8 +30,7 @@
 
 .container .closeButton {
   position: absolute;
-  right: 1.3rem;
-  margin-right: 0;
+  right: 0;
   top: 0;
 }
 
@@ -39,10 +45,17 @@
 }
 
 .input {
-  line-height: 2em;
-  padding: 0 1em;
-  border-radius: 1em;
+  line-height: $icon-size-small;
+  padding: 0 $icon-padding-small;
+  border-radius: calc(#{$icon-size-small} / 2 + #{$icon-padding-small});
   width: 200px;
   box-sizing: border-box;
-  margin-bottom: 0.5em;
+  margin-bottom: calc(#{$icon-padding-small} / 2);
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+    border-radius: calc(
+      #{$icon-size-small-phone-landscape} / 2 + #{$icon-padding-small}
+    );
+  }
 }

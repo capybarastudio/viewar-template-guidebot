@@ -1,11 +1,9 @@
 import React from 'react';
+import viewarApi from 'viewar-api';
 import { withRouter } from 'react-router';
 import { compose, withHandlers, withProps, withState } from 'recompose';
-import waitForUiUpdate from '../../utils/wait-for-ui-update';
-import viewarApi from 'viewar-api';
-import authManager from '../../services/auth-manager';
-import storage from '../../services/storage';
-import appState from '../../services/app-state';
+import { waitForUiUpdate } from '../../utils';
+import { authManager, storage, appState } from '../../services';
 
 import render from './template.jsx';
 
@@ -14,12 +12,8 @@ export const goTo = ({ history }) => route => history.push(route);
 export const goBack = ({ history }) => route => history.push('/map-selection');
 
 export const onMapInfoChanged = ({
-  appState,
   history,
-  setProject,
-  setMapInfoVisible,
   userId,
-  storage,
   showDialog,
   hideDialog,
 }) => async name => {
@@ -33,25 +27,25 @@ export const onMapInfoChanged = ({
   history.push('/init-tracker');
 };
 
+export const showDialog = ({ setWaitDialogText }) => async text => {
+  setWaitDialogText(text);
+  await waitForUiUpdate();
+};
+
+export const hideDialog = ({ setWaitDialogText }) => async () => {
+  setWaitDialogText('');
+  await waitForUiUpdate();
+};
+
 export default compose(
   withRouter,
-  withProps({
-    authManager,
-    viewarApi,
-    storage,
-    appState,
+  withProps(() => ({
     userId: authManager.user.username,
-  }),
+  })),
   withState('waitDialogText', 'setWaitDialogText', ''),
   withHandlers({
-    showDialog: ({ setWaitDialogText }) => async text => {
-      setWaitDialogText(text);
-      await waitForUiUpdate();
-    },
-    hideDialog: ({ setWaitDialogText }) => async () => {
-      setWaitDialogText('');
-      await waitForUiUpdate();
-    },
+    showDialog,
+    hideDialog,
   }),
   withHandlers({
     goTo,

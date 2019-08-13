@@ -1,26 +1,22 @@
-$margin: 3rem;
+@import 'constants.scss';
+@import 'media-queries.scss';
+$margin: 2rem;
 
 body .container {
   position: absolute;
-  border-radius: 1000px;
-  padding: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  box-sizing: border-box;
   pointer-events: none;
   transition: opacity 0.25s ease;
   display: flex;
-  align-items: center;
-  left: 50%;
+  justify-content: center;
   bottom: $margin;
-  max-width: 400px;
-  width: calc(100% - 2 * #{$margin});
-  border: 1px solid white;
+
+  left: 0;
+  right: 0;
 
   &.isCenter {
     bottom: auto;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     width: auto;
   }
 
@@ -28,10 +24,33 @@ body .container {
     opacity: 0;
   }
 
+  .content {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    border-radius: 1000px;
+    padding: 0.5rem;
+    border: 1px solid white;
+    box-sizing: border-box;
+    max-width: calc(100% - 2 * #{$margin});
+  }
+
+  .icon,
+  .text {
+    float: left;
+  }
+
   .icon {
     flex: 0 0 auto;
     margin: 0;
     background-color: white;
+    width: $icon-size-small;
+    height: $icon-size-small;
+
+    @include phone-landscape {
+      width: $icon-size-small-phone-landscape;
+      height: $icon-size-small-phone-landscape;
+    }
   }
 
   .text {
@@ -47,7 +66,7 @@ body .container {
       padding: 0 1rem;
     }
 
-    .icon {
+    .ccon {
       width: 0;
     }
   }

@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import { translate } from '../../services';
 
-import { Icon, IconButton } from '../';
+import { Icon, IconButton, Button } from '../';
 
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
@@ -26,34 +26,30 @@ export default ({
     />
 
     <div className={styles.content}>
-      {buttons.map(button => (
-        <div className={styles.entry} key={button}>
-          <div className={styles.image}>
-            <IconButton className={styles.icon} icon={button} />
-          </div>
-          <div className={styles.text}>
-            <div className={cx(styles.title, global.CustomFont2)}>
-              {translate(`Help${getButtonName(button)}`)}
+      <div className={styles.help}>
+        {buttons.map(button => (
+          <div className={styles.entry} key={button}>
+            <div className={styles.image}>
+              <Icon className={styles.icon} icon={button} />
             </div>
-            <div className={styles.description}>
-              {translate(`Help${getButtonName(button)}Description`)}
+            <div className={styles.text}>
+              <div className={cx(styles.title, global.CustomFont2)}>
+                {translate(`Help${getButtonName(button)}`)}
+              </div>
+              <div className={styles.description}>
+                {translate(`Help${getButtonName(button)}Description`)}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {initialHelp && (
-        <div
-          className={cx(
-            styles.button,
-            styles.continueButton,
-            global.ButtonColor,
-            global.CustomFont2
-          )}
+        <Button
+          className={cx(styles.continueButton)}
           onClick={toggleHelp}
-        >
-          {translate('HelpContinue')}
-        </div>
+          label="HelpContinue"
+        />
       )}
     </div>
   </div>

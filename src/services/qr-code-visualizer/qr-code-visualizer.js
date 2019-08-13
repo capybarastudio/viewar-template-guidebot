@@ -5,7 +5,7 @@ import {
   MODE_WAYPOINT_PLACEMENT,
 } from '../scene-director/modes';
 import { QR_CODES_HIGHLIGHT_TIME } from '../../constants';
-import appState from '../../services/app-state';
+import { appState } from '../../services';
 
 export default ({
   insertContainer,
@@ -26,12 +26,13 @@ export default ({
   let instances = {};
   let oldQrCodeState = {};
   let lastUpdate = null;
+  let initialQrCodes = [];
 
   let qrCodesTimeout = {};
 
   const updateQrCodes = async () => {
     const learnedQrCodes = targetsChanged ? await getLearnedQrCodes() : [];
-    const qrCodes = getInitialQrCodes();
+    const qrCodes = JSON.parse(JSON.stringify(initialQrCodes));
 
     for (let qrCode of learnedQrCodes) {
       const found = qrCodes.find(code => code.name === qrCode.name);
@@ -189,6 +190,7 @@ export default ({
 
   const start = async () => {
     if (!running && isEnabled()) {
+      initialQrCodes = getInitialQrCodes();
       running = true;
       targetsChanged = true;
       oldQrCodeState = {};

@@ -1,5 +1,7 @@
 import viewarApi, { coreInterface } from 'viewar-api';
 import authManager from '../auth-manager';
+import { getQrCodeType } from '../../utils';
+import { trackingTargets } from '../../services';
 
 const appConfig = viewarApi.appConfig;
 
@@ -26,66 +28,37 @@ export const uploadLearnedQrCodes = async () => {
 };
 
 export const setCustomTrackingTargets = async qrCodes => {
-  if (viewarApi.tracker.name === 'ARKit') {
-    const { trackerList } = appConfig;
-
-    const customTrackingConfig = JSON.parse(JSON.stringify(trackerList));
-    const customTracker = customTrackingConfig.find(
-      tracker => tracker.name === 'ARKit'
-    );
-
-    if (customTracker) {
-      const size = customTracker.config.defaultQRCodeSize || 170;
-
-      for (let qrCode of qrCodes) {
-        const target = customTracker.targets.find(
-          target => target.name === qrCode.name
-        );
-        if (target) {
-          // Adapt existing target.
-          target.pose = qrCode.pose;
-          target.learn = false;
-        } else {
-          // Create new target
-          customTracker.targets.push({
-            name: qrCode.name,
-            type: 'image',
-            size,
-            handling: 'camera',
-            useTimeout: true,
-            learn: false,
-            targetTimeout: 0,
-            forceYUp: true,
-            pose: {
-              position: qrCode.pose.position,
-              orientation: qrCode.pose.orientation,
-            },
-          });
-        }
-      }
-
-      await viewarApi.trackers.ARKit.setTrackingTargets(customTracker.targets);
-    }
+  if (
+    viewarApi.tracker &&
+    (viewarApi.tracker.name === 'ARKit' || viewarApi.tracker.name === 'ARCore')
+  ) {
+    const targets = trackingTargets.getTargets(qrCodes);
+    await viewarApi.tracker.setTrackingTargets(targets);
   }
 };
 
 export const setOriginalTrackingTargets = async () => {
-  if (viewarApi.tracker.name === 'ARKit') {
+  if (
+    viewarApi.tracker.name === 'ARKit' ||
+    viewarApi.tracker.name === 'ARCore'
+  ) {
     const tracker = appConfig.trackerList.find(
-      tracker => tracker.name === 'ARKit'
+      tracker => tracker.name === 'ARKit' || tracker.name === 'ARCore'
     );
     if (tracker) {
-      await viewarApi.trackers.ARKit.setTrackingTargets(tracker.targets);
+      await viewarApi.tracker.setTrackingTargets(tracker.targets);
     }
   }
 };
 
 export const getLearnedQrCodes = async () => {
   const qrCodes =
-    coreInterface.platform === 'iOS' && viewarApi.tracker.name === 'ARKit'
+    (coreInterface.platform === 'iOS' && viewarApi.tracker.name === 'ARKit') ||
+    (coreInterface.platform === 'Android' &&
+      viewarApi.tracker.name === 'ARCore')
       ? await coreInterface.call(
           'customTrackingCommand',
-          'ARKit',
+          viewarApi.tracker.name,
           'getLearnedTargets',
           ''
         )

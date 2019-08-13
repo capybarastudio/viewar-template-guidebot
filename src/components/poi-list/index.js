@@ -1,13 +1,9 @@
 import { compose, withHandlers, withProps, withState } from 'recompose';
-
-import camera from '../../services/camera';
+import { camera, graphController } from '../../services';
+import { withRefs } from '../../utils';
 
 import render from './template.jsx';
-
-import graphController from '../../services/graph-controller';
-import sceneDirector from '../../services/scene-director';
-
-import config from '../../services/config';
+import { getUiConfigPath } from '../../utils';
 
 export const sortByName = (a, b) => {
   const aName = a.data.name.toLowerCase();
@@ -17,33 +13,46 @@ export const sortByName = (a, b) => {
   return 0;
 };
 
+export const getPois = ({ sortByName, query, searchVisible }) => () => {
+  let pois = graphController.pois;
+  if (query && searchVisible) {
+    pois = pois.filter(poi =>
+      (poi.data.name || 'Untitled').toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
+  return pois.sort(sortByName);
+};
+
+export const toggleSearch = ({
+  searchVisible,
+  setSearchVisible,
+  refs,
+}) => () => {
+  setSearchVisible(!searchVisible);
+
+  if (!searchVisible) {
+    const element = refs['searchBar'];
+    if (element) {
+      element.focus();
+    }
+  }
+};
+
+export const getDistance = poi =>
+  (graphController.getPathLengthBetween(camera, poi) / 1000).toFixed(1);
+
 export default compose(
+  withRefs,
   withState('query', 'setQuery', ''),
   withState('searchVisible', 'setSearchVisible', false),
-  withProps({
-    sceneDirector,
-  }),
-  withProps(({}) => ({
-    usePoiImages: config.app.usePoiImages,
-    camera,
+  withProps(() => ({
+    usePoiImages: getUiConfigPath('app.usePoiImages'),
     sortByName,
+    getDistance,
   })),
   withHandlers({
-    getPois: ({ sortByName, query, searchVisible }) => () => {
-      let pois = graphController.pois;
-      if (query && searchVisible) {
-        pois = pois.filter(poi =>
-          (poi.data.name || 'Untitled')
-            .toLowerCase()
-            .includes(query.toLowerCase())
-        );
-      }
-
-      return pois.sort(sortByName);
-    },
-    toggleSearch: ({ searchVisible, setSearchVisible }) => () =>
-      setSearchVisible(!searchVisible),
-    getDistance: ({ camera }) => poi =>
-      (graphController.getPathLengthBetween(camera, poi) / 1000).toFixed(1),
+    getPois,
+    toggleSearch,
   })
 )(render);

@@ -1,3 +1,5 @@
+@import 'media-queries.scss';
+
 .container {
   display: flex;
   align-items: center;
@@ -14,6 +16,10 @@
   width: 50vmax;
   height: 25vmax;
   background: center / contain no-repeat;
+
+  @include tablet {
+    max-width: 400px;
+  }
 }
 
 @media only screen and (orientation: landscape) {

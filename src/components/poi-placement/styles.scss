@@ -1,19 +1,36 @@
+@import 'media-queries.scss';
+@import 'constants.scss';
+
 .container {
   position: absolute;
-  right: calc(78px * 0.5 + 40px);
-  left: auto;
   max-width: 50vw;
+  right: calc(#{$icon-size} * 0.5 + #{$icon-padding});
+  left: auto;
   bottom: 0;
   top: auto;
   z-index: 10;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-}
 
-.container.isVisible {
-  opacity: 1;
-  pointer-events: all;
+  @include phone-landscape {
+    right: calc(
+      #{$icon-size-phone-landscape} * 0.5 + #{$icon-padding-phone-landscape}
+    );
+    left: calc(
+      #{$icon-size-phone-landscape} * 0.5 + #{$icon-padding-phone-landscape}
+    );
+    max-width: 100%;
+  }
+
+  @media only screen and (orientation: portrait) {
+    max-width: calc(100% - (#{$icon-size} * 0.5 + #{$icon-padding}) * 2);
+  }
+
+  &.isVisible {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 .info {
@@ -27,39 +44,14 @@
     no-repeat;
   padding-bottom: 80%;
   margin-bottom: 1em;
-}
 
-.placeButton {
-  align-self: center;
-}
-
-@media only screen and (orientation: portrait) {
-  .container {
-    max-width: calc(100% - (78px * 0.5 + 40px) * 2);
-  }
-}
-
-@media only screen and (orientation: landscape) and (max-height: 736px),
-  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
-  .container {
-    right: calc((100vh / 4 - 30px) * 0.5 + 24px);
-    left: calc((100vh / 4 - 30px) * 1.5 + 44px);
-    max-width: 100%;
-  }
-
-  .image {
+  @include phone-landscape {
     flex: 1 0 auto;
     padding-bottom: 0;
     background-size: auto 100%;
   }
 }
 
-@media only screen and (orientation: portrait) and(max-height: 736px),
-  screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .container {
-    position: absolute;
-    right: calc(60px * 0.5 + 24px);
-    left: calc(60px * 0.5 + 24px);
-    max-width: 100%;
-  }
+.placeButton {
+  align-self: center;
 }

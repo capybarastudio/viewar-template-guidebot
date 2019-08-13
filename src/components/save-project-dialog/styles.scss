@@ -9,4 +9,8 @@
   min-width: 256px;
   display: flex;
   flex-direction: column;
+
+  form input[type='submit'] {
+    display: none;
+  }
 }

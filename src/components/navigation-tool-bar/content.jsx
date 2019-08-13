@@ -6,7 +6,7 @@ import { DetailContent } from '../';
 import ListItem from './list-item.jsx';
 
 export default ({ getPois, ...props }) => (
-  <DetailContent className={cx(styles.list)}>
+  <DetailContent dark className={cx(styles.list)}>
     {getPois().map(poi => (
       <ListItem key={poi.$id} poi={poi} {...props} />
     ))}

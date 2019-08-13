@@ -1,3 +1,4 @@
+import viewarApi from 'viewar-api';
 import createKeyboardJoystick from '../../components/walk-control/joysticks/keyboard-joystick';
 
 const movementKeys = {

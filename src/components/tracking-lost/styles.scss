@@ -1,26 +1,34 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .trackingLost {
   position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.9em;
-  line-height: 1.1em;
+  line-height: $icon-size-small;
   color: black;
-  height: 2.2em;
-  border-radius: 1.4em;
-  padding: 0.4em 1.4em;
+  border-radius: calc(#{$icon-size-small} / 2 + #{$icon-padding-small});
+  padding: calc(#{$icon-padding-small} / 2) $icon-padding-small;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease;
-}
 
-.isHidden.trackingLost {
-  opacity: 0;
-  pointer-events: none;
-}
+  @include phone-landscape {
+    border-radius: calc(
+      #{$icon-size-small-phone-landscape} / 2 + #{$icon-padding-small}
+    );
+  }
 
-.trackingLost > span {
-  line-height: inherit;
+  &.isHidden {
+    opacity: 0;
+    pointer-events: none;
+
+    & > span {
+      line-height: inherit;
+    }
+  }
 }

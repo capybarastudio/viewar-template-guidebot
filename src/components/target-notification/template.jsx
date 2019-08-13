@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './styles.scss';
 
-import config from '../../services/config';
+import { config } from '../../services';
 
 export default ({ children, className, target }) => (
   <div

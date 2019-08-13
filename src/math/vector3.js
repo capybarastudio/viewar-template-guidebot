@@ -110,7 +110,8 @@ export default class Vector3 {
   }
 
   length() {
-    return Math.hypot(this.x, this.y, this.z);
+    // return Math.hypot(this.x, this.y, this.z);
+    return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2);
   }
 
   lengthSq() {

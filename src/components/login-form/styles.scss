@@ -1,24 +1,49 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .loginForm {
   display: flex;
   flex-flow: column;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(
+    -50%,
+    calc((#{$icon-size-small} / 2 + #{$icon-padding-small}) * -1)
+  );
+
+  @include phone-landscape {
+    transform: translate(
+      -50%,
+      calc(
+        (#{$icon-size-small-phone-landscape} / 2 + #{$icon-padding-small}) * -1
+      )
+    );
+  }
+
+  form input[type='submit'] {
+    visibility: hidden;
+  }
 }
 
 .inputWrapper {
-  line-height: 2em;
-  height: 2em;
-  border-radius: 1em;
-  padding: 0 1em;
-  margin-bottom: 0.5em;
+  line-height: $icon-size-small;
+  height: $icon-size-small;
+  border-radius: calc(#{$icon-size-small} / 2);
+  padding: 0 $icon-padding-small;
+  margin-bottom: $icon-padding-small / 2;
   background: white;
   display: flex;
   align-items: center;
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+    height: $icon-size-small-phone-landscape;
+    border-radius: calc(#{$icon-size-small-phone-landscape} / 2);
+  }
 }
 
 .inputWrapper input {
   text-align: center;
-}
-
-.loginForm .button {
-  margin: 0.5em;
 }

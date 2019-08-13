@@ -1,0 +1,12 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(40, 47, 57, 0.6);
+}

@@ -1,7 +1,7 @@
 import Vector3 from './vector3';
 import Quaternion from './quaternion';
 
-import config from '../services/config';
+import { config } from '../services';
 
 export const applyDeadZone = (value, deadZone = 0.001) =>
   value > -deadZone && value < deadZone ? 0 : value;

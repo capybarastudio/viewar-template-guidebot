@@ -1,0 +1,50 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+.button {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 16px;
+  border: none;
+  -webkit-appearance: none;
+  min-width: 96px;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $icon-padding;
+  cursor: pointer;
+  border-radius: calc(#{$icon-size} / 2);
+  line-height: $icon-size;
+  height: $icon-size;
+  flex: 0 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: $icon-padding;
+  max-width: calc(100vw - #{$icon-padding} * 4 - #{$icon-size} * 2);
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  align-items: center;
+
+  .label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    font-weight: 500;
+    flex: 0 0 auto;
+  }
+
+  .nextPoi {
+    flex: 0 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin-top: 0.5em;
+    font-size: 0.7em;
+    max-width: calc(100vw - #{$icon-padding} * 6 - #{$icon-size} * 2);
+  }
+}

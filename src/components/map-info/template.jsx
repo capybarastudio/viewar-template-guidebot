@@ -9,12 +9,11 @@ import styles from './styles.scss';
 export default ({ visible, name, setName, saveChanges, goBack, className }) => (
   <div className={cx(styles.container, !visible && styles.isHidden, className)}>
     <div className={styles.title}>{translate('AdminNewProjectName')}</div>
-    <TextInput onChange={setName} value={name} className={styles.input} />
-    <Button
-      className={cx(styles.button)}
-      onClick={() => saveChanges()}
-      label="Save"
-    />
+    <form onSubmit={saveChanges}>
+      <TextInput onChange={setName} value={name} className={styles.input} />
+      <input type="submit" />
+    </form>
+    <Button className={cx(styles.button)} onClick={saveChanges} label="Save" />
     <IconButton
       size="small"
       icon="close"

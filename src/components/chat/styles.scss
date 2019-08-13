@@ -1,14 +1,20 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .chat {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: calc(100% - (78px + 80px));
-  /*max-height: calc(2em + (1.5em + 0.6em + 2.4em) * 2.5);*/
+  width: calc(100% - (#{$icon-size} + #{$icon-padding} * 2));
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  @include phone-landscape {
+    width: calc(100% - (#{$icon-size-phone-landscape} + #{$icon-padding} * 2));
+  }
 }
 
 .messages {
@@ -16,7 +22,7 @@
   display: flex;
   justify-content: flex-end;
   flex-flow: column;
-  padding: 0 1em 1em 1em;
+  padding: 0 $icon-padding-small;
   width: 100%;
   box-sizing: border-box;
   align-items: flex-start;
@@ -32,11 +38,14 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  padding: 0.4em 1em 0.2em 1em;
-  border-radius: 1.5em;
-  margin-top: 2.4em;
-  margin-bottom: 0.4em;
+  padding: calc(#{$icon-padding-small} / 2) $icon-padding-small;
+  border-radius: $icon-size-small;
+  margin: $icon-padding-small 0;
   justify-content: flex-start;
+
+  @include phone-landscape {
+    border-radius: $icon-size-small-phone-landscape;
+  }
 }
 
 .message:first-child {
@@ -44,29 +53,23 @@
 }
 
 .message > span {
-  line-height: 1.5em;
+  line-height: $icon-size-small;
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+  }
 }
 
 .message.speaker-user {
   background-color: lightgrey;
   color: black;
-  margin-left: 2em;
+  margin-left: $icon-size-small;
+
+  @include phone-landscape {
+    margin-left: $icon-size-small-phone-landscape;
+  }
 }
 
 .message.speaker-guide {
   color: white;
-}
-
-@media only screen and (orientation: landscape) and (max-height: 736px),
-  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
-  .robotChat {
-    width: calc(100% - ((100vh / 4 - 30px) + 48px));
-  }
-}
-
-@media only screen and (orientation: portrait) and(max-height: 736px),
-  screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  .robotChat {
-    width: calc(100% - (60px + 48px));
-  }
 }

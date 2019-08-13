@@ -1,8 +1,7 @@
 import { compose, branch, renderComponent, withProps } from 'recompose';
+import { waypointPlacement } from '../../services';
 
 import render from './template.jsx';
-
-import waypointPlacement from '../../services/waypoint-placement';
 
 export default compose(
   branch(

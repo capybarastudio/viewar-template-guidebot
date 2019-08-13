@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   position: absolute;
   left: 0;
@@ -24,7 +27,7 @@
 
 .container .closeButton {
   position: absolute;
-  right: 1.3rem;
+  right: 0;
   margin-right: 0;
   top: 0;
 }
@@ -39,11 +42,15 @@
   color: white;
   background: rgba(0, 0, 0, 0.6);
   margin-bottom: 1rem;
+  max-height: calc(100% - #{$icon-size-small} * 2 - #{$icon-padding * 2});
+  display: flex;
+  flex-flow: column;
 }
 
 .name {
   font-size: 1.1em;
   margin-bottom: 0.5rem;
+  flex: 0 0 auto;
 }
 
 .image {
@@ -51,9 +58,12 @@
   padding-bottom: 100%;
   width: 100%;
   background: rgba(255, 255, 255, 0.7) center / cover no-repeat;
+  flex: 0 0 auto;
 }
 
 .description {
+  flex: 0 1 auto;
+  overflow-y: auto;
   font-weight: 200;
   font-size: 0.9em;
   line-height: 1.4em;

@@ -8,7 +8,8 @@ import {
 } from 'recompose';
 import viewarApi from 'viewar-api';
 import render from './template.jsx';
-import config from '../../services/config';
+import { config } from '../../services';
+import { getQrCodeType } from '../../utils';
 
 const UPDATE_INTERVAL = 500;
 
@@ -18,7 +19,7 @@ const update = ({ viewarApi, trackedTargets, config, setHidden }) => () => {
   const cameraPosition = cameras.arCamera.pose.position;
 
   const qrCodes = (tracker || {}).targets
-    .filter(target => target.type === 'image')
+    .filter(target => target.type === getQrCodeType())
     .filter(target => !trackedTargets.includes(target.name));
 
   for (let qrCode of qrCodes) {
@@ -43,7 +44,7 @@ const update = ({ viewarApi, trackedTargets, config, setHidden }) => () => {
 
 const updateTracking = ({ setTrackedTargets, trackedTargets }) => target => {
   if (
-    target.type === 'image' &&
+    target.type === getQrCodeType() &&
     target.tracked &&
     !trackedTargets.includes(target.name)
   ) {
@@ -66,7 +67,7 @@ const startUpdate = ({
       tracker.on('trackingTargetStatusChanged', updateTracking);
       setTrackedTargets(
         tracker.targets
-          .filter(target => target.tracked && target.type === 'image')
+          .filter(target => target.tracked && target.type === getQrCodeType())
           .map(target => target.name)
       );
       interval = setInterval(update, UPDATE_INTERVAL);
@@ -110,14 +111,12 @@ export default compose(
   }),
   lifecycle({
     componentDidMount() {
-      const { enabled, startUpdate } = this.props;
-      if (enabled) {
-        startUpdate();
+      if (this.props.enabled) {
+        this.props.startUpdate();
       }
     },
     componentWillUnmount() {
-      const { stopUpdate } = this.props;
-      stopUpdate();
+      this.props.stopUpdate();
     },
   })
 )(render);

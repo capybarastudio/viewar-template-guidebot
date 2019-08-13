@@ -13,7 +13,6 @@ export default compose(
   withPropsOnChange(
     ['hidden'],
     ({
-      speechDisabled,
       hidden,
       setButtons,
       type,
@@ -25,12 +24,13 @@ export default compose(
     }) => {
       if (!hidden) {
         let buttons = [];
-        if (type === 'navigate') {
+        if (type === 'voice') {
+          buttons.push('poi');
+        } else if (type === 'manual') {
           buttons.push('menu');
-
-          if (!speechDisabled) {
-            buttons.push('poi');
-          }
+        } else if (type === 'tour') {
+          buttons.push('menu');
+          buttons.push('pause');
         } else if (type === 'map-edit') {
           if (initialHelp) {
             buttons.push('placewaypoint', 'placepoi', 'delete', 'undo', 'save');

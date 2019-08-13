@@ -1,0 +1,34 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(40, 47, 57, 0.6);
+}
+
+.selection {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .title {
+    color: white;
+    margin-bottom: $icon-padding;
+    font-size: 1.4rem;
+  }
+
+  .button {
+    margin-bottom: $icon-padding-small;
+  }
+}

@@ -6,7 +6,7 @@ import {
   findNearestPointOnEdge,
 } from '../../math/math';
 
-import config from '../../services/config';
+import { config } from '../../services';
 
 import findShortestPath from '../../math/graph/find-shortest-path';
 import {
@@ -101,18 +101,19 @@ export default function createGraphController({
   };
 
   const addPoi = (poi, waypoint, canUndo = true) => {
+    let usedWaypoint = waypoint;
+
     if (!graph.contains(waypoint)) {
-      throw new Error(
-        'Cannot attach POI to a waypoint not present in the environment!'
-      );
+      // Waypoint not found, attach to nearest waypoint.
+      usedWaypoint = getNearestWaypoint(poi);
     }
 
-    if (!poiByWaypoints.has(waypoint)) {
-      poiByWaypoints.set(waypoint, new Set());
+    if (!poiByWaypoints.has(usedWaypoint)) {
+      poiByWaypoints.set(usedWaypoint, new Set());
     }
-    poiByWaypoints.get(waypoint).add(poi);
+    poiByWaypoints.get(usedWaypoint).add(poi);
 
-    waypointsByPoi.set(poi, waypoint);
+    waypointsByPoi.set(poi, usedWaypoint);
 
     canUndo &&
       undoStack.push({

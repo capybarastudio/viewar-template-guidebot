@@ -2,21 +2,20 @@ const merge = require('webpack-merge');
 
 const common = require('./common.config');
 const production = require('./production.config');
-const develop = require('./develop/develop.config');
-const mock = require('./develop/mock.config');
-const core = require('./develop/core.config');
+const develop = require('./develop.config');
 
 module.exports = env => {
   if (env === 'production') {
-    console.log('using production mode');
+    console.log('[ViewAR] Using production mode.');
     return merge(common.config, production.config);
   }
 
+  const developConfig = merge(common.config, develop.config);
   if (env === 'development_mock') {
-    console.log('using development mock mode');
-    return merge(merge(common.config, develop.config), mock.config);
+    console.log('[ViewAR] Using development mock mode.');
+    return merge(developConfig, develop.mock);
   }
 
-  console.log('using development core mode');
-  return merge(merge(common.config, develop.config), core.config);
+  console.log('[ViewAR] Using development core mode.');
+  return merge(developConfig, develop.core);
 };

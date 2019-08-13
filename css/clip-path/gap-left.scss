@@ -1,0 +1,78 @@
+@import '../constants.scss';
+@import './math.scss';
+
+@function clipPathLeft($size, $height) {
+  $radius: calc(#{$size} / 2 + #{$clip-outline-width});
+  $vertices: ();
+  $vertices: $vertices, 100% 0%;
+  $vertices: $vertices, 100% 100%;
+  $vertices: $vertices, 0% 100%;
+
+  @for $i from 0 to $clip-precision + 1 {
+    $deg: 270 + (180 / $clip-precision) * $i;
+    $x: round(cos($deg / 180 * $pi) * 1000) / 1000;
+    $y: round(sin($deg / 180 * $pi) * 1000) / 1000;
+
+    $xOffset: #{$radius} * $x;
+    $yOffset: #{$height} - (#{$radius} * $y);
+    $vertices: $vertices, calc(0% + #{$xOffset}) calc(100% - #{$yOffset});
+  }
+
+  $vertices: $vertices, 0% 0%;
+
+  @return $vertices;
+}
+
+@mixin clipPathGapLeft1LandscapePhone() {
+  clip-path: polygon(
+    clipPathLeft(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 0.5 + #{$icon-padding-phone-landscape} *
+          1
+      )
+    )
+  );
+}
+
+@mixin clipPathGapLeft2LandscapePhone() {
+  clip-path: polygon(
+    clipPathLeft(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 1.5 + #{$icon-padding-phone-landscape} *
+          2
+      )
+    )
+  );
+}
+
+@mixin clipPathGapLeft3LandscapePhone() {
+  clip-path: polygon(
+    clipPathLeft(
+      $icon-size-phone-landscape,
+      calc(
+        #{$icon-size-phone-landscape} * 2.5 + #{$icon-padding-phone-landscape} *
+          3
+      )
+    )
+  );
+}
+
+@mixin clipPathGapLeft1Normal() {
+  clip-path: polygon(
+    clipPathLeft($icon-size, calc(#{$icon-size} * 0.5 + #{$icon-padding} * 1))
+  );
+}
+
+@mixin clipPathGapLeft2Normal() {
+  clip-path: polygon(
+    clipPathLeft($icon-size, calc(#{$icon-size} * 1.5 + #{$icon-padding} * 2))
+  );
+}
+
+@mixin clipPathGapLeft3Normal() {
+  clip-path: polygon(
+    clipPathLeft($icon-size, calc(#{$icon-size} * 2.5 + #{$icon-padding} * 3))
+  );
+}

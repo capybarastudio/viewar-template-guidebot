@@ -1,10 +1,10 @@
-import generateId from '../../utils/generate-id';
+import { generateId } from '../../utils';
 import isEqual from 'lodash/isEqual';
 import createProject from './project';
 
 export function createProjectManager({
   cachingEnabled = false,
-  storage,
+  getStorage,
   setContentToApp,
   getContentFromApp,
   unloadContentFromApp,
@@ -34,11 +34,11 @@ export function createProjectManager({
 
   async function fetchProjectIndexFor(userId) {
     const index =
-      (await storage.read(`/public/${userId}/projects/index.json`)) || {};
+      (await getStorage().read(`/public/${userId}/projects/index.json`)) || {};
     if (cachingEnabled && !isEqual(index, projectIndices[userId])) {
       projectIndices[userId] = index;
     }
-    await storage.write(
+    await getStorage().write(
       `/public/${userId}/projects/index.json`,
       JSON.stringify(index)
     );
@@ -50,12 +50,12 @@ export function createProjectManager({
       const projectIndex = await fetchProjectIndexFor(userId);
 
       const file = projectIndex[projectId].file;
-      const projectData = await storage.read(file);
+      const projectData = await getStorage().read(file);
       const project = createProject(
         Object.assign({}, projectData, {
           file,
           userId,
-          storage,
+          storage: getStorage(),
           setContentToApp,
           getContentFromApp,
           unloadContentFromApp,
@@ -84,7 +84,7 @@ export function createProjectManager({
       file,
       content,
       info,
-      storage,
+      storage: getStorage(),
       setContentToApp,
       getContentFromApp,
       unloadContentFromApp,

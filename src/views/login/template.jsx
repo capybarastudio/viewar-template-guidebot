@@ -24,7 +24,7 @@ export default ({ goTo, goToInitTracker, ...props }) => (
         onClick={() => goTo('/')}
       />
     </ToolBar>
-    <Logo admin size="large" className={styles.logo} />
+    <Logo admin size="large" />
     <LoginForm {...props} />
   </div>
 );

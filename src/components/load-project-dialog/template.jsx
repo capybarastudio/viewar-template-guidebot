@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { IconButton } from '../';
+import { Icon, IconButton } from '../';
 import { translate } from '../../services';
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
@@ -21,11 +21,6 @@ export default ({
           key={id}
           onClick={() => loadProject(id)}
         >
-          {/* <IconButton
-            className={styles.icon}
-            icon={projectId === id ? 'active' : 'none'}
-            size="small"
-          /> */}
           <div className={styles.details}>
             <div className={styles.title}>
               <span>
@@ -40,7 +35,7 @@ export default ({
             )}
           </div>
           <IconButton
-            className={cx(styles.icon, styles.iconNext)}
+            className={cx(styles.iconButton, styles.iconNext)}
             icon="openProject"
             size="small"
           />
@@ -48,8 +43,8 @@ export default ({
       ))}
     </div>
     <div className={styles.newProject}>
-      <IconButton
-        className={cx(styles.icon, styles.iconNew)}
+      <Icon
+        className={cx(styles.icon, global.ButtonColor, styles.iconNew)}
         icon="add"
         size="small"
       />

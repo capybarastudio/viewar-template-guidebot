@@ -25,4 +25,16 @@
   position: relative;
   z-index: 120;
   border-radius: 50%;
+
+  path {
+    stroke-width: 4;
+
+    &:nth-child(1) {
+      stroke: rgba(255, 255, 255, 0);
+    }
+
+    &:nth-child(2) {
+      stroke: inherit;
+    }
+  }
 }

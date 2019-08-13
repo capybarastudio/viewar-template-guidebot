@@ -56,21 +56,20 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  margin: 1.3rem;
-  transform: translateX(-75%);
+  padding: 1.3rem 0;
+  transform: translateX(-50%);
 }
 
 .buttonSave {
   position: absolute;
   right: 0;
   bottom: 0;
-  margin: 1.3rem;
+  padding: 1.3rem;
 }
 
 .container .closeButton {
   position: absolute;
-  right: 1.3rem;
-  margin-right: 0;
+  right: 0;
   top: 0;
 }
 

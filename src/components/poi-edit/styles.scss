@@ -1,3 +1,6 @@
+@import 'constants.scss';
+@import 'media-queries.scss';
+
 .container {
   position: absolute;
   left: 0;
@@ -10,6 +13,10 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  form input[type='submit'] {
+    display: none;
+  }
 }
 
 .isHidden.container {
@@ -23,20 +30,17 @@
 
 .container .closeButton {
   position: absolute;
-  right: 1.3rem;
-  margin-right: 0;
+  right: 0;
   top: 0;
 }
 
 .container .backButton {
   position: absolute;
-  left: 1.3rem;
-  margin-left: 0;
+  left: 0;
   top: 0;
 }
 
 .poi {
-  padding: 1rem 1rem 0 1rem;
   width: 80vw;
   max-width: 80vh;
   box-sizing: border-box;
@@ -44,12 +48,13 @@
   height: 80vh;
   display: flex;
   flex-flow: column;
+  margin-bottom: $icon-padding-small / 2;
 }
 
 .input {
   display: flex;
   flex-flow: column;
-  margin-bottom: 1em;
+  margin-bottom: $icon-padding-small / 2;
 }
 
 .inputText {
@@ -57,22 +62,37 @@
 }
 
 .label {
-  padding: 0 0.5em;
+  padding: 0 $icon-padding-small;
   font-weight: 200;
-  margin-bottom: 0.5em;
-  line-height: 1.2em;
+  margin-bottom: calc(#{$icon-padding-small} / 2);
+  line-height: $icon-size-small;
   flex: 0 0 auto;
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+  }
 }
 
 .input .textArea {
   flex: 1 0 auto;
-  line-height: 1.2em;
-  padding: 0.5em 1em;
-  border-radius: 1em;
+  line-height: $icon-size-small;
+  padding: calc(#{$icon-padding-small} / 2) $icon-padding-small;
+  border-radius: #{$icon-padding-small};
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+  }
 }
 
 .input .textInput {
-  line-height: 2em;
-  padding: 0 1em;
-  border-radius: 1em;
+  line-height: $icon-size-small;
+  padding: 0 $icon-padding-small;
+  border-radius: calc(#{$icon-size-small} / 2 + #{$icon-padding-small});
+
+  @include phone-landscape {
+    line-height: $icon-size-small-phone-landscape;
+    border-radius: calc(
+      #{$icon-size-small-phone-landscape} / 2 + #{$icon-padding-small}
+    );
+  }
 }

@@ -1,0 +1,3624 @@
+{
+  "id": "ouv1q9tmiyk",
+  "readOnly": false,
+  "content": {
+    "version": "3.0.0",
+    "waypoints": {
+      "qx1kxli9p9m": {
+        "$id": "qx1kxli9p9m",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.8412199020385742,
+            "x": 0,
+            "y": 0.5406931638717651,
+            "z": 0
+          },
+          "position": {
+            "x": -895.3068237304688,
+            "y": -0.00054931640625,
+            "z": 564.8648681640625
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "r4r01h7mq1j": {
+        "$id": "r4r01h7mq1j",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9509304761886597,
+            "x": 0,
+            "y": 0.3094049394130707,
+            "z": 0
+          },
+          "position": {
+            "x": -1340.855224609375,
+            "y": 15.89288330078125,
+            "z": -950.1776123046875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "bob1ocagcw": {
+        "$id": "bob1ocagcw",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9974110126495361,
+            "x": 0,
+            "y": -0.0719117671251297,
+            "z": 0
+          },
+          "position": {
+            "x": 473.6210021972656,
+            "y": -22.7945556640625,
+            "z": -1577.99755859375
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "i5g1d3akmh": {
+        "$id": "i5g1d3akmh",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9860457181930542,
+            "x": 0,
+            "y": -0.16647477447986603,
+            "z": 0
+          },
+          "position": {
+            "x": 326.45050048828125,
+            "y": -89.95574951171875,
+            "z": 322.451416015625
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "3y8oc3iz6vs": {
+        "$id": "3y8oc3iz6vs",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.910606324672699,
+            "x": 0,
+            "y": -0.41327497363090515,
+            "z": 0
+          },
+          "position": {
+            "x": 1850.3955078125,
+            "y": 0.000244140625,
+            "z": -377.2978515625
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "oefrspu4rk": {
+        "$id": "oefrspu4rk",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9312254786491394,
+            "x": 0,
+            "y": -0.3644437789916992,
+            "z": 0
+          },
+          "position": {
+            "x": 1472.22021484375,
+            "y": -110.829345703125,
+            "z": -1807.548095703125
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "251i7tp4oc5": {
+        "$id": "251i7tp4oc5",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.6899648308753967,
+            "x": 0,
+            "y": -0.7238429188728333,
+            "z": 0
+          },
+          "position": {
+            "x": 4712.353515625,
+            "y": -62.7164306640625,
+            "z": -1762.647216796875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "6afrkmpwy2u": {
+        "$id": "6afrkmpwy2u",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": -0.07466987520456314,
+            "x": 0,
+            "y": 0.997208297252655,
+            "z": 0
+          },
+          "position": {
+            "x": 4979.783203125,
+            "y": 19.82177734375,
+            "z": 722.2005615234375
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "gf68sv2eus9": {
+        "$id": "gf68sv2eus9",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9998223185539246,
+            "x": 0,
+            "y": 0.018853619694709778,
+            "z": 0
+          },
+          "position": {
+            "x": 4682.69287109375,
+            "y": 66.2861328125,
+            "z": -3755.3662109375
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "tsc9tvic7p": {
+        "$id": "tsc9tvic7p",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9847742319107056,
+            "x": 0,
+            "y": -0.17383871972560883,
+            "z": 0
+          },
+          "position": {
+            "x": 5008.8935546875,
+            "y": -249.9427490234375,
+            "z": -5439.10107421875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "74eszigwozi": {
+        "$id": "74eszigwozi",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.8345963358879089,
+            "x": 0,
+            "y": -0.5508620142936707,
+            "z": 0
+          },
+          "position": {
+            "x": 7687.43017578125,
+            "y": -157.1456298828125,
+            "z": -7476.66455078125
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "7gnxxn4ql6n": {
+        "$id": "7gnxxn4ql6n",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": -0.29828739166259766,
+            "x": 0,
+            "y": 0.9544761180877686,
+            "z": 0
+          },
+          "position": {
+            "x": 6963.318359375,
+            "y": -153.371337890625,
+            "z": -3528.82958984375
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "vntwtt30fem": {
+        "$id": "vntwtt30fem",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.6778795719146729,
+            "x": 0,
+            "y": -0.7351729273796082,
+            "z": 0
+          },
+          "position": {
+            "x": 10280.09765625,
+            "y": -172.28564453125,
+            "z": -3368.28564453125
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "2lxieoyycu8": {
+        "$id": "2lxieoyycu8",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": -0.46929627656936646,
+            "x": 0,
+            "y": 0.883040726184845,
+            "z": 0
+          },
+          "position": {
+            "x": 11845.8515625,
+            "y": -397.74456787109375,
+            "z": -2766.078857421875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "iud37kivjar": {
+        "$id": "iud37kivjar",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": -0.05139882490038872,
+            "x": 0,
+            "y": 0.9986782670021057,
+            "z": 0
+          },
+          "position": {
+            "x": 11554.6875,
+            "y": -168.822021484375,
+            "z": 837.987060546875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "yy2tndxnic": {
+        "$id": "yy2tndxnic",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.6927238702774048,
+            "x": 0,
+            "y": -0.7212029099464417,
+            "z": 0
+          },
+          "position": {
+            "x": 13461.328125,
+            "y": -231.171875,
+            "z": -2879.048095703125
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "mbgy516yso": {
+        "$id": "mbgy516yso",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.9999517202377319,
+            "x": 0,
+            "y": 0.00983016099780798,
+            "z": 0
+          },
+          "position": {
+            "x": 12833.64453125,
+            "y": -406.56396484375,
+            "z": -5469.07763671875
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      },
+      "mfcgusl4nnl": {
+        "$id": "mfcgusl4nnl",
+        "model": {
+          "tags": [],
+          "id": "54383",
+          "name": "Waypoint",
+          "imageUrl": "coui:///Models/Images/54383.png",
+          "type": "basic",
+          "foreignKey": "guidebot_waypoint",
+          "version": 1527517339,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1114,
+              "uv-layouts": 2,
+              "vertices": 656
+            },
+            "bounding_box": {
+              "max_x": 25,
+              "max_y": 3,
+              "max_z": 25,
+              "min_x": -25,
+              "min_y": 0,
+              "min_z": -25
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54383_1524052940_0 /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/orig/WayPoint.fbx /home/viewar/webroot_prod2/current/storage/tmp/54383_1524052940/converted",
+              "files": [
+                "54383_1524052940_0##WayPoint.mesh",
+                "54383_1524052940_0.json",
+                "54383_1524052940_0.material"
+              ],
+              "prefix": "54383_1524052940_0"
+            },
+            "dimensions": {
+              "x": 50,
+              "y": 3,
+              "z": 50
+            },
+            "materials": ["waypoint"],
+            "meshes": {
+              "Cube": [],
+              "Sphere": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54383/version:1527517339"
+              }
+            ],
+            "name": "Waypoint",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "orientation": {
+            "w": 0.8264580965042114,
+            "x": 0,
+            "y": 0.5629982352256775,
+            "z": 0
+          },
+          "position": {
+            "x": 9450.8798828125,
+            "y": -377.27520751953125,
+            "z": -7194.11083984375
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      }
+    },
+    "paths": {
+      "m24d1heu7y": {
+        "$id": "m24d1heu7y",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": -895.3068237304688,
+            "y": -0.00054931640625,
+            "z": 564.8648681640625
+          },
+          "orientation": {
+            "w": 0.5991153735631936,
+            "x": 0,
+            "y": 0.8006186538403028,
+            "z": 0.008398826297555213
+          },
+          "scale": {
+            "x": 1.5792782200584576,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "j13z0pqft3q": {
+        "$id": "j13z0pqft3q",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": -1340.855224609375,
+            "y": 15.89288330078125,
+            "z": -950.1776123046875
+          },
+          "orientation": {
+            "w": 0.9861129309597542,
+            "x": 0,
+            "y": 0.16576172782405307,
+            "z": -0.010214547603665101
+          },
+          "scale": {
+            "x": 1.9204110446824982,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "3hoxjuxe29c": {
+        "$id": "3hoxjuxe29c",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 473.6210021972656,
+            "y": -22.7945556640625,
+            "z": -1577.99755859375
+          },
+          "orientation": {
+            "w": 0.679278728749269,
+            "x": 0,
+            "y": -0.733422538284869,
+            "z": -0.02591889281116571
+          },
+          "scale": {
+            "x": 1.9073217053308393,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "ubeewto4uod": {
+        "$id": "ubeewto4uod",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 326.45050048828125,
+            "y": -89.95574951171875,
+            "z": 322.451416015625
+          },
+          "orientation": {
+            "w": 0.9765940791634787,
+            "x": 0,
+            "y": 0.2133350942001779,
+            "z": 0.027425209669906178
+          },
+          "scale": {
+            "x": 1.6793300758393261,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "07s9u3ninkq9": {
+        "$id": "07s9u3ninkq9",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 1850.3955078125,
+            "y": 0.000244140625,
+            "z": -377.2978515625
+          },
+          "orientation": {
+            "w": 0.6103635407847698,
+            "x": 0,
+            "y": 0.7897538751877727,
+            "z": -0.06119775082937657
+          },
+          "scale": {
+            "x": 1.4835482840343457,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "md6jnfkgdos": {
+        "$id": "md6jnfkgdos",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 1472.22021484375,
+            "y": -110.829345703125,
+            "z": -1807.548095703125
+          },
+          "orientation": {
+            "w": 0.9999484482482773,
+            "x": 0,
+            "y": -0.006927791307105613,
+            "z": 0.007423378844388991
+          },
+          "scale": {
+            "x": 3.240801559545371,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "oj84d9fn1zq": {
+        "$id": "oj84d9fn1zq",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 4712.353515625,
+            "y": -62.7164306640625,
+            "z": -1762.647216796875
+          },
+          "orientation": {
+            "w": 0.7439583066704284,
+            "x": 0,
+            "y": -0.6678577016114207,
+            "z": 0.022183965704525025
+          },
+          "scale": {
+            "x": 2.500559872300778,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "netxzxzgkdc": {
+        "$id": "netxzxzgkdc",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 4712.353515625,
+            "y": -62.7164306640625,
+            "z": -1762.647216796875
+          },
+          "orientation": {
+            "w": 0.701836241843378,
+            "x": 0,
+            "y": 0.7108503406641484,
+            "z": 0.04601828780851755
+          },
+          "scale": {
+            "x": 1.9971105139241438,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "s0vakk6p0i": {
+        "$id": "s0vakk6p0i",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 4682.69287109375,
+            "y": 66.2861328125,
+            "z": -3755.3662109375
+          },
+          "orientation": {
+            "w": 0.770404685790442,
+            "x": 0,
+            "y": 0.6265996033726139,
+            "z": -0.11768414152048412
+          },
+          "scale": {
+            "x": 1.7439526030007142,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "ulkmnripw9g": {
+        "$id": "ulkmnripw9g",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 5008.8935546875,
+            "y": -249.9427490234375,
+            "z": -5439.10107421875
+          },
+          "orientation": {
+            "w": 0.9259299629916751,
+            "x": 0,
+            "y": -0.3772135408107122,
+            "z": 0.019069563793658213
+          },
+          "scale": {
+            "x": 2.734636995771509,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "qafocgbuytg": {
+        "$id": "qafocgbuytg",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 5008.8935546875,
+            "y": -249.9427490234375,
+            "z": -5439.10107421875
+          },
+          "orientation": {
+            "w": 0.9475207924842834,
+            "x": 0,
+            "y": 0.31936314702033997,
+            "z": 0.014544813893735409
+          },
+          "scale": {
+            "x": 3.366724729537964,
+            "y": 0.10000000149011612,
+            "z": 0.10000000149011612
+          }
+        }
+      },
+      "u0lphqxv4oq": {
+        "$id": "u0lphqxv4oq",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 6963.318359375,
+            "y": -153.371337890625,
+            "z": -3528.82958984375
+          },
+          "orientation": {
+            "w": 0.99970355589071,
+            "x": 0,
+            "y": -0.0241802574006618,
+            "z": -0.002848770174640461
+          },
+          "scale": {
+            "x": 3.320716340422774,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "cathuj6mqd": {
+        "$id": "cathuj6mqd",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 10280.09765625,
+            "y": -172.28564453125,
+            "z": -3368.28564453125
+          },
+          "orientation": {
+            "w": 0.9810785233790801,
+            "x": 0,
+            "y": -0.18131939452699278,
+            "z": -0.06788378401863372
+          },
+          "scale": {
+            "x": 1.692651776205399,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "23v7k2la97t": {
+        "$id": "23v7k2la97t",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 11845.8515625,
+            "y": -397.74456787109375,
+            "z": -2766.078857421875
+          },
+          "orientation": {
+            "w": 0.6780986629429726,
+            "x": 0,
+            "y": -0.7334927305366957,
+            "z": 0.04658988693670826
+          },
+          "scale": {
+            "x": 3.62304749963337,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "mcdi6aoe4": {
+        "$id": "mcdi6aoe4",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 11845.8515625,
+            "y": -397.74456787109375,
+            "z": -2766.078857421875
+          },
+          "orientation": {
+            "w": 0.9980802182788857,
+            "x": 0,
+            "y": 0.034763176048610844,
+            "z": 0.05125816492408896
+          },
+          "scale": {
+            "x": 1.6279659194206095,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "t4nbjcbq7ab": {
+        "$id": "t4nbjcbq7ab",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 13461.328125,
+            "y": -231.171875,
+            "z": -2879.048095703125
+          },
+          "orientation": {
+            "w": 0.6184578075329866,
+            "x": 0,
+            "y": 0.7840223971480742,
+            "z": -0.053092570776696685
+          },
+          "scale": {
+            "x": 2.6707680734905237,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      },
+      "f9165sppq1": {
+        "$id": "f9165sppq1",
+        "model": {
+          "tags": [],
+          "id": "54429",
+          "name": "Path",
+          "imageUrl": "coui:///Models/Images/54429.png",
+          "type": "environment",
+          "foreignKey": "guidebot_path",
+          "version": 1528175017,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 56,
+              "uv-layouts": 1,
+              "vertices": 60
+            },
+            "bounding_box": {
+              "max_x": 100,
+              "max_y": 10,
+              "max_z": 9.749279022216797,
+              "min_x": -4.37113897078234e-7,
+              "min_y": -10.000004768371582,
+              "min_z": -9.749279022216797
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54429_1523278688_0 /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/orig/groundcylinder.fbx /home/viewar/webroot_prod2/current/storage/tmp/54429_1523278688/converted",
+              "files": [
+                "54429_1523968750_0##groundcylinder.mesh",
+                "54429_1523968750_0.json",
+                "54429_1523968750_0.material"
+              ],
+              "prefix": "54429_1523278688_0"
+            },
+            "dimensions": {
+              "x": 100,
+              "y": 20.000003814697266,
+              "z": 19.498558044433594
+            },
+            "materials": ["Ground1"],
+            "meshes": {
+              "Cylinder": []
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54429/version:1528175017"
+              }
+            ],
+            "name": "Path",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": false,
+            "rotation": false,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 12833.64453125,
+            "y": -406.56396484375,
+            "z": -5469.07763671875
+          },
+          "orientation": {
+            "w": 0.23363668625489775,
+            "x": 0,
+            "y": 0.9721838499955109,
+            "z": 0.016506381909322534
+          },
+          "scale": {
+            "x": 3.797327224497222,
+            "y": 0.1,
+            "z": 0.1
+          }
+        }
+      }
+    },
+    "pois": {
+      "8w3xnamwz34": {
+        "$id": "8w3xnamwz34",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": -462.77215576171875,
+            "y": 873.9779052734375,
+            "z": 332.6037902832031
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #1",
+          "description": "This is POI #1.",
+          "newFreezeFrame": null,
+          "imageUrl": "https://images.unsplash.com/photo-1536420113339-670e1666cbdd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+        }
+      },
+      "yhmu7t8houp": {
+        "$id": "yhmu7t8houp",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 150.17478942871094,
+            "y": 721.1468505859375,
+            "z": 766.2702026367188
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #2",
+          "description": "This is POI #2.",
+          "freezeFrame": "poi_1564574920177",
+          "imageUrl": "https://cdn.pixabay.com/photo/2017/02/22/20/02/landscape-2090495_960_720.jpg"
+        }
+      },
+      "d8edvkyh22p": {
+        "$id": "d8edvkyh22p",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 1452.96728515625,
+            "y": 1007.4049682617188,
+            "z": -1694.92529296875
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #3",
+          "description": "This is POI #3.",
+          "newFreezeFrame": null
+        }
+      },
+      "zwwzlueur5": {
+        "$id": "zwwzlueur5",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 4872.59912109375,
+            "y": 1103.486328125,
+            "z": 848.936279296875
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #4",
+          "description": "This is POI #4.",
+          "newFreezeFrame": null
+        }
+      },
+      "yffho5ennkd": {
+        "$id": "yffho5ennkd",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 4710.0341796875,
+            "y": 803.5032958984375,
+            "z": -4404.60595703125
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #5",
+          "description": "This is POI #5.",
+          "newFreezeFrame": null
+        }
+      },
+      "opo29bro7a": {
+        "$id": "opo29bro7a",
+        "model": {
+          "tags": [],
+          "id": "54426",
+          "name": "POI",
+          "imageUrl": "coui:///Models/Images/54426.png",
+          "type": "basic",
+          "foreignKey": "guidebot_poi",
+          "version": 1524043973,
+          "description": "",
+          "data": {
+            "analysis": {
+              "faces": 1104,
+              "uv-layouts": 2,
+              "vertices": 691
+            },
+            "bounding_box": {
+              "max_x": 7.216800212860107,
+              "max_y": 91.93789672851562,
+              "max_z": 7.216800212860107,
+              "min_x": -7.216800212860107,
+              "min_y": 14.595369338989258,
+              "min_z": -7.216800212860107
+            },
+            "cameras": [],
+            "converter": {
+              "arguments": "-defaultLighting -pre 54426_1520941339_0 /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/orig/POI.fbx /home/viewar/webroot_prod2/current/storage/tmp/54426_1520941339/converted",
+              "files": [
+                "54426_1524040337_0##POI.mesh",
+                "54426_1524040337_0.json",
+                "54426_1524040337_0.material"
+              ],
+              "prefix": "54426_1520941339_0"
+            },
+            "dimensions": {
+              "x": 14.433600425720215,
+              "y": 77.342529296875,
+              "z": 14.433600425720215
+            },
+            "materials": ["Color"],
+            "meshes": {
+              "POI": {
+                "Capsule": [],
+                "Sphere": []
+              }
+            }
+          },
+          "images": [],
+          "info": {
+            "description": "",
+            "images": [
+              {
+                "name": "no name",
+                "url": "https://api.viewar.com/model/downloadImage/id:54426/version:1524043973"
+              }
+            ],
+            "name": "POI",
+            "text": []
+          },
+          "source": false,
+          "defaultInteraction": {
+            "interactionPlane": "horizontal",
+            "translation": true,
+            "rotation": true,
+            "scaling": false
+          }
+        },
+        "pose": {
+          "position": {
+            "x": 5914.95263671875,
+            "y": 611.831298828125,
+            "z": -7856.6943359375
+          },
+          "orientation": {
+            "w": 1,
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25,
+            "z": 0.25
+          }
+        },
+        "data": {
+          "name": "POI #6",
+          "description": "This is POI #6.",
+          "newFreezeFrame": null
+        }
+      }
+    },
+    "adjacency": {
+      "qx1kxli9p9m": {
+        "m24d1heu7y": "r4r01h7mq1j"
+      },
+      "r4r01h7mq1j": {
+        "m24d1heu7y": "qx1kxli9p9m",
+        "j13z0pqft3q": "bob1ocagcw"
+      },
+      "bob1ocagcw": {
+        "j13z0pqft3q": "r4r01h7mq1j",
+        "3hoxjuxe29c": "i5g1d3akmh"
+      },
+      "i5g1d3akmh": {
+        "3hoxjuxe29c": "bob1ocagcw",
+        "ubeewto4uod": "3y8oc3iz6vs"
+      },
+      "3y8oc3iz6vs": {
+        "ubeewto4uod": "i5g1d3akmh",
+        "07s9u3ninkq9": "oefrspu4rk"
+      },
+      "oefrspu4rk": {
+        "07s9u3ninkq9": "3y8oc3iz6vs",
+        "md6jnfkgdos": "251i7tp4oc5"
+      },
+      "251i7tp4oc5": {
+        "md6jnfkgdos": "oefrspu4rk",
+        "oj84d9fn1zq": "6afrkmpwy2u",
+        "netxzxzgkdc": "gf68sv2eus9"
+      },
+      "6afrkmpwy2u": {
+        "oj84d9fn1zq": "251i7tp4oc5"
+      },
+      "gf68sv2eus9": {
+        "netxzxzgkdc": "251i7tp4oc5",
+        "s0vakk6p0i": "tsc9tvic7p"
+      },
+      "tsc9tvic7p": {
+        "s0vakk6p0i": "gf68sv2eus9",
+        "ulkmnripw9g": "7gnxxn4ql6n",
+        "qafocgbuytg": "74eszigwozi"
+      },
+      "74eszigwozi": {
+        "qafocgbuytg": "tsc9tvic7p"
+      },
+      "7gnxxn4ql6n": {
+        "ulkmnripw9g": "tsc9tvic7p",
+        "u0lphqxv4oq": "vntwtt30fem"
+      },
+      "vntwtt30fem": {
+        "u0lphqxv4oq": "7gnxxn4ql6n",
+        "cathuj6mqd": "2lxieoyycu8"
+      },
+      "2lxieoyycu8": {
+        "cathuj6mqd": "vntwtt30fem",
+        "23v7k2la97t": "iud37kivjar",
+        "mcdi6aoe4": "yy2tndxnic"
+      },
+      "iud37kivjar": {
+        "23v7k2la97t": "2lxieoyycu8"
+      },
+      "yy2tndxnic": {
+        "mcdi6aoe4": "2lxieoyycu8",
+        "t4nbjcbq7ab": "mbgy516yso"
+      },
+      "mbgy516yso": {
+        "t4nbjcbq7ab": "yy2tndxnic",
+        "f9165sppq1": "mfcgusl4nnl"
+      },
+      "mfcgusl4nnl": {
+        "f9165sppq1": "mbgy516yso"
+      }
+    },
+    "poiMap": {
+      "qx1kxli9p9m": ["8w3xnamwz34"],
+      "i5g1d3akmh": ["yhmu7t8houp"],
+      "oefrspu4rk": ["d8edvkyh22p"],
+      "6afrkmpwy2u": ["zwwzlueur5"],
+      "gf68sv2eus9": ["yffho5ennkd"],
+      "74eszigwozi": ["opo29bro7a"]
+    }
+  },
+  "info": {
+    "name": "2",
+    "timestamp": 1564575247977
+  },
+  "tours": [
+    {
+      "id": "6s7w6f8shkl",
+      "name": "Tour 1",
+      "details": "This is a<br/>sample tour<br/> with html content<br/><img src='https://via.placeholder.com/140x100'/>",
+      "pois": ["8w3xnamwz34", "yhmu7t8houp", "d8edvkyh22p", "zwwzlueur5"]
+    },
+    {
+      "id": "g92tyz0kk28",
+      "name": "Tour 2",
+      "details": "This is another<br/><b>sample tour</b><br/><img src='https://via.placeholder.com/150x200'/>",
+      "pois": ["yffho5ennkd", "opo29bro7a"]
+    }
+  ],
+  "qrCodes": []
+}

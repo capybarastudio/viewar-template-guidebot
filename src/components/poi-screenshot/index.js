@@ -1,11 +1,4 @@
-import {
-  compose,
-  withProps,
-  withState,
-  withHandlers,
-  lifecycle,
-} from 'recompose';
-import { sceneManager } from 'viewar-api';
+import { compose } from 'recompose';
 
 import render from './template.jsx';
 

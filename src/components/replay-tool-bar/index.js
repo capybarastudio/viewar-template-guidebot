@@ -7,10 +7,10 @@ import {
 } from 'recompose';
 import viewarApi from 'viewar-api';
 
-import camera from '../../services/camera';
-import config from '../../services/config';
+import { camera, config } from '../../services';
 
 import render from './template.jsx';
+import { getUiConfigPath } from '../../utils';
 
 const loadReplayFromStorage = async () => {
   return viewarApi.storage.cloud.read(
@@ -25,11 +25,71 @@ const saveReplayToStorage = async captureData => {
   );
 };
 
+const toggleCapture = ({ capturing, startCapture, stopCapture }) => () =>
+  capturing ? stopCapture() : startCapture();
+
+const toggleReplay = ({ replaying, startReplay, stopReplay }) => () =>
+  replaying ? stopReplay() : startReplay();
+
+export const startCapture = ({
+  replaying,
+  capturing,
+  setCapturing,
+}) => async () => {
+  if (!replaying && !capturing) {
+    camera.startCapture();
+    setCapturing(true);
+  }
+};
+
+export const stopCapture = ({
+  capturing,
+  setCapturing,
+  setCaptureData,
+}) => async () => {
+  if (capturing) {
+    const captureData = camera.stopCapture();
+    setCaptureData(captureData);
+    setCapturing(false);
+  }
+};
+
+export const startReplay = ({
+  captureData,
+  capturing,
+  replaying,
+  setReplaying,
+}) => async () => {
+  if (!capturing && !replaying && captureData) {
+    camera.startReplay(captureData);
+    setReplaying(true);
+  }
+};
+
+export const stopReplay = ({ replaying, setReplaying }) => async () => {
+  if (replaying) {
+    camera.stopReplay();
+    setReplaying(false);
+  }
+};
+
+export const loadCapture = ({
+  loadReplayFromStorage,
+  setCaptureData,
+}) => async () => setCaptureData(await loadReplayFromStorage());
+
+export const saveCapture = ({
+  saveReplayToStorage,
+  captureData,
+}) => async () => {
+  await saveReplayToStorage(captureData);
+  alert('Saved.');
+};
+
 export default compose(
   setDisplayName('DisplayToolBar'),
   withProps(() => ({
-    visible: config.debug.showReplayControls,
-    camera,
+    visible: getUiConfigPath('debug.showReplayControls'),
     loadReplayFromStorage,
     saveReplayToStorage,
   })),
@@ -37,56 +97,15 @@ export default compose(
   withState('replaying', 'setReplaying', false),
   withState('captureData', 'setCaptureData', null),
   withHandlers({
-    startCapture: ({
-      camera,
-      replaying,
-      capturing,
-      setCapturing,
-    }) => async () => {
-      if (!replaying && !capturing) {
-        camera.startCapture();
-        setCapturing(true);
-      }
-    },
-    stopCapture: ({
-      camera,
-      capturing,
-      setCapturing,
-      setCaptureData,
-    }) => async () => {
-      if (capturing) {
-        const captureData = camera.stopCapture();
-        setCaptureData(captureData);
-        setCapturing(false);
-      }
-    },
-    startReplay: ({
-      camera,
-      captureData,
-      capturing,
-      replaying,
-      setReplaying,
-    }) => async () => {
-      if (!capturing && !replaying && captureData) {
-        camera.startReplay(captureData);
-        setReplaying(true);
-      }
-    },
-    stopReplay: ({ camera, replaying, setReplaying }) => async () => {
-      if (replaying) {
-        camera.stopReplay();
-        setReplaying(false);
-      }
-    },
-    loadCapture: ({ loadReplayFromStorage, setCaptureData }) => async () =>
-      setCaptureData(await loadReplayFromStorage()),
-    saveCapture: ({ saveReplayToStorage, captureData }) => async () =>
-      saveReplayToStorage(captureData),
+    startCapture,
+    stopCapture,
+    startReplay,
+    stopReplay,
+    loadCapture,
+    saveCapture,
   }),
   withHandlers({
-    toggleCapture: ({ capturing, startCapture, stopCapture }) => () =>
-      capturing ? stopCapture() : startCapture(),
-    toggleReplay: ({ replaying, startReplay, stopReplay }) => () =>
-      replaying ? stopReplay() : startReplay(),
+    toggleCapture,
+    toggleReplay,
   })
 )(render);

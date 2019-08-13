@@ -8,15 +8,18 @@ import { translate } from '../../services';
 export default ({ history, nextView }) => (
   <div className={styles.container}>
     <Logo />
+
     <div className={cx(styles.qrScanArea, global.ButtonColor)} />
     <div className={cx(styles.qrScanAreaInlay, global.ButtonColor)} />
+
     <IconButton
       onClick={() => history.push(nextView)}
       size="small"
       icon="skip"
       className={styles.skipButton}
     />
-    <TrackingNotification>
+
+    <TrackingNotification className={styles.notification}>
       {translate('QRCodeNotification')}
     </TrackingNotification>
   </div>

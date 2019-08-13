@@ -4,7 +4,7 @@ import { translate } from '../../services';
 import styles from './styles.scss';
 import global from '../../../css/global.scss';
 
-export default ({ children, className, hidden }) => (
+export default ({ className, hidden }) => (
   <div
     className={cx(
       styles.trackingLost,

@@ -15,12 +15,7 @@ import {
 
 const MapViewHeaderBar = ({ headerBarHidden, goBack, ...props }) => (
   <HeaderBar hidden={headerBarHidden} {...props} className={styles.headerBar}>
-    <IconButton
-      onClick={() => goBack()}
-      size="small"
-      icon="back"
-      className={styles.headerBarButton}
-    />
+    <IconButton onClick={() => goBack()} size="small" icon="back" />
   </HeaderBar>
 );
 

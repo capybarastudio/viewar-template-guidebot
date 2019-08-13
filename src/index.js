@@ -1,20 +1,27 @@
+import './remote-console';
 import viewarApi from 'viewar-api';
 import viewarGuide from 'viewar-guide';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import graphController from './services/graph-controller';
-import storage from './services/storage';
-import sceneDirector from './services/scene-director';
-import graphVisualizer from './services/graph-visualizer';
-import qrCodeVisualizer from './services/qr-code-visualizer';
-import camera from './services/camera';
-import authManager from './services/auth-manager';
-import poiPlacement from './services/poi-placement';
-import waypointPlacement from './services/waypoint-placement';
-import objectAnimation from './services/object-animation';
-import translationProvider, { translate } from './services/translations';
+import {
+  initDebugInfo,
+  config,
+  appState,
+  graphController,
+  storage,
+  sceneDirector,
+  graphVisualizer,
+  qrCodeVisualizer,
+  camera,
+  authManager,
+  poiPlacement,
+  waypointPlacement,
+  objectAnimation,
+  translationProvider,
+  translate,
+} from './services';
 import {
   MODE_WAYPOINT_PLACEMENT,
   MODE_NAVIGATION,
@@ -24,9 +31,6 @@ import {
 
 import App from './app';
 
-import { initDebugInfo } from './services/debug-info';
-import config from './services/config';
-import appState from './services/app-state';
 import {
   keyboardMovementJoystick,
   keyboardRotationJoystick,
@@ -76,6 +80,13 @@ import {
       MODE_POI_PLACEMENT,
     });
   }
+
+  viewarApi.coreInterface.on('trackingTargetStatusChanged', (...args) =>
+    console.info('trackingTargetStatusChanged', ...args)
+  );
+  viewarApi.coreInterface.on('customTrackingInfo', (...args) =>
+    console.info('customTrackingInfo', ...args)
+  );
 
   const rootElement = document.getElementById('app-root');
   const render = Component => {

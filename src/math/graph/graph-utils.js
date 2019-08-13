@@ -30,4 +30,11 @@ export function importGraphState(graph, { vertices, edges, adjacency }) {
       graph.addEdge(edges[edgeId], vertices[vertexId], vertices[neighborId]);
     }
   }
+
+  // Special case where only waypoints without any paths are in the graph.
+  if (!Object.keys(adjacency).length) {
+    for (let vertex of Object.values(vertices)) {
+      graph.addVertex(vertex);
+    }
+  }
 }

@@ -1,25 +1,20 @@
-import React from 'react';
 import { withRouter } from 'react-router';
-import { compose, withState, withHandlers, withProps } from 'recompose';
+import { compose, withHandlers, withProps } from 'recompose';
 import viewarApi from 'viewar-api';
-import config from '../../services/config';
+import { getUiConfigPath } from '../../utils';
 
 import render from './template.jsx';
 
 export const goTo = ({ history }) => route => history.push(route);
 
-export const openUrl = ({ viewarApi }) => async url => {
+export const openUrl = ({}) => async url => {
   viewarApi.appUtils.openUrl(url);
 };
 
 export default compose(
   withRouter,
-  withProps({
-    viewarApi,
-    config,
-  }),
-  withProps(({ config }) => ({
-    infoText: config.app.infoText,
+  withProps(() => ({
+    infoText: getUiConfigPath('app.infoText'),
   })),
   withHandlers({
     goTo,
